@@ -28,6 +28,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::group(['prefix' => '/admin'], function () {
         Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
         Route::get('', [AdminsController::class, 'adminHome'])->name('admin.home');
+        Route::get('/home', [AdminsController::class, 'adminHome'])->name('admin.homes');
+
 
         // SiteSettings
         Route::get('credentials', [AdminsController::class, 'systemsCredentials']);
