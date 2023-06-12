@@ -35,17 +35,17 @@
                     @if(Session::has('message'))
                                   <div class="alert alert-success">{{ Session::get('message') }}</div>
                    @endif
-   
+
                    @if(Session::has('messageError'))
                                   <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
                    @endif
                 </center>
-               
+
                 <table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
-                            
+
                             <th>Content</th>
                             <th>Thumbail</th>
                             <th>Image</th>
@@ -59,20 +59,18 @@
                         <tr>
                             <td>{{$item->id}}</td>
                             <td>
-                                Text1 - {!! html_entity_decode($item->text1, ENT_QUOTES, 'UTF-8') !!}<br>
-                                Text2 - {!! html_entity_decode($item->text2, ENT_QUOTES, 'UTF-8') !!}<br>
-                                Text3-  {!! html_entity_decode($item->text3, ENT_QUOTES, 'UTF-8') !!}<br>
-                                Text4 - {!! html_entity_decode($item->text4, ENT_QUOTES, 'UTF-8') !!}<br>
-                                Text5 - {!! html_entity_decode($item->text5, ENT_QUOTES, 'UTF-8') !!}<br>
+                                Name: {!! html_entity_decode($item->name, ENT_QUOTES, 'UTF-8') !!}<br>
+                                Content: <br> {!! html_entity_decode($item->content, ENT_QUOTES, 'UTF-8') !!}<br>
+
                             </td>
-                            
-                            <td><img style="width:200px" src="{{url('/')}}/uploads/slider/{{$item->thumbnail}}" alt=""></td>           
+
+                            <td><img style="width:200px" src="{{url('/')}}/uploads/transparent-icon.webp" alt=""></td>
                             <td><img style="width:200px" src="{{url('/')}}/uploads/slider/{{$item->image}}" alt=""></td>
                             <td><a href="{{url('/')}}/admin/editSlider/{{$item->id}}" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </td>
                             <td><a onclick="archiveFunction{{$item->id}}()" href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                             </td>
-                     
+
                         </tr>
                         <script>
                             function archiveFunction{{$item->id}}()
@@ -94,7 +92,7 @@
                                                 type: "POST",
                                                 data: {id: {{$item->id}}},
                                                 dataType: "html",
-                                                success: function () 
+                                                success: function ()
                                                 {
                                                     swal("Done!","It was succesfully deleted!","success");
                                                     setTimeout(function() {
@@ -103,8 +101,8 @@
 
                                                 }
                                             });
-                                            // 
-                                          
+                                            //
+
                                         } else {
                                             swal("Your imaginary file is safe!");
                                         }

@@ -177,6 +177,7 @@ class ComposerStaticInit884ca8297142f058f67ee064a67e87c7
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'BinaryCats\\Sku\\' => 15,
         ),
         'A' => 
         array (
@@ -551,6 +552,10 @@ class ComposerStaticInit884ca8297142f058f67ee064a67e87c7
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'BinaryCats\\Sku\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/binary-cats/laravel-sku/src',
+        ),
         'Artesaos\\SEOTools\\' => 
         array (
             0 => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools',
@@ -668,6 +673,15 @@ class ComposerStaticInit884ca8297142f058f67ee064a67e87c7
         'Artesaos\\SEOTools\\Traits\\SEOTools' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Traits/SEOTools.php',
         'Artesaos\\SEOTools\\TwitterCards' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/TwitterCards.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'BinaryCats\\Sku\\Concerns\\SkuGenerator' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/Concerns/SkuGenerator.php',
+        'BinaryCats\\Sku\\Concerns\\SkuMacro' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/Concerns/SkuMacro.php',
+        'BinaryCats\\Sku\\Concerns\\SkuObserver' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/Concerns/SkuObserver.php',
+        'BinaryCats\\Sku\\Concerns\\SkuOptions' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/Concerns/SkuOptions.php',
+        'BinaryCats\\Sku\\Contracts\\SkuGenerator' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/Contracts/SkuGenerator.php',
+        'BinaryCats\\Sku\\Contracts\\SkuOptions' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/Contracts/SkuOptions.php',
+        'BinaryCats\\Sku\\Exceptions\\SkuException' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/Exceptions/SkuException.php',
+        'BinaryCats\\Sku\\HasSku' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/HasSku.php',
+        'BinaryCats\\Sku\\SkuServiceProvider' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/SkuServiceProvider.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',

@@ -18,7 +18,7 @@
         @include('admin.sidebar')
 
         <!--== BODY INNER CONTAINER ==-->
-        
+
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
@@ -29,7 +29,7 @@
                     <li class="page-back"><a href="{{url('/')}}/admin/sliders"><i class="fa fa-backward" aria-hidden="true"></i> All Sliders</a>
                     </li>
                 </ul>
-               
+
             </div>
             <div class="sb2-2-add-blog sb2-2-1">
                 <h2>Add Sliders</h2>
@@ -38,7 +38,7 @@
                     @if(Session::has('message'))
                                   <div class="alert alert-success">{{ Session::get('message') }}</div>
                    @endif
-   
+
                    @if(Session::has('messageError'))
                                   <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
                    @endif
@@ -58,6 +58,22 @@
                             {{-- <label for="textarea1">Blog Descriptions:</label> --}}
                         </div>
                     </div>
+                    <br>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="list-title" name="action_name" type="text"  value=""  class="validate">
+                            <label for="list-title">Action Name</label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="list-title" name="action" type="url"  value=""  class="validate">
+                            <label for="list-title">Action</label>
+                        </div>
+                    </div>
+                    <br>
+
                 <br><br>
                      {{-- Images --}}
                                  {{-- Preview --}}
@@ -92,7 +108,7 @@
                                 <div class="">
                                     <div class="input-field col s12">
                                         <div class="form-group">
-                                            <label>Slider Image</label>
+                                            <label>Slider Image(456 by 200)</label>
                                             <div class="input-group">
                                                 <span class="input-group-btn">
                                                     <span class="btn btn-default btn-file">
@@ -111,7 +127,7 @@
                             {{-- Images --}}
                             <br><br>
                             <div class="clearfix"></div>
-                          
+
                     <div class="row">
                         <div class="input-field col s12">
                             <input type="submit" class="waves-effect waves-light btn-large" value="Add Slider">

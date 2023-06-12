@@ -18,7 +18,7 @@
         @include('admin.sidebar')
 
         <!--== BODY INNER CONTAINER ==-->
-        
+
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
@@ -29,32 +29,32 @@
                     <li class="page-back"><a href="{{url('/')}}/admin/banners"><i class="fa fa-backward" aria-hidden="true"></i> All Banners</a>
                     </li>
                 </ul>
-               
+
             </div>
             <div class="sb2-2-add-blog sb2-2-1">
                 <h2>Edit {{$Banner->name}} Banner</h2>
                 <p>Banner Images are random images used to bring out the layout</p>
                 <form method="POST" action="{{url('/')}}/admin/edit_Banner/{{$Banner->id}}" enctype="multipart/form-data">
                     {{csrf_field()}}
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="input-field col s12">
                             <input id="list-title" name="link_name" type="text" value="{{$Banner->link_name}}" class="validate">
                             <label for="list-title">Banner Link Name</label>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="row">
                         <div class="input-field col s12">
                             <input id="list-title" name="link" type="text" value="{{$Banner->link}}" class="validate">
                             <label for="list-title">Banner Link</label>
                         </div>
                     </div> --}}
-                    <div class="row">
+                    {{-- <div class="row">
                         <?php $Settings = DB::table('_site_settings')->get(); ?>
                         @foreach ($Settings as $settings)
-                        {{--  --}}
+
                         <div class="input-field col s12">
                             <select required name="link" class="icons" id="mydiv">
-                                <option value="{{$Banner->link}}" selected>{{$Banner->link}}</option>                                        
+                                <option value="{{$Banner->link}}" selected>{{$Banner->link}}</option>
                                 <?php $Category = DB::table('categories')->get(); ?>
                                 @foreach ($Category as $Categories)
                                 <option value="{{$settings->url}}/products/{{$Categories->slung}}" data-icon="{{url('/')}}/uploads/categories/{{$Categories->image}}" class="circle">{{$Categories->title}} - Link: {{$settings->url}}/products/{{$Categories->slung}}</option>
@@ -63,8 +63,8 @@
                             <label>Choose Where this Link Points To</label>
                         </div>
                         @endforeach
-                    </div>
-                    <div class="row">
+                    </div> --}}
+                    {{-- <div class="row">
                         <div class="input-field col s12">
                             <input id="list-title" name="title" type="text" value="{{$Banner->title}}" class="validate">
                             <label for="list-title">Banner title</label>
@@ -81,7 +81,7 @@
                             <input id="list-title" name="size" type="text" value="{{$Banner->size}}" readonly class="validate">
                             <label for="list-title">Banner Size</label>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="list-title" name="section" type="text" value="{{$Banner->section}}" readonly class="validate">

@@ -77,7 +77,7 @@
 
                         <div class="main-header--one__left">
                             <div class="logo">
-                                <a href="{{url('/')}}"><img src="{{asset('temp/assets/images/resources/logo-1.png')}}" alt="" /></a>
+                                <a href="{{url('/')}}"><img style="max-width:200px" src="{{asset('uploads/logo/logo.png')}}" alt="" /></a>
                             </div>
                         </div>
 
@@ -87,7 +87,7 @@
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <div class="stricky-one-logo">
                                     <div class="logo">
-                                        <a href="{{url('/')}}"><img src="{{asset('temp/assets/images/resources/logo-1.png')}}" alt=""></a>
+                                        <a href="{{url('/')}}"><img style="max-width:200px" src="{{asset('uploads/logo/logo.png')}}" alt=""></a>
                                     </div>
                                 </div>
 
@@ -161,7 +161,7 @@
             </div>
             <div class="hidden-bar-wrapper">
                 <div class="logo">
-                    {{-- <a href="{{url('/')}}"><img src="{{asset('temp/assets/images/resources/logo-1.png')}}" alt="Logo" /></a> --}}
+                    {{-- <a href="{{url('/')}}"><img src="{{asset('uploads/logo/logo.png')}}" alt="Logo" /></a> --}}
                 </div>
                 <div class="hiddenbar-about-us">
                     <h3>About Us</h3>
@@ -408,7 +408,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="{{url('/')}}" aria-label="logo image"><img src="{{asset('temp/assets/images/resources/mobilemenu_logo.png')}}"
+                <a href="{{url('/')}}" aria-label="logo image"><img src="{{asset('uploads/logo/logo.png')}}"
                         width="155" alt="" /></a>
             </div>
             <!-- /.logo-box -->

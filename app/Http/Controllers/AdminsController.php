@@ -378,6 +378,8 @@ class AdminsController extends Controller
         $Slider = new Slider;
         $Slider->name = $request->name;
         $Slider->content = $request->content;
+        $Slider->action_name = $request->action_name;
+        $Slider->action = $request->action;
         $Slider->image = $image;
         $Slider->save();
         Session::flash('message', "Slider Image Has Been Added");
@@ -412,12 +414,9 @@ class AdminsController extends Controller
             $thumbnail = $request->thumbnail_cheat;
         }
         $updateDetails = array(
-            'text1'=>$request->text1,
-            'text2'=>$request->text2,
-            'text3'=>$request->text3,
-            'text4'=>$request->text4,
-            'text5'=>$request->text5,
-            'type'=>$request->type,
+
+            'name'=>$request->name,
+            'content'=>$request->content,
             'action_name'=>$request->action_name,
             'action' =>$request->action,
             'thumbnail' => $thumbnail,
