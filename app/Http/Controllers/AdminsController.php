@@ -20,6 +20,8 @@ use App\Models\About;
 
 use App\Models\Slider;
 
+use App\Models\Portfolio;
+
 use App\Models\User;
 
 use App\Models\Banner;
@@ -745,6 +747,140 @@ class AdminsController extends Controller
     }
 
     // Products
+
+     // Portfolio
+     public function portfolios(){
+        activity()->log('Accessed All Portfolios');
+        $Portfolio = Portfolio::all();
+        $page_title = 'list';
+        $page_name = 'Portfolios';
+        return view('admin.portfolios',compact('page_title','Portfolio','page_name'));
+    }
+
+    public function addPortfolio(){
+        $Category = Category::all();
+        activity()->log('Accessed Add Portfolio Page');
+        $page_title = 'formfiletext';
+        $page_name = 'Add Portfolio';
+        return view('admin.addPortfolio',compact('page_title','page_name','Category'));
+    }
+
+    public function add_Portfolio(Request $request){
+        activity()->log('Evoked add Portfolio Operation');
+        $path = public_path('uploads/portfolios');
+        if(isset($request->image_one)){
+            $file = $request->file('image_one');
+            $filename = $file->getClientOriginalName();
+            $file->move($path, $filename);
+            $image_one = $filename;
+        }else{
+            $image_one = "0";
+        }
+
+        if(isset($request->image_two)){
+            $file = $request->file('image_two');
+            $filename = $file->getClientOriginalName();
+            $file->move($path, $filename);
+            $image_two = $filename;
+        }else{
+            $image_two = "0";
+        }
+
+        if(isset($request->image_three)){
+            $file = $request->file('image_three');
+            $filename = $file->getClientOriginalName();
+            $file->move($path, $filename);
+            $image_three = $filename;
+        }else{
+            $image_three = "0";
+        }
+
+        $Portfolio = new Portfolio;
+        $Portfolio->name = $request->title;
+        $Portfolio->slung = Str::slug($request->title);
+        $Portfolio->meta = $request->meta;
+        $Portfolio->content = $request->content;
+        $Portfolio->image_one = $image_one;
+        $Portfolio->image_two = $image_two;
+        $Portfolio->image_three = $image_three;
+        $Portfolio->save();
+        Session::flash('message', "Portfolio Has Been Added");
+        return Redirect::back();
+    }
+
+    public function editPortfolio($id){
+        $Category = Category::all();
+        activity()->log('Access Edit Portfolio ID number '.$id.' ');
+        $Portfolio = Portfolio::find($id);
+        $page_title = 'formfiletext';
+        $page_name = 'Edit Home Page Slider';
+        return view('admin.editPortfolio',compact('page_title','Portfolio','page_name','Category'));
+    }
+
+    public function edit_Portfolio(Request $request, $id){
+        activity()->log('Evoked Edit Portfolio For Portfolio ID number '.$id.' ');
+        $path = public_path('uploads/portfolios');
+            if(isset($request->image_one)){
+                $file = $request->file('image_one');
+                $filename = $file->getClientOriginalName();
+                $file->move($path, $filename);
+                $image_one = $filename;
+            }else{
+                $image_one = $request->image_one_cheat;
+            }
+
+            if(isset($request->image_two)){
+                $file = $request->file('image_two');
+                $filename = $file->getClientOriginalName();
+                $file->move($path, $filename);
+                $image_two = $filename;
+            }else{
+                $image_two = $request->image_two_cheat;
+            }
+
+            if(isset($request->image_three)){
+                $file = $request->file('image_three');
+                $filename = $file->getClientOriginalName();
+                $file->move($path, $filename);
+                $image_three = $filename;
+            }else{
+                $image_three = $request->image_three_cheat;
+            }
+            if(isset($request->image_four)){
+                $file = $request->file('image_four');
+                $filename = $file->getClientOriginalName();
+                $file->move($path, $filename);
+                $image_four = $filename;
+            }else{
+                $image_four = $request->image_four_cheat;
+            }
+
+
+
+
+        $updateDetails = array(
+            'name'=>$request->title,
+            'slung' => Str::slug($request->title),
+            'content'=>$request->content,
+            'meta'=>$request->meta,
+            'image_one'=>$image_one,
+            'image_two'=>$image_two,
+            'image_three'=>$image_three,
+            'image_four'=>$image_four
+
+        );
+        DB::table('portfolios')->where('id',$id)->update($updateDetails);
+        Session::flash('message', "Changes have been saved");
+        return Redirect::back();
+    }
+
+    public function deletePortfolio($id){
+        activity()->log('Deleted Portfolio ID number '.$id.' ');
+        DB::table('portfolios')->where('id',$id)->delete();
+        return Redirect::back();
+    }
+
+    //Portfolio
 
      // Manage Users
      public function admins(){

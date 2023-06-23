@@ -150,7 +150,13 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::post('edit_Product/{id}', [AdminsController::class, 'edit_Product']);
         Route::get('deleteProduct/{id}', [AdminsController::class, 'deleteProduct']);
 
-
+        // Portfolio
+        Route::get('portfolio', [AdminsController::class, 'portfolios']);
+        Route::get('addPortfolio', [AdminsController::class, 'addPortfolio']);
+        Route::post('add_Portfolio', [AdminsController::class, 'add_Portfolio']);
+        Route::get('editPortfolios/{id}', [AdminsController::class, 'editPortfolio']);
+        Route::post('edit_Portfolio/{id}', [AdminsController::class, 'edit_Portfolio']);
+        Route::get('deletePortfolio/{id}', [AdminsController::class, 'deletePortfolio']);
 
         Route::post('add_Variation', [AdminsController::class, 'add_Variation']);
         Route::post('edit_Variation/{id}', [AdminsController::class, 'edit_Variation']);
