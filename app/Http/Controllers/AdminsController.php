@@ -701,11 +701,29 @@ class AdminsController extends Controller
         }else{
             $new_stock = 'Out Of Stock';
         }
+
+        if($request->featured == 'on'){
+            $featured = "1";
+        }else{
+            $featured = '0';
+        }
+
+        if($request->trending == 'on'){
+            $trending = "1";
+        }else{
+            $trending = '0';
+        }
+
+
+
+
         $updateDetails = array(
             'name'=>$request->title,
             'slung' => Str::slug($request->title),
             'content'=>$request->content,
             'meta'=>$request->meta,
+            'trending'=>$trending,
+            'featured'=>$featured,
             'stock'=>$new_stock,
             'price'=>$request->price,
             'category'=>$request->category,

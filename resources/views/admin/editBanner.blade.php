@@ -84,11 +84,24 @@
                     </div> --}}
                     <div class="row">
                         <div class="input-field col s12">
+                            <input id="list-title" name="title" type="text" value="{{$Banner->title}}" class="validate">
+                            <label for="list-title">Banner title</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
                             <input id="list-title" name="section" type="text" value="{{$Banner->section}}" readonly class="validate">
                             <label for="list-title">Banner Section</label>
                         </div>
                     </div>
-                <br><br>
+                    <br><br>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea required id="article-ckeditor" name="content" class="materialilze-textarea" placeholder="content">{{$Banner->content}}</textarea>
+
+                        </div>
+                    </div><br><br>
+
                      {{-- Images --}}
                                  {{-- Preview --}}
                             {{-- Style --}}

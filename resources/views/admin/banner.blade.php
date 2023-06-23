@@ -35,12 +35,12 @@
                     @if(Session::has('message'))
                                   <div class="alert alert-success">{{ Session::get('message') }}</div>
                    @endif
-   
+
                    @if(Session::has('messageError'))
                                   <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
                    @endif
                 </center>
-               
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -49,7 +49,7 @@
                             <th>Section</th>
                             <th>Banner</th>
                             <th>Edit</th>
-                    
+
                         </tr>
                     </thead>
                     <tbody>
@@ -64,9 +64,9 @@
                             <td><img style="width:120px" src="{{url('/')}}/uploads/banners/{{$item->image}}" alt=""></td>
                             <td><a href="{{url('/')}}/admin/editBanner/{{$item->id}}" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </td>
-                     
+
                         </tr>
-                      
+
                         @endforeach
                     </tbody>
                 </table>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminsController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
 
@@ -19,6 +20,9 @@ use App\Http\Controllers\BlogController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', [HomeController::class, 'index']);
+
+
 
 
 Route::get('/clear-cache', function() {

@@ -18,7 +18,7 @@
         @include('admin.sidebar')
 
         <!--== BODY INNER CONTAINER ==-->
-        
+
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
@@ -29,7 +29,7 @@
                     <li class="page-back"><a href="{{url('/')}}/admin/products"><i class="fa fa-backward" aria-hidden="true"></i> All Products</a>
                     </li>
                 </ul>
-               
+
             </div>
             <div class="sb2-2-add-blog sb2-2-1">
                 <div class="box-inn-sp">
@@ -39,7 +39,7 @@
                             @if(Session::has('message'))
                                           <div class="alert alert-success">{{ Session::get('message') }}</div>
                            @endif
-           
+
                            @if(Session::has('messageError'))
                                           <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
                            @endif
@@ -62,16 +62,16 @@
                                     <label for="list-title">SKU</label>
                                 </div>
 
-                                
+
                             </div>
                             <div class="row">
-                             
+
                                 {{--  --}}
                                 <div class="input-field col s12">
                                     <select required name="category" class="icons" id="mydiv">
                                         <?php $CategorySelected = DB::table('categories')->where('id',$Product->category)->get() ?>
                                         @foreach ($CategorySelected as $CatSel)
-                                        <option value="{{$CatSel->id}}" selected>{{$CatSel->title}}</option>                                        
+                                        <option value="{{$CatSel->id}}" selected>{{$CatSel->title}}</option>
                                         @endforeach
                                         @foreach ($Category as $Categories)
                                         <option value="{{$Categories->id}}" data-icon="{{url('/')}}/uploads/categories/{{$Categories->image}}" class="circle">{{$Categories->title}}</option>
@@ -79,35 +79,96 @@
                                     </select>
                                     <label>Choose Category</label>
                                 </div>
-                                
+
                                 <div class="section-space col s12"></div>
                             </div>
+
+                            <div class="row">
                             {{-- Stock --}}
-                            <div class="input-field col s6">
-                                <div class="box-inn-sp box-second-inn">
-                                    <div class="inn-title">
-                                        <h4>Stock Status</h4>
+                                <div class="input-field col s4">
+                                    <div class="box-inn-sp box-second-inn">
+                                        <div class="inn-title">
+                                            <h4>Stock Status</h4>
+                                        </div>
+                                        <div class="tab-inn">
+                                            @if($Product->stock == 'Out Of Stock')
+                                            <!-- Switch -->
+                                            <div class="switch mar-bot-20">
+                                                <label>
+                                                    Off
+                                                    <input name="stock" type="checkbox">
+                                                    <span class="lever"></span> On
+                                                </label>
+                                            </div>
+                                            @else
+                                            <!-- Switch -->
+                                            <div class="switch mar-bot-20">
+                                                <label>
+                                                    Off
+                                                    <input name="stock" checked type="checkbox">
+                                                    <span class="lever"></span> On
+                                                </label>
+                                            </div>
+                                            @endif
+                                        </div>
                                     </div>
-                                    <div class="tab-inn">
-                                        @if($Product->stock == 'Out Of Stock')
-                                        <!-- Switch -->
-                                        <div class="switch mar-bot-20">
-                                            <label>
-                                                Off
-                                                <input name="stock" type="checkbox">
-                                                <span class="lever"></span> On
-                                            </label>
+                                </div>
+
+                                <div class="input-field col s4">
+                                    <div class="box-inn-sp box-second-inn">
+                                        <div class="inn-title">
+                                            <h4>Trending</h4>
                                         </div>
-                                        @else 
-                                        <!-- Switch -->
-                                        <div class="switch mar-bot-20">
-                                            <label>
-                                                Off
-                                                <input name="stock" checked type="checkbox">
-                                                <span class="lever"></span> On
-                                            </label>
+                                        <div class="tab-inn">
+                                            @if($Product->trending == '0')
+                                            <!-- Switch -->
+                                            <div class="switch mar-bot-20">
+                                                <label>
+                                                    Off
+                                                    <input name="trending" type="checkbox">
+                                                    <span class="lever"></span> On
+                                                </label>
+                                            </div>
+                                            @else
+                                            <!-- Switch -->
+                                            <div class="switch mar-bot-20">
+                                                <label>
+                                                    Off
+                                                    <input name="trending" checked type="checkbox">
+                                                    <span class="lever"></span> On
+                                                </label>
+                                            </div>
+                                            @endif
                                         </div>
-                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="input-field col s4">
+                                    <div class="box-inn-sp box-second-inn">
+                                        <div class="inn-title">
+                                            <h4>Featured</h4>
+                                        </div>
+                                        <div class="tab-inn">
+                                            @if($Product->featured == '0')
+                                            <!-- Switch -->
+                                            <div class="switch mar-bot-20">
+                                                <label>
+                                                    Off
+                                                    <input name="featured" type="checkbox">
+                                                    <span class="lever"></span> On
+                                                </label>
+                                            </div>
+                                            @else
+                                            <!-- Switch -->
+                                            <div class="switch mar-bot-20">
+                                                <label>
+                                                    Off
+                                                    <input name="featured" checked type="checkbox">
+                                                    <span class="lever"></span> On
+                                                </label>
+                                            </div>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -123,13 +184,13 @@
                                     <textarea required id="article-ckeditor" name="content" class="materialilze-textarea" placeholder="content">{{$Product->content}}</textarea>
                                 </div>
                             </div><br><br>
-                         
+
                             <script src="{{ asset('ckeditor/ckeditor.js')}}"></script>
                             <script>CKEDITOR.replace('article-ckeditor');</script>
-                                                    
-                         
 
-                           
+
+
+
                            {{-- Images --}}
                             <style>
                                 .btn-file {
@@ -232,7 +293,7 @@
                             <input type="hidden" name="image_two_cheat" value="{{$Product->image_two}}">
                             <input type="hidden" name="image_three_cheat" value="{{$Product->image_three}}">
                             <input type="hidden" name="image_four_cheat" value="{{$Product->image_four}}">
-                            
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input  type="submit" class="waves-effect waves-light btn-large" value="Save Changes">
