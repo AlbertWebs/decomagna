@@ -75,7 +75,7 @@
             </li>
 
             <li>
-              <a href="gallery.html" class="navbar-link" data-nav-link
+              <a href="{{url('/')}}/portfolio" class="navbar-link" data-nav-link
                 >Our portfolio</a
               >
             </li>
