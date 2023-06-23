@@ -20,6 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode2 = Artisan::call('config:clear');
+
+    echo "Done";
+});
+
+
 Auth::routes();
 
 // Admin Routes
