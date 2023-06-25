@@ -42,6 +42,8 @@ use App\Models\Course;
 
 use App\Models\Topic;
 
+use App\Models\Partner;
+
 use App\Models\SendMails;
 
 use App\Models\Product;
@@ -881,6 +883,83 @@ class AdminsController extends Controller
     }
 
     //Portfolio
+
+     // Partner
+     public function partners(){
+        activity()->log('Accessed All Partners');
+        $Partner = Partner::all();
+        $page_title = 'list';
+        $page_name = 'Partners';
+        return view('admin.partners',compact('page_title','Partner','page_name'));
+    }
+
+    public function addPartner(){
+        $Category = Category::all();
+        activity()->log('Accessed Add Partner Page');
+        $page_title = 'formfiletext';
+        $page_name = 'Add Partner';
+        return view('admin.addPartner',compact('page_title','page_name','Category'));
+    }
+
+    public function add_Partner(Request $request){
+        activity()->log('Evoked add Partner Operation');
+        $path = public_path('uploads/partners');
+        if(isset($request->image_one)){
+            $file = $request->file('image_one');
+            $filename = $file->getClientOriginalName();
+            $file->move($path, $filename);
+            $image_one = $filename;
+        }else{
+            $image_one = "0";
+        }
+
+        $Partner = new Partner;
+        $Partner->name = $request->title;
+        $Partner->slung = Str::slug($request->title);
+        $Partner->image = $image_one;
+        $Partner->save();
+        Session::flash('message', "Partner Has Been Added");
+        return Redirect::back();
+    }
+
+    public function editPartner($id){
+        $Category = Category::all();
+        activity()->log('Access Edit Partner ID number '.$id.' ');
+        $Partner = Partner::find($id);
+        $page_title = 'formfiletext';
+        $page_name = 'Edit Home Page Slider';
+        return view('admin.editPartner',compact('page_title','Partner','page_name','Category'));
+    }
+
+    public function edit_Partner(Request $request, $id){
+        activity()->log('Evoked Edit Partner For Partner ID number '.$id.' ');
+        $path = public_path('uploads/partners');
+            if(isset($request->image_one)){
+                $file = $request->file('image_one');
+                $filename = $file->getClientOriginalName();
+                $file->move($path, $filename);
+                $image_one = $filename;
+            }else{
+                $image_one = $request->image_one_cheat;
+            }
+
+        $updateDetails = array(
+            'name'=>$request->title,
+            'slung' => Str::slug($request->title),
+            'image'=>$image_one,
+        );
+        DB::table('partners')->where('id',$id)->update($updateDetails);
+        Session::flash('message', "Changes have been saved");
+        return Redirect::back();
+    }
+
+    public function deletePartner($id){
+        activity()->log('Deleted Partner ID number '.$id.' ');
+        DB::table('partners')->where('id',$id)->delete();
+        return Redirect::back();
+    }
+
+    //Partner
 
      // Manage Users
      public function admins(){
@@ -2092,6 +2171,20 @@ class AdminsController extends Controller
         activity()->log('Evoked a delete How it works Request');
         $id = $request->id;
         DB::table('products')->where('id',$id)->delete();
+        return response()->json(['success'=>'Deleted Successfully!']);
+    }
+
+    public function deletePartnerAjax(Request $request){
+        activity()->log('Evoked a delete Partner Request');
+        $id = $request->id;
+        DB::table('partners')->where('id',$id)->delete();
+        return response()->json(['success'=>'Deleted Successfully!']);
+    }
+
+    public function deletePortfolioAjax(Request $request){
+        activity()->log('Evoked a delete How it works Request');
+        $id = $request->id;
+        DB::table('portfolio')->where('id',$id)->delete();
         return response()->json(['success'=>'Deleted Successfully!']);
     }
 

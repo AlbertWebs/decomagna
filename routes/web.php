@@ -158,6 +158,14 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::post('edit_Portfolio/{id}', [AdminsController::class, 'edit_Portfolio']);
         Route::get('deletePortfolio/{id}', [AdminsController::class, 'deletePortfolio']);
 
+        // Partner
+        Route::get('partners', [AdminsController::class, 'partners']);
+        Route::get('addPartner', [AdminsController::class, 'addPartner']);
+        Route::post('add_Partner', [AdminsController::class, 'add_Partner']);
+        Route::get('editPartners/{id}', [AdminsController::class, 'editPartner']);
+        Route::post('edit_Partner/{id}', [AdminsController::class, 'edit_Partner']);
+        Route::get('deletePartner/{id}', [AdminsController::class, 'deletePartner']);
+
         Route::post('add_Variation', [AdminsController::class, 'add_Variation']);
         Route::post('edit_Variation/{id}', [AdminsController::class, 'edit_Variation']);
         Route::get('addVariation/color', [AdminsController::class, 'variations_color']);
@@ -255,6 +263,9 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::post('deleteTermsAjax', [AdminsController::class, 'deleteTermsAjax']);
         Route::post('deleteHowAjax', [AdminsController::class, 'deleteHowAjax']);
         Route::post('deleteProductAjax', [AdminsController::class, 'deleteProductAjax']);
+        Route::post('deletePartnerAjax', [AdminsController::class, 'deletePartnerAjax']);
+        Route::post('deletePortfolioAjax', [AdminsController::class, 'deletePortfolioAjax']);
+
 
         Route::get('addProductToFacebookPixel', [AdminsController::class, 'addProductToFacebookPixel']);
         Route::get('emptyProductToFacebookPixel', [AdminsController::class, 'emptyProductToFacebookPixel']);

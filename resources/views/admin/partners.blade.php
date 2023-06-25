@@ -23,14 +23,14 @@
                 <ul>
                     <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
-                    <li class="active-bre"><a href="#"> All Portfolio</a>
+                    <li class="active-bre"><a href="#"> All Partner</a>
                     </li>
-                    <li class="page-back"><a href="{{url('/')}}/admin/addPortfolio"><i class="fa fa-pencil" aria-hidden="true"></i> Add Portfolio</a>
+                    <li class="page-back"><a href="{{url('/')}}/admin/addPartner"><i class="fa fa-pencil" aria-hidden="true"></i> Add Partner</a>
                     </li>
                 </ul>
             </div>
             <div class="sb2-2-1">
-                <h2>All Portfolio</h2>
+                <h2>All Partners</h2>
                 <center>
                     @if(Session::has('message'))
                                   <div class="alert alert-success">{{ Session::get('message') }}</div>
@@ -46,7 +46,7 @@
                         <tr>
                             <th>#</th>
                             <th>Title</th>
-                            <th>Meta</th>
+
                             <th>image</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -54,17 +54,15 @@
                     </thead>
                     <tbody>
                         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                        @foreach ($Portfolio as $item)
+                        @foreach ($Partner as $item)
                         <tr>
                             <td>{{$item->id}}</td>
                             <td><a target="new" href="{{url('/')}}/product/{{$item->slung}}">{{$item->name}}</td>
+
                             <td>
-                                {!!html_entity_decode($item->content)!!}
+                                <a target="new" href="{{url('/')}}/Partners/{{$item->slung}}"><img width="150" src="{{url('/')}}/uploads/partners/{{$item->image}}"></a>
                             </td>
-                            <td>
-                                <a target="new" href="{{url('/')}}/portfolios/{{$item->slung}}"><img width="150" src="{{url('/')}}/uploads/portfolios/{{$item->image_one}}"></a>
-                            </td>
-                            <td><a href="{{url('/')}}/admin/editPortfolios/{{$item->id}}" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                            <td><a href="{{url('/')}}/admin/editPartners/{{$item->id}}" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </td>
                             <td><a onclick="archiveFunction{{$item->id}}()" href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                             </td>
@@ -84,7 +82,7 @@
                                         if (willDelete) {
                                             //do the ajax stuff.
                                             $.ajax({
-                                                url: "{{url('/')}}/admin/deletePortfolioAjax",
+                                                url: "{{url('/')}}/admin/deletePartnerAjax",
                                                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                                                 type: "POST",
                                                 data: {id: {{$item->id}}},

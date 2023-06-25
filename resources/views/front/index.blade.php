@@ -482,80 +482,19 @@
 
           <div class="row">
             <div class="column">
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/2021-09-2911_58_15imageApexPartners-04%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/2021-09-2911_58_29imageApexPartners-05%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
+                <?php
+                   $Partners = DB::table('partners')->get();
+                ?>
+                @foreach ($Partners as $partners)
+                <div class="zoom">
+                    <img
+                      src="{{url('/')}}/uploads/partners/{{$partners->image}}"
+                      style="width: 100%"
+                    />
+                  </div>
+                @endforeach
 
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/2021-09-2912_00_02imageApexPartners-07%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/2021-09-2912_01_38imageApexPartners-17%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/Apple-Logo%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/Bentley-Logo%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
 
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/Fedex-logo%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/Nike-Logo%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/Microsoft-logo%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/Intel-logo-2022%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/Olympic-logo%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="zoom">
-                <img
-                  src="{{asset('theme/assets/images/clients/PUMA-logo%201.png')}}"
-                  style="width: 100%"
-                />
-              </div>
             </div>
 
             <a href="partner.html">

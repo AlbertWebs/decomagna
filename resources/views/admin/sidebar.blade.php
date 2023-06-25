@@ -67,6 +67,23 @@
             </li>
             {{--  --}}
 
+
+            {{--  --}}
+            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-handshake-o" aria-hidden="true"></i> Partners </a>
+                <div class="collapsible-body left-sub-menu">
+                    <ul>
+                        <li>
+                            <a href="{{url('/')}}/admin/partners">All Partners </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/')}}/admin/addPartner">Add Partner</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            {{--  --}}
+
             {{--  --}}
             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-suitcase" aria-hidden="true"></i> Portfolio </a>
                 <div class="collapsible-body left-sub-menu">
