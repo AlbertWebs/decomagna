@@ -20,6 +20,13 @@ class HomeController extends Controller
         return view('front.portfolio', compact('Portfolio'));
     }
 
+    public function products()
+    {
+        $Products = DB::table('products')->get();
+        return view('front.products', compact('Products'));
+    }
+
+
 
 
 

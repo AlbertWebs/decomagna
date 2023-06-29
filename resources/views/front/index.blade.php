@@ -488,8 +488,7 @@
                 @foreach ($Partners as $partners)
                 <div class="zoom">
                     <img
-                      src="{{url('/')}}/uploads/partners/{{$partners->image}}"
-                      style="width: 100%"
+                      src="{{url('/')}}/uploads/partners/{{$partners->image}}" style="width: 100%"
                     />
                   </div>
                 @endforeach

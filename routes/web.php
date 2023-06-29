@@ -21,6 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', [HomeController::class, 'index']);
+Route::get('/products', [HomeController::class, 'products']);
 Route::get('/portfolio', [HomeController::class, 'portfolio']);
 
 

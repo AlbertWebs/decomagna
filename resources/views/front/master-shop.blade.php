@@ -21,6 +21,9 @@
     - custom css link
   -->
     <link rel="stylesheet" href="{{asset('theme/assets/css/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('theme/assets/css/style2.css')}}" />
+    {{-- <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style2.css" /> --}}
 
     <!--
     - google font link
