@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="icon" sizes="192x192" href="https://decomagna.com/static/images/favicon.png">
 
-    {{-- SEO --}}
+    {{-- SEO SKELETON STRUCTURE --}}
     <title>Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium</title>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow"><!-- Google Specific -->
