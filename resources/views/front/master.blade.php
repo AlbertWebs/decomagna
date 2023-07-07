@@ -223,12 +223,14 @@
             </a>
 
             <address class="body-4">
-              Quick-Step flooring Kenya - Decomagna ltd, Nairobi, Kenya
+                Quick-Step Flooring Kenya - Decomagna Limited, Nairobi, Kenya
             </address>
 
-            <a href="mailto:booking@grilli.com" class="body-4 contact-link"
-              >decomagna@gmail.com</a
+            <a href="mailto:info@decomagna.com" class="body-4 contact-link"
+              >info@decomagna.com</a
             >
+            <a href="tel:+254796110511" class="body-4 contact-link">+254796110511</a
+          >
 
             <div class="wrapper">
               <div class="separator"></div>
@@ -330,7 +332,8 @@
 
         <div class="footer-bottom">
           <p class="copyright">
-            &copy; {{date('Y')}} Decomagna. All Rights Reserved | Powered by
+            Copyright &copy; {{date('Y')}} Quick-Step Flooring Kenya - Decomagna Limited
+            . All Rights Reserved | Powered by
             <a
               href="https://github.com/codewithsadee"
               target="_blank"
