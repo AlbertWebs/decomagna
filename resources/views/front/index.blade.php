@@ -70,9 +70,8 @@
       - #SERVICE
     -->
 
-      <section
-        class="section service service-white text-center"
-        aria-label="service">
+      {{-- <section class="section service service-white text-center" aria-label="service" style="background-color:#D9D9D9"> --}}
+      <section class="section service service-white text-center" aria-label="service">
         <div class="container">
           <h2 class="headline-intro">Quick-Step® Original Product Selections</h2>
           <p>
@@ -97,10 +96,10 @@
                 src="{{url('/')}}/uploads/categories/{{$cat->image}}"
                 alt="{{$cat->title}}" class="w-100"/>
 
-              <a class="category-title" href="singleproduct.html">{{$cat->title}}</a>
+              <a class="category-title" href="{{url('/')}}/products/{{$cat->slung}}">{{$cat->title}}</a>
 
               <div>
-                <a href="singleproduct.html"
+                <a href="{{url('/')}}/products/{{$cat->slung}}"
                   ><ion-icon name="eye-outline"></ion-icon
                 ></a>
               </div>
@@ -133,36 +132,34 @@
       - #ABOUT
     -->
 
-      <section class="section about" aria-labelledby="about-label" id="about">
+      <section class="section about" aria-labelledby="about-label" id="about" >
         <div class="container">
           <div class="about-content">
-            <h2 class="headline-1 section-title text-center">
-              LAMINATE FLOORING
-            </h2>
+            <h3 class="product-intro-title section-title text-center">
+                QUICK-STEP® LAMINATE FLOORING
+            </h3>
 
             <p class="section-text" >
-              Faux wood flooring is currently the hottest trend of flooring.
-              Although there are other rising trends, such as vinyl or ceramic
-              tiles, laminate flooring is a low-maintenance and durable
-              solution, and it is still the main wood flooring substitute.
-              Richwood's laminate flooring provides the texture of real logs,
-              from every tree to every board, from visual design to
-              installation functionality, we never slack off. The cheap,
-              low-maintenance Richwood laminate flooring can realize the
-              wood-grain flooring of your dreams.
+                With Quick-Step's broad choice in laminate flooring designs, you can create a truly extraordinary home.
+                The impeccable quality of our products is backed by decades of experience as a trend-setting flooring brand.
+                Made in Belgium!
+
+                At Decomagna Ltd- We have made it our mission to bring to the Kenyan market the best laminate floors at incredible prices. Enjoy original quality at affordable prices!
+
+
             </p>
 
             <a href="#" class="btn btn-primary">
-              <span class="text text-1">Contact us</span>
+              <span class="text text-1">Shop All Laminate Flooring</span>
 
-              <span class="text text-2" aria-hidden="true">Contact us</span>
+              <span class="text text-2" aria-hidden="true">Shop All Laminate Flooring</span>
             </a>
           </div>
 
           <figure class="about-banner">
             <img
-              src="{{asset('version/assets/images/OIP.jpg')}}"
-              width="570"
+              src="{{url('/')}}/uploads/Laminate.png"
+              width="670"
               height="570"
               loading="lazy"
               alt="about banner"

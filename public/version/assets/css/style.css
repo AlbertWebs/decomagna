@@ -2247,7 +2247,7 @@ textarea.input-field {
   }
 
   .about-banner > .w-100 {
-    padding-inline-start: 90px;
+    /* padding-inline-start: 90px; */
   }
 
   .about .abs-img-1 {
@@ -2774,7 +2774,8 @@ textarea.input-field {
    */
 
   .about-content {
-    padding-inline-end: 10px;
+    /* padding-inline-end: 10px; */
+    width:600px;
   }
 
   .about .shape {
@@ -3089,6 +3090,13 @@ textarea.input-field {
     margin: 0px;
     text-shadow: 1px 1px 0px #2944d1;
 
+}
+
+.product-intro-title{
+    text-align: center;
+    color: #ffffff !important;
+    margin: 0px;
+    text-shadow: 1px 0px 0px #E34C8A;
 }
 
 .margin-top-100{
