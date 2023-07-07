@@ -46,6 +46,19 @@
             </li>
             {{--  --}}
 
+                  {{--  --}}
+                  <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-list-alt" aria-hidden="true"></i> Sections </a>
+                    <div class="collapsible-body left-sub-menu">
+                        <ul>
+                            <li><a href="{{url('/')}}/admin/sections">All Sections</a>
+                            </li>
+                            {{-- <li><a href="{{url('/')}}/admin/addBanner">Add Banners</a>
+                            </li> --}}
+                        </ul>
+                    </div>
+                </li>
+                {{--  --}}
+
               {{--  --}}
               <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Products </a>
                 <div class="collapsible-body left-sub-menu">

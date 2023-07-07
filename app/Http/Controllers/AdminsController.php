@@ -8,6 +8,8 @@ use App\Models\Term;
 
 use App\Models\Privacy;
 
+use App\Models\Section;
+
 use App\Models\Copyright;
 
 use App\Models\ProExcel;
@@ -2046,6 +2048,13 @@ class AdminsController extends Controller
         return response()->json(['success'=>'Deleted Successfully!']);
     }
 
+    public function deleteSectionAjax(Request $request){
+        activity()->log('Evoked a delete Section Request');
+        $id = $request->id;
+        DB::table('section')->where('id',$id)->delete();
+        return response()->json(['success'=>'Deleted Successfully!']);
+    }
+
     public function deleteTestimonialAjax(Request $request){
         activity()->log('Evoked a delete Testimonial Request');
         $id = $request->id;
@@ -2324,6 +2333,81 @@ class AdminsController extends Controller
     public function emptyProductToFacebookPixel(){
         DB::table('_pro_excel')->delete();
         Session::flash('message', "Table Has been cleared");
+        return Redirect::back();
+    }
+
+    //
+       // Sections
+       public function section(){
+        activity()->log('Accessed All Sections Page');
+        $Section = Section::all();
+        $page_title = 'list';
+        $page_name = 'Home Page Section';
+        return view('admin.section',compact('page_title','Section','page_name'));
+    }
+
+    public function addSection(){
+        activity()->log('Add Section Page');
+        $page_title = 'formfiletext';
+        $page_name = 'Add Home Page Section';
+        return view('admin.addSection',compact('page_title','page_name'));
+    }
+
+    public function add_Section(Request $request){
+        activity()->log('Evoked an add Section Operation ');
+        $path = 'uploads/section';
+        $file = $request->file('image');
+        $filename = $file->getClientOriginalName();
+        $file->move($path, $filename);
+        $image = $filename;
+        $Section = new Section;
+        $Section->name = $request->name;
+        $Section->content = $request->content;
+        $Section->action_name = $request->action_name;
+        $Section->action = $request->action;
+        $Section->image = $image;
+        $Section->save();
+        Session::flash('message', "Section Image Has Been Added");
+        return Redirect::back();
+    }
+
+    public function editSection($id){
+        activity()->log('Accessed Page Section With number '.$id.' ');
+        $Section = Section::find($id);
+        $page_title = 'formfiletext';
+        $page_name = 'Edit Home Page Section';
+        return view('admin.editSection',compact('page_title','Section','page_name'));
+    }
+
+    public function edit_Section(Request $request, $id){
+        activity()->log('Edited Section ID number '.$id.' ');
+        $path = 'uploads/sections';
+        if(isset($request->image)){
+            $file = $request->file('image');
+            $filename = $file->getClientOriginalName();
+            $file->move($path, $filename);
+            $image = $filename;
+        }else{
+            $image = $request->image_cheat;
+        }
+
+        $updateDetails = array(
+            'name'=>$request->name,
+            'content'=>$request->content,
+            'action_name'=>$request->action_name,
+            'action' =>$request->action,
+            'position' =>$request->position,
+            'page' =>$request->page,
+            'image' =>$image
+        );
+        DB::table('sections')->where('id',$id)->update($updateDetails);
+        Session::flash('message', "Changes have been saved");
+        return Redirect::back();
+    }
+
+    public function deleteSection($id){
+        activity()->log(' Deleted Section Number '.$id.'');
+        DB::table('slider')->where('id',$id)->delete();
         return Redirect::back();
     }
 

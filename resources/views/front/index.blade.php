@@ -131,34 +131,31 @@
       <!--
       - #ABOUT
     -->
-
+      <?php
+          $SectionHome = DB::table('sections')->where('page','home')->where('position','1st_banner')->get();
+      ?>
+      @foreach ($SectionHome as $sectionhome)
       <section class="section about" aria-labelledby="about-label" id="about" >
         <div class="container">
           <div class="about-content">
             <h3 class="product-intro-title section-title text-center">
-                QUICK-STEP® LAMINATE FLOORING
+                {{$sectionhome->name}}
             </h3>
 
             <p class="section-text" >
-                With Quick-Step's broad choice in laminate flooring designs, you can create a truly extraordinary home.
-                The impeccable quality of our products is backed by decades of experience as a trend-setting flooring brand.
-                Made in Belgium!
-
-                At Decomagna Ltd- We have made it our mission to bring to the Kenyan market the best laminate floors at incredible prices. Enjoy original quality at affordable prices!
-
-
+                {!!html_entity_decode($sectionhome->content)!!}
             </p>
 
-            <a href="#" class="btn btn-primary">
-              <span class="text text-1">Shop All Laminate Flooring</span>
+            <a href="{{$sectionhome->action}}" class="btn btn-primary">
+              <span class="text text-1">{{$sectionhome->action_name}}</span>
 
-              <span class="text text-2" aria-hidden="true">Shop All Laminate Flooring</span>
+              <span class="text text-2" aria-hidden="true">{{$sectionhome->action_name}}</span>
             </a>
           </div>
 
           <figure class="about-banner">
             <img
-              src="{{url('/')}}/uploads/Laminate.png"
+              src="{{url('/')}}/uploads/sections/{{$sectionhome->image}}"
               width="670"
               height="570"
               loading="lazy"
@@ -170,6 +167,8 @@
           </figure>
         </div>
       </section>
+      @endforeach
+
 
       <!--
       - #SPECIAL DISH
