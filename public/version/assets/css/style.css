@@ -2145,7 +2145,7 @@
     }
 
     .contact-number {
-      --fontSize-body-1: 3rem;
+      /* --fontSize-body-1: 3rem; */
     }
 
     /**
@@ -3104,6 +3104,10 @@
   .margin-top-100{
       margin-top:100px !important;
   }
+
+  .margin-top-50{
+    margin-top:50px !important;
+}
 
   .category-title{
       max-height:100px;

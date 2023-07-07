@@ -326,12 +326,18 @@
       <section class="section testi text-center has-bg-image" style="background-image: url('{{asset('uploads/sections/')}}/{{$sectionhome->image}}')" aria-label="testimonials">
         <div class="container">
           {{-- <div class="quote trans360">”</div> --}}
-
           <p class="headline-2 testi-text">
             Aqua Floor And Laminate Flooring Is A Cheap Alternative To Hardwood Flooring. Want Lower Prices And Lower Maintenance?
           </p>
-
           {{-- <div class="quote">”</div> --}}
+        </div>
+        <div class="margin-center margin-top-50">
+            <center>
+                <a href="#" class="btn btn-secondary margin-center">
+                    <span class="text text-1">Request Free Samples</span>
+                    <span class="text text-2" aria-hidden="true">Request Free Samples</span>
+                </a>
+            </center>
         </div>
       </section>
     @endforeach
@@ -395,9 +401,9 @@
               <p class="contact-label">Make a call</p>
 
               <a
-                href="tel:+88123123456"
+                href="tel:+254 796 110511"
                 class="body-1 contact-number hover-underline"
-                >+88-123-123456</a
+                >+254 796 110511</a
               >
 
               <div class="separator"></div>
@@ -416,176 +422,20 @@
 
       <section class="section features text-center" aria-label="features">
         <div class="container">
-          <h2 class="headline-1 section-title">Our clients and partners</h2>
-
+          <h2 class="headline-1 section-title">Decomagna Satisfied Clients</h2>
           <ul class="grid-list gridme owl-carousel">
+            <?php
+                $Partners = DB::table('partners')->get();
+            ?>
+            @foreach ($Partners as $partners)
             <li class="feature-item">
               <div class="feature-card">
                 <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/2021-09-2911_58_15imageApexPartners-04 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
+                  <img src="{{url('/')}}/uploads/partners/{{$partners->image}}" width="100" height="80" loading="lazy" alt="{{$partners->name}}"/>
                 </div>
               </div>
             </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/2021-09-2911_58_29imageApexPartners-05 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/2021-09-2912_00_02imageApexPartners-07 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/2021-09-2912_01_38imageApexPartners-17 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/Apple-Logo 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/Bentley-Logo 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/Fedex-logo 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/Intel-logo-2022 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/Microsoft-logo 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/Nike-Logo 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/Olympic-logo 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
-
-            <li class="feature-item">
-              <div class="feature-card">
-                <div class="card-icon">
-                  <img
-                    src="{{asset('version/assets/images/clients/PUMA-logo 1.png')}}"
-                    width="100"
-                    height="80"
-                    loading="lazy"
-                    alt="icon"
-                  />
-                </div>
-              </div>
-            </li>
+            @endforeach
           </ul>
         </div>
         <a href="#" class="btn btn-primary centy">
@@ -599,153 +449,48 @@
       - #EVENT
     -->
 
+    <?php
+        $Blog = DB::table('blogs')->get();
+    ?>
+
+
       <section class="section event blogd" aria-label="event">
         <div class="container">
-          <h2 class="section-title headline-1 text-center">Blogs</h2>
+          <h2 class="section-title headline-1 text-center">Quick-Step Flooring Kenya - Decomagna Limited Blogs
+        </h2>
 
           <ul class="grid-list gridblog owl-carousel">
+            @foreach ($Blog as $blog)
             <li>
-              <div class="event-card has-before hover:shine">
-                <div
-                  class="card-banner img-holder"
-                  style="--width: 350; --height: 450"
-                >
-                  <a href="singleblog.html" class="nzula">
-                    <img
-                      src="{{asset('version/assets/images/normal.jpg')}}"
-                      width="350"
-                      height="450"
-                      loading="lazy"
-                      alt="Flavour so good you’ll try to eat with your eyes."
-                      class="img-cover"
-                    />
-                  </a>
+                <div class="event-card has-before hover:shine">
+                  <div
+                    class="card-banner img-holder"
+                    style="--width: 350; --height: 450">
+                    <a href="{{url('/')}}/blog/{{$blog->slung}}" class="nzula">
+                      <img src="{{url('/')}}/uploads/blogs/{{$blog->image_one}}" width="350" height="450" loading="lazy"   alt="{{$blog->title}}"   class="img-cover"/>
+                    </a>
 
-                  <time class="publish-date label-2" datetime="2022-09-15"
-                    >15/09/2022</time
-                  >
+                    <time class="publish-date label-2" datetime="2022-09-15">
+                       {{ date('d/m/Y', strtotime($blog->created_at)) }}
+                    </time>
+                  </div>
+
+                  <div class="card-content">
+                    <p class="card-subtitle label-2 text-center">
+                      Decomagna
+                    </p>
+
+                    <h3 class="card-title title-2 text-center">
+                      {{$blog->title}}
+                    </h3>
+                  </div>
                 </div>
+              </li>
+            @endforeach
 
-                <div class="card-content">
-                  <p class="card-subtitle label-2 text-center">
-                    SPC FLOORING
-                  </p>
-
-                  <h3 class="card-title title-2 text-center">
-                    Different from dated prints and cheap materials in the
-                    past...
-                  </h3>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="event-card has-before hover:shine">
-                <div
-                  class="card-banner img-holder"
-                  style="--width: 350; --height: 450"
-                >
-                  <a href="singleblog.html" class="nzula">
-                    <img
-                      src="{{asset('version/assets/images/normal (1).jpg')}}"
-                      width="350"
-                      height="450"
-                      loading="lazy"
-                      alt="Flavour so good you’ll try to eat with your eyes."
-                      class="img-cover"
-                    />
-                  </a>
-
-                  <time class="publish-date label-2" datetime="2022-09-08"
-                    >08/09/2022</time
-                  >
-                </div>
-
-                <div class="card-content">
-                  <p class="card-subtitle label-2 text-center">
-                    LAMINATE FLOORING
-                  </p>
-
-                  <h3 class="card-title title-2 text-center">
-                    Faux wood flooring is currently the hottest trend of
-                    flooring...
-                  </h3>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="event-card has-before hover:shine">
-                <div
-                  class="card-banner img-holder"
-                  style="--width: 350; --height: 450"
-                >
-                  <a href="singleblog.html" class="nzula">
-                    <img
-                      src="{{asset('version/assets/images/normal (2).jpg')}}"
-                      width="350"
-                      height="450"
-                      loading="lazy"
-                      alt="Flavour so good you’ll try to eat with your eyes."
-                      class="img-cover"
-                    />
-                  </a>
-
-                  <time class="publish-date label-2" datetime="2022-09-03"
-                    >03/09/2022</time
-                  >
-                </div>
-
-                <div class="card-content">
-                  <p class="card-subtitle label-2 text-center">
-                    Timber FLOORING
-                  </p>
-
-                  <h3 class="card-title title-2 text-center">
-                    Decomagnas's waterproof aqua flooring provides the
-                    appearance and texture...
-                  </h3>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="event-card has-before hover:shine">
-                <div
-                  class="card-banner img-holder"
-                  style="--width: 350; --height: 450"
-                >
-                  <a href="singleblog.html" class="nzula">
-                    <img
-                      src="{{asset('version/assets/images/normal (2).jpg')}}"
-                      width="350"
-                      height="450"
-                      loading="lazy"
-                      alt="Flavour so good you’ll try to eat with your eyes."
-                      class="img-cover"
-                    />
-                  </a>
-
-                  <time class="publish-date label-2" datetime="2022-09-03"
-                    >03/11/2022</time
-                  >
-                </div>
-
-                <div class="card-content">
-                  <p class="card-subtitle label-2 text-center">
-                    AQUA FLOORING
-                  </p>
-
-                  <h3 class="card-title title-2 text-center">
-                    For the first time ever, you can install timber everywhere
-                    in your home, thanks ...
-                  </h3>
-                </div>
-              </div>
-            </li>
           </ul>
 
-          <a href="blog.html" class="btn btn-primary">
+          <a href="{{url('/')}}/blogs" class="btn btn-primary">
             <span class="text text-1">View Our Blog</span>
 
             <span class="text text-2" aria-hidden="true">View Our Blog</span>
