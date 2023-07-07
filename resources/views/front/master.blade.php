@@ -330,7 +330,7 @@
 
         <div class="footer-bottom">
           <p class="copyright">
-            &copy; {{date('Y')}} Decomagna. All Rights Reserved | Crafted by
+            &copy; {{date('Y')}} Decomagna. All Rights Reserved | Powered by
             <a
               href="https://github.com/codewithsadee"
               target="_blank"
