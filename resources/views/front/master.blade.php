@@ -297,35 +297,34 @@
 
           <ul class="footer-list">
             <li>
-              <a
-                href="#"
+              <a target="new"
+                href="https://www.facebook.com/decomagnaDev/"
                 class="label-2 footer-link hover-underline flex-flex-flexy"
                 >Facebook <ion-icon name="logo-facebook"></ion-icon
               ></a>
             </li>
 
             <li>
-              <a
-                href="#"
+              <a target="new"
+                href="https://www.instagram.com/decomagna_kenya/"
                 class="label-2 footer-link hover-underline flex-flex-flexy"
                 >Instagram <ion-icon name="logo-instagram"></ion-icon
               ></a>
             </li>
 
             <li>
-              <a
-                href="#"
+              <a target="new"
+                href="https://twitter.com/DecomagnaKenya"
                 class="label-2 footer-link hover-underline flex-flex-flexy"
                 >Twitter <ion-icon name="logo-twitter"></ion-icon
               ></a>
             </li>
 
             <li>
-              <a
-                href="#"
+              <a target="new"
+                href="https://goo.gl/maps/njDLRodCvupea21D9"
                 class="label-2 footer-link hover-underline flex-flex-flexy"
-                >Google Map</a
-              >
+                >Google Map <span class="fa fa-map-marker"> </span></a>
             </li>
           </ul>
         </div>
