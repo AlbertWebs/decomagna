@@ -466,7 +466,7 @@
                   <div
                     class="card-banner img-holder"
                     style="--width: 350; --height: 450">
-                    <a href="{{url('/')}}/blog/{{$blog->slung}}" class="nzula">
+                    <a href="{{url('/')}}/blogs/{{$blog->slung}}" class="nzula">
                       <img src="{{url('/')}}/uploads/blogs/{{$blog->image_one}}" width="350" height="450" loading="lazy"   alt="{{$blog->title}}"   class="img-cover"/>
                     </a>
 

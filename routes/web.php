@@ -23,6 +23,8 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/products', [HomeController::class, 'products']);
 Route::get('/portfolio', [HomeController::class, 'portfolio']);
+Route::get('/blogs', [HomeController::class, 'blog']);
+Route::get('/blogs/{slung}', [HomeController::class, 'blog_single']);
 
 
 
