@@ -3,56 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" sizes="192x192" href="https://decomagna.com/static/images/favicon.png">
 
-    <!--
-    - primary meta tags
-  -->
-
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-
+    {{-- SEO --}}
+    <title>Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium</title>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+    <meta name="subject" content="Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium">
+    <meta name="rating" content="General">
+    <meta name="google-site-verification" content="verification_token">
+    <meta name="referrer" content="no-referrer">
+    {{-- OG --}}
+    <meta property="og:url" content="https://decomagna.com/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium">
+    <meta property="og:image" content="https://ucarecdn.com/e8843711-9080-4637-a097-d955332409ef/image.jpeg">
+    <meta property="og:description" content="Discover our stories and blog-posts. Up to date advice on flooring colors, trends and more on our blog section. Get inspired by Quick-Step® flooring designers.">
+    <meta property="og:site_name" content="DecoMagna">
+    <meta property="og:locale" content="en_US">
+    {{-- Twitter --}}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Decomagna_Kenya">
+    <meta name="twitter:url" content="https://decomagna.com/blog/">
+    <meta name="twitter:title" content="Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium">
+    <meta name="twitter:description" content="Discover our stories and blog-posts. Up to date advice on flooring colors, trends and more on our blog section. Get inspired by Quick-Step® flooring designers.">
+    <meta name="twitter:image" content="https://ucarecdn.com/e8843711-9080-4637-a097-d955332409ef/image.jpeg">
+    {{-- SEO --}}
+    <!--- primary meta tags -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
     <!-- *******  Font Awesome Icons Link  ******* -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <!-- *******  Owl Carousel Links  ******* -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 
-    <title>Decomagna</title>
-    <meta name="title" content="Amazing wooden floors" />
-    <meta
-      name="description"
-      content="This is a wooden floor branding website made by designekta studios"
-    />
 
-    <!--
-    - favicon
-  -->
-    <link
-      rel="shortcut icon"
-      href="{{asset('version/assets/images/decomagna N-14.jpg')}}"
-      type="image/svg+xml"
-    />
+
 
     <!--
     - google font link

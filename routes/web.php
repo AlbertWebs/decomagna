@@ -17,10 +17,10 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', [HomeController::class, 'index']);
+// Route::get('/home', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [HomeController::class, 'products']);
 Route::get('/portfolio', [HomeController::class, 'portfolio']);
 Route::get('/blogs', [HomeController::class, 'blog']);
