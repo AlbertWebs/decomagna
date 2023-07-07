@@ -93,14 +93,23 @@
 
     <header class="header" data-header>
       <div class="container">
-        <a href="{{url('/')}}" class="logo">
+        {{-- <a href="{{url('/')}}" class="logo">
           <img
             src="{{asset('version/assets/images/decomagna N-14.jpg')}}"
             width="160"
             height="50"
             alt="Grilli - Home"
           />
-        </a>
+        </a> --}}
+
+        <a href="{{url('/')}}" class="logo">
+            <img
+              src="{{url('/')}}/uploads/logo/decomagna-Logos-Trans-14.jpg"
+              width="160"
+              height="50"
+              alt="Decomagna"
+            />
+          </a>
 
         <nav class="navbar" data-navbar>
           <button class="close-btn" aria-label="close menu" data-nav-toggler>

@@ -76,7 +76,7 @@
           <h2 class="headline-intro">Quick-Step® Original Product Selections</h2>
           <p>
             <font color="#676767">
-                <span style="font-size: 18px; line-height: 1.6;">
+                <span style=" line-height: 1.6;">
                     Our original Quick-Step Laminate flooring is crafted in <strong>Belgium</strong> with the best materials available on the market.
 
                     The composite nature of <strong>top quality laminates</strong> make them an ideal solution for <strong>high traffic</strong> requirements such as restaurants, hotels, lounges, clubs and even homes.
@@ -159,8 +159,8 @@
               width="670"
               height="570"
               loading="lazy"
-              alt="about banner"
-              class="w-100"
+              alt=" {{$sectionhome->name}}"
+              class="w-100s"
               data-parallax-item
               data-parallax-speed="1"
             />
@@ -174,19 +174,24 @@
       - #SPECIAL DISH
     -->
 
+    <?php
+        $SectionHome = DB::table('sections')->where('page','home')->where('position','2nd_banner')->get();
+    ?>
+    @foreach ($SectionHome as $sectionhome)
+
       <section class="special-dish text-center" aria-labelledby="dish-label">
         <div class="special-dish-banner">
           <img
-            src="{{asset('version/assets/images/pexels-photo-2549018.jpeg')}}"
-            width="940"
-            height="900"
+            src="{{asset('uploads/61b9ad5597305.jpg')}}"
+            width="670"
+            height="570"
             loading="lazy"
-            alt="special dish"
-            class="img-cover"
+            alt="{{$sectionhome->name}}"
+            class="img-covers"
           />
         </div>
 
-        <div class="special-dish-content bg-black-10">
+        <div class="special-dish-content bg-black-10 text-center">
           <div class="container">
             <img
               src="{{asset('version/assets/images/badge-1.png')}}"
@@ -197,27 +202,23 @@
               class="abs-img"
             />
 
-            <h2 class="headline-1 section-title">AQUA FLOORING</h2>
+            <h3 class="product-intro-title section-title text-center margin-top-100">{{$sectionhome->name}}</h3>
 
-            <p class="section-text">
-              Decomagna's waterproof aqua flooring provides the appearance and
-              texture of real wood flooring without worrying about damage or
-              staining due to water and moisture. Aqua flooring is an upgraded
-              version of the popular wood-like synthetic flooring, which can
-              now resist water damage. Laminate flooring can provide a
-              realistic appearance, comparable to real solid wood. People like
-              affordable laminate flooring, but its water resistance has never
-              been known.
+
+            <p class="section-text text-center info-texts">
+                {!!html_entity_decode($sectionhome->content)!!}
             </p>
 
             <a href="#" class="btn btn-primary">
-              <span class="text text-1">Contact us</span>
+              <span class="text text-1">{{$sectionhome->action_name}}</span>
 
-              <span class="text text-2" aria-hidden="true">Contact us</span>
+              <span class="text text-2" aria-hidden="true">{{$sectionhome->action_name}}</span>
             </a>
           </div>
         </div>
       </section>
+
+    @endforeach
 
       <!--
       - #MENU
@@ -318,43 +319,22 @@
       - #TESTIMONIALS
     -->
 
-      <section
-        class="section testi text-center has-bg-image"
-        style="background-image: url('{{asset('version/assets/images/people2.jpg')}}')"
-        aria-label="testimonials"
-      >
+    <?php
+        $SectionHome = DB::table('sections')->where('page','home')->where('position','3rd_banner')->get();
+    ?>
+    @foreach ($SectionHome as $sectionhome)
+      <section class="section testi text-center has-bg-image" style="background-image: url('{{asset('uploads/sections/')}}/{{$sectionhome->image}}')" aria-label="testimonials">
         <div class="container">
-          <div class="quote trans360">”</div>
+          {{-- <div class="quote trans360">”</div> --}}
 
           <p class="headline-2 testi-text">
-            WOULD YOU LIKE TO GET FREE LAMINATE BEFORE ORDERING?
+            Aqua Floor And Laminate Flooring Is A Cheap Alternative To Hardwood Flooring. Want Lower Prices And Lower Maintenance?
           </p>
 
-          <div class="quote">”</div>
-
-          <div class="wrapper">
-            <div class="separator"></div>
-            <div class="separator"></div>
-            <div class="separator"></div>
-          </div>
-
-          <div class="profile">
-            <img
-              src="{{asset('version/assets/images/testi-avatar.jpg')}}"
-              width="100"
-              height="100"
-              loading="lazy"
-              alt="Lucas"
-              class="img"
-            />
-
-            <p class="label-2 profile-name">
-              Kori Vince <br />
-              Customer care
-            </p>
-          </div>
+          {{-- <div class="quote">”</div> --}}
         </div>
       </section>
+    @endforeach
 
       <!--
       - #RESERVATION
