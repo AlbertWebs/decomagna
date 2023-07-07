@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--
+    <!-- 
     - primary meta tags
   -->
 
@@ -45,16 +45,16 @@
       content="This is a wooden floor branding website made by designekta studios"
     />
 
-    <!--
+    <!-- 
     - favicon
   -->
     <link
       rel="shortcut icon"
-      href="{{asset('version/assets/images/decomagna N-14.jpg')}}"
+      href="./assets/images/decomagna N-14.jpg"
       type="image/svg+xml"
     />
 
-    <!--
+    <!-- 
     - google font link
   -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,21 +64,21 @@
       rel="stylesheet"
     />
 
-    <!--
+    <!-- 
     - custom css link
   -->
-    <link rel="stylesheet" href="{{asset('version/assets/css/style.css')}}" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!--
+    <!-- 
     - preload images
   -->
-    <link rel="preload" as="image" href="{{asset('version/assets/images/hero-slider-1.jpg')}}" />
-    <link rel="preload" as="image" href="{{asset('version/assets/images/hero-slider-2.jpg')}}" />
-    <link rel="preload" as="image" href="{{asset('version/assets/images/hero-slider-3.jpg')}}" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg" />
   </head>
 
   <body id="top">
-    <!--
+    <!-- 
     - #PRELOADER
   -->
 
@@ -87,15 +87,15 @@
       <p class="text">Decomagna</p>
     </div>
 
-    <!--
+    <!-- 
     - #HEADER
   -->
 
     <header class="header" data-header>
       <div class="container">
-        <a href="{{url('/')}}" class="logo">
+        <a href="index.html" class="logo">
           <img
-            src="{{asset('version/assets/images/decomagna N-14.jpg')}}"
+            src="./assets/images/decomagna N-14.jpg"
             width="160"
             height="50"
             alt="Grilli - Home"
@@ -107,9 +107,9 @@
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
 
-          <a href="{{url('/')}}" class="logo">
+          <a href="index.html" class="logo">
             <img
-              src="{{asset('version/assets/images/decomagna_N-15-removebg-preview2.png')}}"
+              src="./assets/images/decomagna_N-15-removebg-preview2.png"
               width="160"
               height="50"
               alt="Grilli - Home"
@@ -117,38 +117,29 @@
           </a>
 
           <ul class="navbar-list">
-            {{-- <li class="navbar-item">
-              <a href="{{url('/')}}" class="navbar-link hover-underline active">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-link hover-underline active">
                 <div class="separator"></div>
 
                 <span class="span">Home</span>
               </a>
-            </li> --}}
-
+            </li>
 
             <li class="navbar-item">
-                <a href="product.html" class="navbar-link hover-underline active">
-                  <div class="separator"></div>
+              <a href="product.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
 
-                  <span class="span">Laminate Flooring</span>
-                </a>
-              </li>
+                <span class="span">Our products</span>
+              </a>
+            </li>
 
             <li class="navbar-item">
               <a href="gallery.html" class="navbar-link hover-underline">
                 <div class="separator"></div>
 
-                <span class="span">Doors</span>
+                <span class="span">Our portfolio</span>
               </a>
             </li>
-
-            <li class="navbar-item">
-                <a href="gallery.html" class="navbar-link hover-underline">
-                  <div class="separator"></div>
-
-                  <span class="span">Accessories</span>
-                </a>
-              </li>
 
             <li class="navbar-item">
               <a href="about.html" class="navbar-link hover-underline">
@@ -193,9 +184,154 @@
       </div>
     </header>
 
-    @yield('content')
+    <main>
+      <article>
+        <!-- 
+        - #SPECIAL DISH
+      -->
 
-    <!--
+        <section class="special-dish text-center" aria-labelledby="dish-label">
+          <div class="special-dish-banner">
+            <img
+              src="./assets/images/pexels-photo-2549018.jpeg"
+              width="940"
+              height="900"
+              loading="lazy"
+              alt="special dish"
+              class="img-cover"
+            />
+          </div>
+
+          <div class="special-dish-content bg-black-10">
+            <div class="container">
+              <h2 class="headline-1 section-title">TIMBER FLOORING</h2>
+
+              <p class="section-text">
+                Decomagna's waterproof aqua flooring provides the appearance and
+                texture of real wood flooring without worrying about damage or
+                staining due to water and moisture. Aqua flooring is an upgraded
+                version of the popular wood-like synthetic flooring, which can
+                now resist water damage. Laminate flooring can provide a
+                realistic appearance, comparable to real solid wood. People like
+                affordable laminate flooring, but its water resistance has never
+                been known.
+              </p>
+
+              <a href="contact.html" class="btn btn-primary">
+                <span class="text text-1">Contact us</span>
+
+                <span class="text text-2" aria-hidden="true">Contact us</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 
+        - #SERVICE
+      -->
+
+        <section
+          class="section service service-white text-center"
+          aria-label="service"
+        >
+          <div class="container">
+            <h2 class="headline-1 section-title">Other products</h2>
+
+            <div class="royaly owl-carousel">
+              <div class="royalty_child">
+                <img
+                  src="./assets/images/category-wood-species-birch.webp"
+                  alt="about banner"
+                  class="w-100"
+                />
+
+                <a href="singleproduct.html">Laminate flooring</a>
+
+                <div>
+                  <a href="singleproduct.html"
+                    ><ion-icon name="eye-outline"></ion-icon
+                  ></a>
+                </div>
+              </div>
+
+              <div class="royalty_child">
+                <img
+                  src="./assets/images/category-wood-trend-oil-finished.webp"
+                  alt="about banner"
+                  class="w-100"
+                />
+
+                <a href="singleproduct.html">Timber flooring</a>
+
+                <div>
+                  <a href="singleproduct.html"
+                    ><ion-icon name="eye-outline"></ion-icon
+                  ></a>
+                </div>
+              </div>
+
+              <div class="royalty_child">
+                <img
+                  src="./assets/images/category-wood-hero-banner-new.webp"
+                  alt="about banner"
+                  class="w-100"
+                />
+
+                <a href="singleproduct.html">Hybrid flooring</a>
+
+                <div>
+                  <a href="singleproduct.html"
+                    ><ion-icon name="eye-outline"></ion-icon
+                  ></a>
+                </div>
+              </div>
+
+              <div class="royalty_child">
+                <img
+                  src="./assets/images/category-wood-hero-banner-new.webp"
+                  alt="about banner"
+                  class="w-100"
+                />
+
+                <a href="singleproduct.html">Vinyl flooring</a>
+
+                <div>
+                  <a href="singleproduct.html"
+                    ><ion-icon name="eye-outline"></ion-icon
+                  ></a>
+                </div>
+              </div>
+
+              <div class="royalty_child">
+                <img
+                  src="./assets/images/category-wood-hero-banner-new.webp"
+                  alt="about banner"
+                  class="w-100"
+                />
+
+                <a href="singleproduct.html">Bamboo flooring</a>
+
+                <div>
+                  <a href="singleproduct.html"
+                    ><ion-icon name="eye-outline"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="product.html" class="btn btn-primary centy">
+            <span class="text text-1">View all products</span>
+
+            <span class="text text-2" aria-hidden="true"
+              >View all products</span
+            >
+          </a>
+        </section>
+      </article>
+    </main>
+
+    <!-- 
     - #FOOTER
   -->
 
@@ -205,7 +341,7 @@
           <div class="footer-brand has-before has-after">
             <a href="#" class="logo">
               <img
-                src="{{asset('version/assets/images/decomagna N-14.jpg')}}"
+                src="./assets/images/decomagna N-14.jpg"
                 width="160"
                 height="50"
                 loading="lazy"
@@ -321,7 +457,7 @@
 
         <div class="footer-bottom">
           <p class="copyright">
-            &copy; {{date('Y')}} Decomagna. All Rights Reserved | Crafted by
+            &copy; 2022 Decomagna. All Rights Reserved | Crafted by
             <a
               href="https://github.com/codewithsadee"
               target="_blank"
@@ -333,7 +469,7 @@
       </div>
     </footer>
 
-    <!--
+    <!-- 
       - #BACK TO TOP
     -->
 
@@ -346,11 +482,11 @@
       <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
     </a>
 
-    <!--
+    <!-- 
       - custom js link
     -->
 
-    <script src="{{asset('version/assets/js/script.js')}}"></script>
+    <script src="./assets/js/script.js"></script>
 
     <!--   *****   JQuery Link   *****   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -359,9 +495,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!--   *****   Link To Custom Script File   *****   -->
-    {{-- <script type="text/javascript" src="{{asset('version/script.js')}}"></script> --}}
+    <script type="text/javascript" src="script.js"></script>
 
-    <!--
+    <!-- 
       - ionicon link
     -->
 

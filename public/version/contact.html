@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--
+    <!-- 
     - primary meta tags
   -->
 
@@ -45,16 +45,16 @@
       content="This is a wooden floor branding website made by designekta studios"
     />
 
-    <!--
+    <!-- 
     - favicon
   -->
     <link
       rel="shortcut icon"
-      href="{{asset('version/assets/images/decomagna N-14.jpg')}}"
+      href="./assets/images/decomagna N-14.jpg"
       type="image/svg+xml"
     />
 
-    <!--
+    <!-- 
     - google font link
   -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,21 +64,21 @@
       rel="stylesheet"
     />
 
-    <!--
+    <!-- 
     - custom css link
   -->
-    <link rel="stylesheet" href="{{asset('version/assets/css/style.css')}}" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!--
+    <!-- 
     - preload images
   -->
-    <link rel="preload" as="image" href="{{asset('version/assets/images/hero-slider-1.jpg')}}" />
-    <link rel="preload" as="image" href="{{asset('version/assets/images/hero-slider-2.jpg')}}" />
-    <link rel="preload" as="image" href="{{asset('version/assets/images/hero-slider-3.jpg')}}" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg" />
   </head>
 
   <body id="top">
-    <!--
+    <!-- 
     - #PRELOADER
   -->
 
@@ -87,15 +87,15 @@
       <p class="text">Decomagna</p>
     </div>
 
-    <!--
+    <!-- 
     - #HEADER
   -->
 
     <header class="header" data-header>
       <div class="container">
-        <a href="{{url('/')}}" class="logo">
+        <a href="index.html" class="logo">
           <img
-            src="{{asset('version/assets/images/decomagna N-14.jpg')}}"
+            src="./assets/images/decomagna N-14.jpg"
             width="160"
             height="50"
             alt="Grilli - Home"
@@ -107,9 +107,9 @@
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
 
-          <a href="{{url('/')}}" class="logo">
+          <a href="index.html" class="logo">
             <img
-              src="{{asset('version/assets/images/decomagna_N-15-removebg-preview2.png')}}"
+              src="./assets/images/decomagna_N-15-removebg-preview2.png"
               width="160"
               height="50"
               alt="Grilli - Home"
@@ -117,38 +117,29 @@
           </a>
 
           <ul class="navbar-list">
-            {{-- <li class="navbar-item">
-              <a href="{{url('/')}}" class="navbar-link hover-underline active">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-link hover-underline active">
                 <div class="separator"></div>
 
                 <span class="span">Home</span>
               </a>
-            </li> --}}
-
+            </li>
 
             <li class="navbar-item">
-                <a href="product.html" class="navbar-link hover-underline active">
-                  <div class="separator"></div>
+              <a href="product.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
 
-                  <span class="span">Laminate Flooring</span>
-                </a>
-              </li>
+                <span class="span">Our products</span>
+              </a>
+            </li>
 
             <li class="navbar-item">
               <a href="gallery.html" class="navbar-link hover-underline">
                 <div class="separator"></div>
 
-                <span class="span">Doors</span>
+                <span class="span">Our portfolio</span>
               </a>
             </li>
-
-            <li class="navbar-item">
-                <a href="gallery.html" class="navbar-link hover-underline">
-                  <div class="separator"></div>
-
-                  <span class="span">Accessories</span>
-                </a>
-              </li>
 
             <li class="navbar-item">
               <a href="about.html" class="navbar-link hover-underline">
@@ -193,9 +184,111 @@
       </div>
     </header>
 
-    @yield('content')
+    <main>
+      <article>
+        <!-- 
+        - #TESTIMONIALS
+      -->
 
-    <!--
+        <section
+          class="section testi text-center has-bg-image"
+          style="background-image: url('./assets/images/people2.jpg')"
+          aria-label="testimonials"
+        >
+          <div class="container">
+            <div class="quote trans360">”</div>
+
+            <p class="headline-2 testi-text">
+              WOULD YOU LIKE TO GET FREE LAMINATE BEFORE ORDERING?
+            </p>
+
+            <div class="quote">”</div>
+
+            <div class="wrapper">
+              <div class="separator"></div>
+              <div class="separator"></div>
+              <div class="separator"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 
+        - #RESERVATION
+      -->
+
+        <section class="reservation">
+          <div class="container">
+            <div class="form reservation-form bg-black-10">
+              <form action="" class="form-left">
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    autocomplete="off"
+                    class="input-field"
+                  />
+
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    autocomplete="off"
+                    class="input-field"
+                  />
+                </div>
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Place your email"
+                  autocomplete="off"
+                  class="input-field"
+                />
+
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  autocomplete="off"
+                  class="input-field"
+                ></textarea>
+
+                <button type="submit" class="btn btn-secondary">
+                  <span class="text text-1">Contact us</span>
+
+                  <span class="text text-2" aria-hidden="true">Contact us</span>
+                </button>
+              </form>
+
+              <div
+                class="form-right text-center"
+                style="
+                  background-image: url('./assets/images/pexels-photo-1250283.jpeg');
+                "
+              >
+                <h2 class="headline-1 text-center">Contact Us</h2>
+
+                <p class="contact-label">Make a call</p>
+
+                <a
+                  href="tel:+88123123456"
+                  class="body-1 contact-number hover-underline"
+                  >+88-123-123456</a
+                >
+
+                <div class="separator"></div>
+
+                <p class="contact-label">Location</p>
+
+                <address class="body-4">Nairobi, Kenya</address>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- 
     - #FOOTER
   -->
 
@@ -205,7 +298,7 @@
           <div class="footer-brand has-before has-after">
             <a href="#" class="logo">
               <img
-                src="{{asset('version/assets/images/decomagna N-14.jpg')}}"
+                src="./assets/images/decomagna N-14.jpg"
                 width="160"
                 height="50"
                 loading="lazy"
@@ -321,7 +414,7 @@
 
         <div class="footer-bottom">
           <p class="copyright">
-            &copy; {{date('Y')}} Decomagna. All Rights Reserved | Crafted by
+            &copy; 2022 Decomagna. All Rights Reserved | Crafted by
             <a
               href="https://github.com/codewithsadee"
               target="_blank"
@@ -333,7 +426,7 @@
       </div>
     </footer>
 
-    <!--
+    <!-- 
       - #BACK TO TOP
     -->
 
@@ -346,11 +439,11 @@
       <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
     </a>
 
-    <!--
+    <!-- 
       - custom js link
     -->
 
-    <script src="{{asset('version/assets/js/script.js')}}"></script>
+    <script src="./assets/js/script.js"></script>
 
     <!--   *****   JQuery Link   *****   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -359,9 +452,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!--   *****   Link To Custom Script File   *****   -->
-    {{-- <script type="text/javascript" src="{{asset('version/script.js')}}"></script> --}}
+    <script type="text/javascript" src="script.js"></script>
 
-    <!--
+    <!-- 
       - ionicon link
     -->
 

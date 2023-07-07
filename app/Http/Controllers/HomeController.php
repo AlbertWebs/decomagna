@@ -10,7 +10,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $Slider = DB::table('sliders')->orderBy('id','ASC')->limit('1')->get();
+        $Slider = DB::table('sliders')->orderBy('id','ASC')->get();
         return view('front.index', compact('Slider'));
     }
 

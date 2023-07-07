@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--
+    <!-- 
     - primary meta tags
   -->
 
@@ -45,16 +45,16 @@
       content="This is a wooden floor branding website made by designekta studios"
     />
 
-    <!--
+    <!-- 
     - favicon
   -->
     <link
       rel="shortcut icon"
-      href="{{asset('version/assets/images/decomagna N-14.jpg')}}"
+      href="./assets/images/decomagna N-14.jpg"
       type="image/svg+xml"
     />
 
-    <!--
+    <!-- 
     - google font link
   -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,21 +64,21 @@
       rel="stylesheet"
     />
 
-    <!--
+    <!-- 
     - custom css link
   -->
-    <link rel="stylesheet" href="{{asset('version/assets/css/style.css')}}" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!--
+    <!-- 
     - preload images
   -->
-    <link rel="preload" as="image" href="{{asset('version/assets/images/hero-slider-1.jpg')}}" />
-    <link rel="preload" as="image" href="{{asset('version/assets/images/hero-slider-2.jpg')}}" />
-    <link rel="preload" as="image" href="{{asset('version/assets/images/hero-slider-3.jpg')}}" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg" />
   </head>
 
   <body id="top">
-    <!--
+    <!-- 
     - #PRELOADER
   -->
 
@@ -87,15 +87,15 @@
       <p class="text">Decomagna</p>
     </div>
 
-    <!--
+    <!-- 
     - #HEADER
   -->
 
     <header class="header" data-header>
       <div class="container">
-        <a href="{{url('/')}}" class="logo">
+        <a href="index.html" class="logo">
           <img
-            src="{{asset('version/assets/images/decomagna N-14.jpg')}}"
+            src="./assets/images/decomagna N-14.jpg"
             width="160"
             height="50"
             alt="Grilli - Home"
@@ -107,9 +107,9 @@
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
 
-          <a href="{{url('/')}}" class="logo">
+          <a href="index.html" class="logo">
             <img
-              src="{{asset('version/assets/images/decomagna_N-15-removebg-preview2.png')}}"
+              src="./assets/images/decomagna_N-15-removebg-preview2.png"
               width="160"
               height="50"
               alt="Grilli - Home"
@@ -117,38 +117,29 @@
           </a>
 
           <ul class="navbar-list">
-            {{-- <li class="navbar-item">
-              <a href="{{url('/')}}" class="navbar-link hover-underline active">
+            <li class="navbar-item" data-navbar>
+              <a href="index.html" class="navbar-link hover-underline active">
                 <div class="separator"></div>
 
                 <span class="span">Home</span>
               </a>
-            </li> --}}
-
+            </li>
 
             <li class="navbar-item">
-                <a href="product.html" class="navbar-link hover-underline active">
-                  <div class="separator"></div>
+              <a href="product.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
 
-                  <span class="span">Laminate Flooring</span>
-                </a>
-              </li>
+                <span class="span">Our products</span>
+              </a>
+            </li>
 
             <li class="navbar-item">
               <a href="gallery.html" class="navbar-link hover-underline">
                 <div class="separator"></div>
 
-                <span class="span">Doors</span>
+                <span class="span">Our portfolio</span>
               </a>
             </li>
-
-            <li class="navbar-item">
-                <a href="gallery.html" class="navbar-link hover-underline">
-                  <div class="separator"></div>
-
-                  <span class="span">Accessories</span>
-                </a>
-              </li>
 
             <li class="navbar-item">
               <a href="about.html" class="navbar-link hover-underline">
@@ -193,9 +184,171 @@
       </div>
     </header>
 
-    @yield('content')
+    <main>
+      <article>
+        <!-- 
+        - #EVENT
+      -->
 
-    <!--
+        <section class="section event blogd" aria-label="event">
+          <div class="container">
+            <h2 class="section-title headline-1 text-center top-topper">
+              Our Blogs
+            </h2>
+
+            <ul class="grid-list">
+              <li>
+                <div class="event-card has-before hover:shine">
+                  <div
+                    class="card-banner img-holder"
+                    style="--width: 350; --height: 450"
+                  >
+                    <a href="singleblog.html" class="nzula">
+                      <img
+                        src="./assets/images/normal.jpg"
+                        width="350"
+                        height="450"
+                        loading="lazy"
+                        alt="Flavour so good you’ll try to eat with your eyes."
+                        class="img-cover"
+                      />
+                    </a>
+
+                    <time class="publish-date label-2" datetime="2022-09-15"
+                      >15/09/2022</time
+                    >
+                  </div>
+
+                  <div class="card-content">
+                    <p class="card-subtitle label-2 text-center">
+                      SPC FLOORING
+                    </p>
+
+                    <h3 class="card-title title-2 text-center">
+                      Different from dated prints and cheap materials in the
+                      past...
+                    </h3>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="event-card has-before hover:shine">
+                  <div
+                    class="card-banner img-holder"
+                    style="--width: 350; --height: 450"
+                  >
+                    <a href="singleblog.html" class="nzula">
+                      <img
+                        src="./assets/images/normal (1).jpg"
+                        width="350"
+                        height="450"
+                        loading="lazy"
+                        alt="Flavour so good you’ll try to eat with your eyes."
+                        class="img-cover"
+                      />
+                    </a>
+
+                    <time class="publish-date label-2" datetime="2022-09-08"
+                      >08/09/2022</time
+                    >
+                  </div>
+
+                  <div class="card-content">
+                    <p class="card-subtitle label-2 text-center">
+                      LAMINATE FLOORING
+                    </p>
+
+                    <h3 class="card-title title-2 text-center">
+                      Faux wood flooring is currently the hottest trend of
+                      flooring...
+                    </h3>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="event-card has-before hover:shine">
+                  <div
+                    class="card-banner img-holder"
+                    style="--width: 350; --height: 450"
+                  >
+                    <a href="singleblog.html" class="nzula">
+                      <img
+                        src="./assets/images/normal (2).jpg"
+                        width="350"
+                        height="450"
+                        loading="lazy"
+                        alt="Flavour so good you’ll try to eat with your eyes."
+                        class="img-cover"
+                      />
+                    </a>
+
+                    <time class="publish-date label-2" datetime="2022-09-03"
+                      >03/09/2022</time
+                    >
+                  </div>
+
+                  <div class="card-content">
+                    <p class="card-subtitle label-2 text-center">
+                      Timber FLOORING
+                    </p>
+
+                    <h3 class="card-title title-2 text-center">
+                      Decomagnas's waterproof aqua flooring provides the
+                      appearance and texture...
+                    </h3>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="event-card has-before hover:shine">
+                  <div
+                    class="card-banner img-holder"
+                    style="--width: 350; --height: 450"
+                  >
+                    <a href="singleblog.html" class="nzula">
+                      <img
+                        src="./assets/images/normal (2).jpg"
+                        width="350"
+                        height="450"
+                        loading="lazy"
+                        alt="Flavour so good you’ll try to eat with your eyes."
+                        class="img-cover"
+                      />
+                    </a>
+
+                    <time class="publish-date label-2" datetime="2022-09-03"
+                      >03/11/2022</time
+                    >
+                  </div>
+
+                  <div class="card-content">
+                    <p class="card-subtitle label-2 text-center">
+                      AQUA FLOORING
+                    </p>
+
+                    <h3 class="card-title title-2 text-center">
+                      For the first time ever, you can install timber everywhere
+                      in your home, thanks ...
+                    </h3>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <a href="#" class="btn btn-primary">
+              <span class="text text-1">View Our Blog</span>
+
+              <span class="text text-2" aria-hidden="true">View Our Blog</span>
+            </a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- 
     - #FOOTER
   -->
 
@@ -205,7 +358,7 @@
           <div class="footer-brand has-before has-after">
             <a href="#" class="logo">
               <img
-                src="{{asset('version/assets/images/decomagna N-14.jpg')}}"
+                src="./assets/images/decomagna N-14.jpg"
                 width="160"
                 height="50"
                 loading="lazy"
@@ -321,7 +474,7 @@
 
         <div class="footer-bottom">
           <p class="copyright">
-            &copy; {{date('Y')}} Decomagna. All Rights Reserved | Crafted by
+            &copy; 2022 Decomagna. All Rights Reserved | Crafted by
             <a
               href="https://github.com/codewithsadee"
               target="_blank"
@@ -333,7 +486,7 @@
       </div>
     </footer>
 
-    <!--
+    <!-- 
       - #BACK TO TOP
     -->
 
@@ -346,11 +499,11 @@
       <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
     </a>
 
-    <!--
+    <!-- 
       - custom js link
     -->
 
-    <script src="{{asset('version/assets/js/script.js')}}"></script>
+    <script src="./assets/js/script.js"></script>
 
     <!--   *****   JQuery Link   *****   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -359,9 +512,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!--   *****   Link To Custom Script File   *****   -->
-    {{-- <script type="text/javascript" src="{{asset('version/script.js')}}"></script> --}}
+    <script type="text/javascript" src="script.js"></script>
 
-    <!--
+    <!-- 
       - ionicon link
     -->
 
