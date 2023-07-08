@@ -231,6 +231,7 @@ class AdminsController extends Controller
     public function edit_about(Request $request){
         activity()->log('Update o the copyright page');
         $updateDetails = array(
+            'title'=>$request->title,
             'content'=>$request->content
         );
         DB::table('abouts')->update($updateDetails);

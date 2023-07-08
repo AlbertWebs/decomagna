@@ -18,7 +18,7 @@
         @include('admin.sidebar')
 
         <!--== BODY INNER CONTAINER ==-->
-        
+
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
@@ -33,7 +33,7 @@
                     <li class="page-back"><a href="{{url('/')}}/admin/faq"><i class="fa fa-backward" aria-hidden="true"></i> Frequently Asked Questions</a>
                     </li>
                 </ul>
-               
+
             </div>
             <div class="sb2-2-add-blog sb2-2-1">
                 <div class="box-inn-sp">
@@ -44,38 +44,45 @@
                             @if(Session::has('message'))
                                           <div class="alert alert-success">{{ Session::get('message') }}</div>
                            @endif
-           
+
                            @if(Session::has('messageError'))
                                           <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
                            @endif
                         </center>
                     </div>
                     @foreach ($About as $item)
-                        
+
                     <div class="bor">
                         <form method="POST" action="{{url('/')}}/admin/edit_About" enctype="multipart/form-data">
                             {{csrf_field()}}
-                       
-                            
-                         
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input value="{{$item->title}}" autocomplete="off" name="title" id="list-title" type="text" class="validate" required>
+                                    <label for="list-title">Post Title</label>
+                                </div>
+                            </div>
+
+
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <textarea required id="article-ckeditor" name="content" class="materialilze-textarea" placeholder="content">{{$item->content}}</textarea>
-                                 
+
                                 </div>
                             </div><br><br>
-                       
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input  type="submit" class="waves-effect waves-light btn-large" value="Save Changes">
                                 </div>
                             </div>
-                            
+
                         </form>
                     </div>
-                        
+
                     @endforeach
-                    
+
                 </div>
             </div>
         </div>

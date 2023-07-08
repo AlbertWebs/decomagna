@@ -69,22 +69,23 @@
       <!--
       - #SERVICE
     -->
-
+      <?php
+          $About = DB::table('abouts')->get();
+      ?>
       {{-- <section class="section service service-white text-center" aria-label="service" style="background-color:#D9D9D9"> --}}
+
       <section class="section service service-white text-center" aria-label="service">
         <div class="container">
-          <h2 class="headline-intro">Quick-Step® Original Product Selections</h2>
+          @foreach ($About as $about)
+          <h2 class="headline-intro">{{$about->title}}</h2>
           <p>
             <font color="#676767">
                 <span style=" line-height: 1.6;">
-                    Our original Quick-Step Laminate flooring is crafted in <strong>Belgium</strong> with the best materials available on the market.
-
-                    The composite nature of <strong>top quality laminates</strong> make them an ideal solution for <strong>high traffic</strong> requirements such as restaurants, hotels, lounges, clubs and even homes.
-
-                    On top of that they come with a warranty ranging from <strong>15 years to a lifetime warranty</strong>. this means you don't have to worry about sunlight, scratches, falling objects and in the case of our Hydroseal collections, water....yes, that's right, our Quick-Step laminate flooring can be installed in bathrooms and kitchens.
+                    {!!html_entity_decode($about->content)!!}
                 </span>
             </font>
           </p>
+          @endforeach
 
           <div class="royaly owl-carousel margin-top-100">
             <?php $Categories = DB::table("categories")->get(); ?>
