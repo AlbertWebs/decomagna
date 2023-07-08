@@ -860,7 +860,17 @@ class AdminsController extends Controller
                 $image_four = $request->image_four_cheat;
             }
 
+            if($request->big == 'on'){
+                $new_big = "1";
+            }else{
+                $new_big = '0';
+            }
 
+            if($request->home == 'on'){
+                $new_home = "1";
+            }else{
+                $new_home = '0';
+            }
 
 
         $updateDetails = array(
@@ -868,11 +878,12 @@ class AdminsController extends Controller
             'slung' => Str::slug($request->title),
             'content'=>$request->content,
             'meta'=>$request->meta,
+            'home'=>$new_home,
+            'big'=>$new_big,
             'image_one'=>$image_one,
             'image_two'=>$image_two,
             'image_three'=>$image_three,
             'image_four'=>$image_four
-
         );
         DB::table('portfolios')->where('id',$id)->update($updateDetails);
         Session::flash('message', "Changes have been saved");

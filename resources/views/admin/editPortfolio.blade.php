@@ -65,7 +65,73 @@
                                 <div class="input-field col s12">
                                     <textarea required id="article-ckeditor" name="content" class="materialilze-textarea" placeholder="content">{{$Portfolio->content}}</textarea>
                                 </div>
-                            </div><br><br>
+                            </div>
+
+                            <br><br>
+                            <div class="row">
+                                {{-- Stock --}}
+                                    <div class="input-field col s6">
+                                        <div class="box-inn-sp box-second-inn">
+                                            <div class="inn-title">
+                                                <h4>Home Page</h4>
+                                            </div>
+                                            <div class="tab-inn">
+                                                @if($Portfolio->home == '0')
+                                                <!-- Switch -->
+                                                <div class="switch mar-bot-20">
+                                                    <label>
+                                                        Off
+                                                        <input name="home" type="checkbox">
+                                                        <span class="lever"></span> On
+                                                    </label>
+                                                </div>
+                                                @else
+                                                <!-- Switch -->
+                                                <div class="switch mar-bot-20">
+                                                    <label>
+                                                        Off
+                                                        <input name="home" checked type="checkbox">
+                                                        <span class="lever"></span> On
+                                                    </label>
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-field col s6">
+                                        <div class="box-inn-sp box-second-inn">
+                                            <div class="inn-title">
+                                                <h4>Big Col</h4>
+                                            </div>
+                                            <div class="tab-inn">
+                                                @if($Portfolio->big == '0')
+                                                <!-- Switch -->
+                                                <div class="switch mar-bot-20">
+                                                    <label>
+                                                        Off
+                                                        <input name="big" type="checkbox">
+                                                        <span class="lever"></span> On
+                                                    </label>
+                                                </div>
+                                                @else
+                                                <!-- Switch -->
+                                                <div class="switch mar-bot-20">
+                                                    <label>
+                                                        Off
+                                                        <input name="big" checked type="checkbox">
+                                                        <span class="lever"></span> On
+                                                    </label>
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            <br><br>
 
                             <script src="{{ asset('ckeditor/ckeditor.js')}}"></script>
                             <script>CKEDITOR.replace('article-ckeditor');</script>

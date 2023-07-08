@@ -26,7 +26,7 @@
                     </li>
                     <li class="active-bre"><a href="#"> Edit Section</a>
                     </li>
-                    <li class="page-back"><a href="{{url('/')}}/admin/Sections"><i class="fa fa-backward" aria-hidden="true"></i> All Sections</a>
+                    <li class="page-back"><a href="{{url('/')}}/admin/sections"><i class="fa fa-backward" aria-hidden="true"></i> All Sections</a>
                     </li>
                 </ul>
 

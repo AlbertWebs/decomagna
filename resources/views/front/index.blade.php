@@ -228,86 +228,52 @@
       <section class="section menu" aria-label="menu-label" id="menu">
         <h2 class="headline-1 section-title text-center">Our gallery</h2>
         <div class="image-grid">
+          <?php
+            $Portfolio = DB::table('portfolios')->where('home','1')->where('big','1')->limit('1')->get();
+          ?>
+          @foreach ($Portfolio as $Portfolio)
           <div class="image-grid-col-2 image-grid-row-2 image-curve">
             <div class="containerm">
               <div class="card">
                 <div class="front">
                   <img
                     class="image-curve"
-                    src="{{asset('version/assets/images/category-wood-type-solid.webp')}}"
-                    alt="architecture"
+                    src="{{url('/')}}/uploads/portfolios/{{$Portfolio->image_one}}"
+                    alt="{{$Portfolio->name}}"
                   />
                 </div>
                 <div class="back">
-                  <h1>Resilient floors</h1>
+                  <h1>{{$Portfolio->name}}</h1>
+                  <p style="max-width:500px">
+                    {!!html_entity_decode($Portfolio->meta)!!}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+          @endforeach
+
+          <?php
+            $Portfolio = DB::table('portfolios')->where('home','1')->where('big','0')->limit('4')->get();
+            ?>
+          @foreach ($Portfolio as $Portfolio)
           <div class="image-grid-col-1 image-curve">
             <div class="containerm">
               <div class="card">
                 <div class="front">
                   <img
                     class="image-curve"
-                    src="{{asset('version/assets/images/category-wood-trend-wide-plank.webp')}}"
-                    alt="architecture"
+                    src="{{url('/')}}/uploads/portfolios/{{$Portfolio->image_one}}"
+                    alt="{{$Portfolio->name}}"
                   />
                 </div>
                 <div class="back">
-                  <h1>Attached pad</h1>
+                  <h1>{{$Portfolio->name}}</h1>
                 </div>
               </div>
             </div>
           </div>
-          <div class="image-grid-col-1 image-curve">
-            <div class="containerm">
-              <div class="card">
-                <div class="front">
-                  <img
-                    class="image-curve"
-                    src="{{asset('version/assets/images/category-wood-type-engineered.webp')}}"
-                    alt="architecture"
-                  />
-                </div>
-                <div class="back">
-                  <h1>Stone look</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="image-grid-col-1 image-curve">
-            <div class="containerm">
-              <div class="card">
-                <div class="front">
-                  <img
-                    class="image-curve"
-                    src="{{asset('version/assets/images/category-wood-type-bamboo.webp')}}"
-                    alt="architecture"
-                  />
-                </div>
-                <div class="back">
-                  <h1>Water resistant</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="image-grid-col-1 image-curve">
-            <div class="containerm">
-              <div class="card">
-                <div class="front">
-                  <img
-                    class="image-curve"
-                    src="{{asset('version/assets/images/610a3de6457a2.png')}}"
-                    alt="architecture"
-                  />
-                </div>
-                <div class="back">
-                  <h1>Pet friendly</h1>
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
         <a href="#" class="btn btn-primary">
           <span class="text text-1">Visit gallery</span>
@@ -329,15 +295,16 @@
         <div class="container">
           {{-- <div class="quote trans360">”</div> --}}
           <p class="headline-2 testi-text">
-            Aqua Floor And Laminate Flooring Is A Cheap Alternative To Hardwood Flooring. Want Lower Prices And Lower Maintenance?
+
+            {!!html_entity_decode($sectionhome->content)!!}
           </p>
           {{-- <div class="quote">”</div> --}}
         </div>
         <div class="margin-center margin-top-50">
             <center>
-                <a href="#" class="btn btn-secondary margin-center">
-                    <span class="text text-1">Request Free Samples</span>
-                    <span class="text text-2" aria-hidden="true">Request Free Samples</span>
+                <a href="{{$sectionhome->action}}" class="btn btn-secondary margin-center">
+                    <span class="text text-1">{{$sectionhome->action_name}}</span>
+                    <span class="text text-2" aria-hidden="true">{{$sectionhome->action_name}}</span>
                 </a>
             </center>
         </div>
