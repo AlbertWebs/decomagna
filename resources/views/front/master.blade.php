@@ -427,7 +427,7 @@
       $(".royaly").owlCarousel({
         margin: 10,
         loop: true,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 2000,
         autoplayHoverPause: true,
         responsive: {
