@@ -87,9 +87,7 @@
           </p>
 
           <div class="royaly owl-carousel margin-top-100">
-            <?php
-                 $Categories = DB::table('categories')->get();
-            ?>
+            <?php $Categories = DB::table("categories")->get(); ?>
             @foreach ($Categories as $cat)
             <div class="royalty_child">
               <img
@@ -131,9 +129,10 @@
       <!--
       - #ABOUT
     -->
-      <?php
-          $SectionHome = DB::table('sections')->where('page','home')->where('position','1st_banner')->get();
-      ?>
+      <?php $SectionHome = DB::table("sections")
+          ->where("page", "home")
+          ->where("position", "1st_banner")
+          ->get(); ?>
       @foreach ($SectionHome as $sectionhome)
       <section class="section about" aria-labelledby="about-label" id="about" >
         <div class="container">
@@ -174,15 +173,16 @@
       - #SPECIAL DISH
     -->
 
-    <?php
-        $SectionHome = DB::table('sections')->where('page','home')->where('position','2nd_banner')->get();
-    ?>
+    <?php $SectionHome = DB::table("sections")
+        ->where("page", "home")
+        ->where("position", "2nd_banner")
+        ->get(); ?>
     @foreach ($SectionHome as $sectionhome)
 
       <section class="special-dish text-center" aria-labelledby="dish-label">
         <div class="special-dish-banner">
           <img
-            src="{{asset('uploads/61b9ad5597305.jpg')}}"
+            src="{{url('/')}}/uploads/sections/{{$sectionhome->image}}"
             width="670"
             height="570"
             loading="lazy"
@@ -319,9 +319,10 @@
       - #TESTIMONIALS
     -->
 
-    <?php
-        $SectionHome = DB::table('sections')->where('page','home')->where('position','3rd_banner')->get();
-    ?>
+    <?php $SectionHome = DB::table("sections")
+        ->where("page", "home")
+        ->where("position", "3rd_banner")
+        ->get(); ?>
     @foreach ($SectionHome as $sectionhome)
       <section class="section testi text-center has-bg-image" style="background-image: url('{{asset('uploads/sections/')}}/{{$sectionhome->image}}')" aria-label="testimonials">
         <div class="container">
@@ -424,9 +425,7 @@
         <div class="container">
           <h2 class="headline-1 section-title">Decomagna Satisfied Clients</h2>
           <ul class="grid-list gridme owl-carousel">
-            <?php
-                $Partners = DB::table('partners')->get();
-            ?>
+            <?php $Partners = DB::table("partners")->get(); ?>
             @foreach ($Partners as $partners)
             <li class="feature-item">
               <div class="feature-card">
@@ -449,9 +448,7 @@
       - #EVENT
     -->
 
-    <?php
-        $Blog = DB::table('blogs')->get();
-    ?>
+    <?php $Blog = DB::table("blogs")->get(); ?>
 
 
       <section class="section event blogd" aria-label="event">
