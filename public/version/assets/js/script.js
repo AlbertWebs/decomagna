@@ -1,6 +1,16 @@
 "use strict";
 
 /**
+ * add event listener on multiple elements
+ */
+
+const addEventOnElements = function (elements, eventType, callback) {
+    for (let i = 0, len = elements.length; i < len; i++) {
+      elements[i].addEventListener(eventType, callback);
+    }
+  };
+
+/**
  * PRELOAD
  *
  * loading will be end after document is loaded
@@ -8,20 +18,12 @@
 
 const preloader = document.querySelector("[data-preaload]");
 
-window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
-});
+setTimeout(function() {
+    preloader.classList.add("loaded");
+    document.body.classList.add("loaded");
+    }, 1000);
 
-/**
- * add event listener on multiple elements
- */
 
-const addEventOnElements = function (elements, eventType, callback) {
-  for (let i = 0, len = elements.length; i < len; i++) {
-    elements[i].addEventListener(eventType, callback);
-  }
-};
 
 /**
  * NAVBAR

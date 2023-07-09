@@ -1059,6 +1059,8 @@
     font-size: 18px;
     color: #e6f3ff;
     margin-top: 20px;
+    width: fit-content;
+    height: 6vh;
   }
 
   .wrapper .strong {
@@ -1068,10 +1070,11 @@
     font-weight: inherit;
     display: flex;
     font-weight: 400;
+    right: auto;
   }
 
   .wrapper .space {
-    padding: 0.1em;
+    padding: 5px;
   }
 
   .wrapper :is(.in, .out) {
@@ -1554,17 +1557,28 @@
   }
 
   .feature-item:nth-child(2n + 1) .feature-card {
-    background-color: var(--eerie-black-3);
+    background-color: white;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    margin: 10px;
   }
 
   .feature-item:nth-child(2n) .feature-card {
-    background-color: var(--smoky-black-3);
+    background-color: white;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    margin: 10px;
   }
 
   .feature-card .card-icon {
-    max-width: max-content;
-    margin-inline: auto;
+    width: 100%;
+    margin: auto;
+    height: 20vh;
     transition: var(--transition-2);
+  }
+
+  .feature-card .card-icon > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .feature-card:hover .card-icon {
@@ -3211,6 +3225,7 @@
     .faq-law > div > a {
         background-color: rgb(238,238,240);
         padding: 10px;
+        margin-top: auto;
     }
 
     .faq-law > div > a > span:first-of-type {

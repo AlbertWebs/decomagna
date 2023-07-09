@@ -23,25 +23,30 @@
 
                 <div class="banner_overview">
                     <div class="banner_overview_content">
-                        <div class="banner_overview_content_image owl-carousel">
+                        {{-- <div class="banner_overview_content_image owl-carousel">
                             @foreach ($Slider as $slider)
                             <img src="{{url('/')}}/uploads/slider/{{$slider->thumbnail}}" alt="" />
                             @endforeach
 
-                        </div>
+                        </div> --}}
 
                         <h1>ELEVATE YOUR SPACE, PREMIUM FLOORS</h1>
 
                         <div class="gotoro">
                             <h4 class="wrapper">
                                 <strong class="strong" data-letter-effect>Made in Belgium</strong>
-                                <strong class="strong" data-letter-effect>Nothing beats the feel of hardwood
-                                    floors!</strong>
-                                <strong class="strong" data-letter-effect>Making your houses more beautiful.</strong>
-                                <strong class="strong" data-letter-effect>We provide all kinds of flooring
-                                    services.</strong>
-                                <strong class="strong" data-letter-effect>Quality floors that will remain a
-                                    lifetime.</strong>
+                                <strong class="strong" data-letter-effect>
+                                    Nothing beats the feel of hardwood floors!
+                                </strong>
+                                <strong class="strong" data-letter-effect>
+                                    Making your houses more beautiful.
+                                </strong>
+                                <strong class="strong" data-letter-effect>
+                                    We provide all kinds of flooring services.
+                                </strong>
+                                <strong class="strong" data-letter-effect>
+                                    Quality floors that will remain a lifetime.
+                                </strong>
                             </h4>
                         </div>
 
@@ -220,9 +225,10 @@
                                         src="{{url('/')}}/uploads/portfolios/{{$Portfolio->image_one}}"
                                         alt="{{$Portfolio->name}}" />
                                 </div>
-                                <div class="back" style="max-height: 100%; overflow:scroll;">
-                                    <h1>{{$Portfolio->name}}</h1>
-                                    <p style="max-width:500px">
+                                <div class="back"
+                                    style="padding: 20px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                    <h1 style="margin-top: 10px;">{{$Portfolio->name}}</h1>
+                                    <p style="max-width:500px; max-height: 80%; overflow:scroll; margin-top: 10px;">
                                         {!!html_entity_decode($Portfolio->meta)!!}
                                     </p>
                                 </div>
@@ -350,8 +356,8 @@
                         <li class="feature-item">
                             <div class="feature-card">
                                 <div class="card-icon">
-                                    <img src="{{url('/')}}/uploads/partners/{{$partners->image}}" width="100"
-                                        height="80" loading="lazy" alt="{{$partners->name}}" />
+                                    <img src="{{url('/')}}/uploads/partners/{{$partners->image}}" loading="lazy"
+                                        alt="{{$partners->name}}" />
                                 </div>
                             </div>
                         </li>
@@ -431,32 +437,32 @@
                                 </a>
                             </div>
                             <div class="text-black-blacky">
-                                <h3>Can you buy high quality but cheap waterproof laminate flooring here?</h3>
+                                <h3>How can AC rating laminate floorings be chosen and purchased effectively?</h3>
                                 <p>If you are looking for high-quality but cheap waterproof laminate flooring​, you have
                                     come to the right place. We are a leading supplier of cheap waterproof laminate
                                     flooring, and we are committed to ...</p>
                                 <a href="#">
-                                    <span>06/08</span>
+                                    <span>05/11</span>
                                     <span>2023</span>
                                 </a>
                             </div>
                             <div class="text-black-blacky">
-                                <h3>Can you buy high quality but cheap waterproof laminate flooring here?</h3>
-                                <p>If you are looking for high-quality but cheap waterproof laminate flooring​, you have
-                                    come to the right place. We are a leading supplier of cheap waterproof laminate
-                                    flooring, and we are committed to ...</p>
+                                <h3>Is high gloss laminate flooring waterproof?</h3>
+                                <p>With the increasing trend of modern decoration, people have higher and higher
+                                    requirements for indoor floor materials. One popular indoor flooring material is a
+                                    high gloss waterproof flooring​. While ...</p>
                                 <a href="#">
-                                    <span>06/08</span>
+                                    <span>04/13</span>
                                     <span>2023</span>
                                 </a>
                             </div>
                             <div class="text-black-blacky">
-                                <h3>Can you buy high quality but cheap waterproof laminate flooring here?</h3>
-                                <p>If you are looking for high-quality but cheap waterproof laminate flooring​, you have
-                                    come to the right place. We are a leading supplier of cheap waterproof laminate
-                                    flooring, and we are committed to ...</p>
+                                <h3>Is High Gloss Laminate Flooring Durable?</h3>
+                                <p>When it comes to enhancing your home's interior design, high gloss laminate flooring​
+                                    is a great option. High gloss laminate flooring is a type of floor covering that
+                                    offers elegance and beauty with i...</p>
                                 <a href="#">
-                                    <span>06/08</span>
+                                    <span>03/23</span>
                                     <span>2023</span>
                                 </a>
                             </div>
