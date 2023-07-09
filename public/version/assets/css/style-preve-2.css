@@ -700,7 +700,7 @@
 
   .header.active {
     padding-block: 20px;
-    background-color: rgb(87,68,57);
+    background-color: var(--eerie-black-4);
     color: white;
     border-color: var(--black-alpha-15);
   }
@@ -755,7 +755,7 @@
 
   .navbar {
     position: fixed;
-    background-color: rgb(87,68,57);
+    background-color: var(--smoky-black-1);
     color: white;
     top: 0;
     left: -360px;
@@ -988,18 +988,18 @@
 
   .banner_overview_circle {
     position: absolute;
-    width: 168%;
+    width: 100%;
     background-color: white;
-    clip-path: ellipse(50% 100% at 50% 100%);
+    clip-path: ellipse(60% 40% at 50% 100%);
     height: 100%;
     bottom: 0;
     z-index: -1;
-    transform: translateY(80%);
+    transform: translateY(15%);
   }
 
   .control {
     position: absolute;
-    top: 90%;
+    top: 85%;
     z-index: 2;
   }
 
@@ -1241,7 +1241,7 @@
   }
 
   .about .container {
-    display: flex;
+    display: grid;
     gap: 120px;
   }
 
@@ -2114,44 +2114,6 @@
     gap: 5px;
   }
 
-  .bg-white-whity {
-    background-color: white;
-  }
-
-  .text-black-blacky {
-    color: rgb(87,68,57);
-  }
-
-  .pad-container-bottom {
-    margin-bottom: 100px;
-  }
-
-
-  .scroll-down {
-    background-color: #E8CAB0;
-    border-radius: 10px;
-
-    animation: scrollDown 2.5s linear infinite alternate;
-  }
-
-  .scroll-down img { width: 22px; }
-
-  .scroll-down:is(:hover, :focus-visible) {
-    background-color: #9D6C37;
-  }
-
-
-  .youtube-div {
-    width: 90%;
-    height: 50vh;
-    margin: 40px auto 0 auto;
-  }
-
-  @keyframes scrollDown {
-    0% { transform: translateY(-12px); }
-    100% { transform: translateY(12px); }
-  }
-
   /*-----------------------------------*\
     #MEDIA QUERIES
   \*-----------------------------------*/
@@ -2967,11 +2929,11 @@
     }
 
     .control.prev {
-      left: 30%;
+      left: 10%;
     }
 
     .control.next {
-      right: 30%;
+      right: 10%;
     }
 
     .control i {
@@ -3067,17 +3029,6 @@
     .banner_overview_content_image {
       margin-top: 100px;
     }
-
-    .about .container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .youtube-div {
-        width: 98%;
-        height: 40vh;
-        margin: 40px auto 0 auto;
-      }
 
     .top-topper {
       margin-top: 50px;
@@ -3181,83 +3132,4 @@
 
     .copyright{
         font-size:15px;
-    }
-
-    .faq-law {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2%;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .faq-law > div {
-        width: 49%;
-        border: 1px solid lightgray;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .faq-law > div > h3 {
-        margin: 10px;
-    }
-
-    .faq-law > div > P {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .faq-law > div > a {
-        background-color: rgb(238,238,240);
-        padding: 10px;
-    }
-
-    .faq-law > div > a > span:first-of-type {
-        font-weight: 600;
-    }
-
-    .faq-law > div:hover > a {
-        background-color: rgb(230,102,34);
-    }
-
-    @media (max-width: 768px) {
-
-        .faq-law {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0%;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .faq-law > div {
-            width: 100%;
-            border: 1px solid lightgray;
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .faq-law > div > h3 {
-            margin: 10px;
-        }
-
-        .faq-law > div > P {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-
-        .faq-law > div > a {
-            background-color: rgb(238,238,240);
-            padding: 10px;
-        }
-
-        .faq-law > div > a > span:first-of-type {
-            font-weight: 600;
-        }
-
-        .faq-law > div:hover > a {
-            background-color: rgb(230,102,34);
-        }
     }

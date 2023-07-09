@@ -106,7 +106,7 @@
 
                     </div>
 
-                    <img src="{{url('/')}}/uploads/sections/Laminate.png" width="246" height="412"
+                    <img src="{{asset('version/assets/images/OIP__1_-removebg-preview.png')}}" width="246" height="412"
                         loading="lazy" alt="shape" class="shape shape-1 move-anim" />
                 </div>
 
@@ -149,9 +149,10 @@
                             data-parallax-speed="1" />
 
                         <div class="youtube-div">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rw34dko8ty8">
-
-                            </iframe>
+                            <video width="100%" height="100%" controls>
+                                <source src="https://www.youtube.com/watch?v=rw34dko8ty8" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </figure>
                 </div>
@@ -206,7 +207,7 @@
     -->
 
             <section class="section menu" aria-label="menu-label" id="menu">
-                <h2 class="headline-1 section-title text-center">Our Project Gallery</h2>
+                <h2 class="headline-1 section-title text-center">Our gallery</h2>
                 <div class="image-grid">
                     <?php
             $Portfolio = DB::table('portfolios')->where('home','1')->where('big','1')->limit('1')->get();
