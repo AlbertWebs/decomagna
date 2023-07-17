@@ -22,6 +22,7 @@ use App\Http\Controllers\BlogController;
 // });
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [HomeController::class, 'products']);
+Route::get('/product', [HomeController::class, 'product']);
 Route::get('/categories', [HomeController::class, 'categories']);
 Route::get('/portfolio', [HomeController::class, 'portfolio']);
 Route::get('/blogs', [HomeController::class, 'blog']);
