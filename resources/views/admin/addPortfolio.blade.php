@@ -69,6 +69,24 @@
                             </div>
 
                             <div class="row">
+
+                                {{--  --}}
+                                <div class="input-field col s12">
+                                    <select required name="category" class="icons" id="mydiv">
+                                        <option value="" disabled selected>Choose your Category</option>
+                                        @foreach ($Category as $Categories)
+                                        <option value="{{$Categories->id}}" data-icon="{{url('/')}}/uploads/categories/{{$Categories->image}}" class="circle">{{$Categories->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose Category</label>
+                                </div>
+                                <a href="#ex1" rel="modal:open"> <strong>+ Add New Category</strong> </a>
+                                {{--  --}}
+                                <div class="section-space col s12"></div>
+                            </div>
+
+
+                            <div class="row">
                                 <div class="input-field col s12">
                                     <textarea required name="meta" class="materialize-textarea"></textarea>
                                     <label for="textarea1">Meta Descriptions:</label>

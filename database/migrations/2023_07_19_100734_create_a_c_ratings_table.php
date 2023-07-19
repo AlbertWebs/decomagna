@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('a_c_ratings', function (Blueprint $table) {
             $table->id();
             $table->string('category_id')->nullable();
+            $table->string('slung')->nullable();
             $table->string('title')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

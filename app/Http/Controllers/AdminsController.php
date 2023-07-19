@@ -643,6 +643,10 @@ class AdminsController extends Controller
         $Product->slung = Str::slug($request->title);
         $Product->meta = $request->meta;
         $Product->category = $request->category;
+        $Product->species = $request->species;
+        $Product->color = $request->color;
+        $Product->a_c_ratings = $request->a_c_ratings;
+        $Product->thickness = $request->thickness;
         $Product->stock = $request->stock;
         $Product->price_raw = $request->price;
         $Product->price = $request->price;
@@ -805,6 +809,7 @@ class AdminsController extends Controller
         $Portfolio->slung = Str::slug($request->title);
         $Portfolio->meta = $request->meta;
         $Portfolio->content = $request->content;
+        $Portfolio->category_id = $request->category;
         $Portfolio->image_one = $image_one;
         $Portfolio->image_two = $image_two;
         $Portfolio->image_three = $image_three;
@@ -2421,6 +2426,16 @@ class AdminsController extends Controller
         activity()->log(' Deleted Section Number '.$id.'');
         DB::table('slider')->where('id',$id)->delete();
         return Redirect::back();
+    }
+
+    public function slungify(){
+        $AC = DB::table('a_c_ratings')->get();
+        foreach ($AC as $key => $value) {
+           $newSlung = Str::slug($value->title);
+           $updateDetails = array('slung' => $newSlung);
+           DB::table('a_c_ratings')->where('id',$value->id)->update($updateDetails);
+        }
+        return "Done";
     }
 
 }

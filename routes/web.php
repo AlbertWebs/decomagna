@@ -24,6 +24,10 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [HomeController::class, 'products']);
 Route::get('/contact-us', [HomeController::class, 'contact']);
 Route::get('/products/{slung}', [HomeController::class, 'categories']);
+Route::get('/products/thickness/{category}/{slung}', [HomeController::class, 'thickness']);
+Route::get('/products/ac-rating/{category}/{slung}', [HomeController::class, 'ac']);
+Route::get('/products/color/{category}/{slung}', [HomeController::class, 'color']);
+Route::get('/products/species/{category}/{slung}', [HomeController::class, 'species']);
 Route::get('/product', [HomeController::class, 'product']);
 Route::get('/categories', [HomeController::class, 'categories']);
 Route::get('/portfolio', [HomeController::class, 'portfolio']);
@@ -248,6 +252,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::get('delete_user/{id}', [AdminsController::class, 'delete_user']);
         Route::get('switchRole/{id}', [AdminsController::class, 'switchRole']);
         Route::get('switchStatus/{id}', [AdminsController::class, 'switchStatus']);
+        Route::get('slungify', [AdminsController::class, 'slungify']);
+
 
         Route::get('updateSlung', [AdminsController::class, 'updateSlung']);
 

@@ -201,7 +201,7 @@
                 <p>{{$Thick->title}}</p>
                 <div class="preview_laminate_thickness_right_div_div">
                     <h1>
-                        <a href="allproduct.html"
+                        <a href="{{url('/')}}/products/thickness/{{$Category->slung}}/{{$Thick->title}}"
                             ><ion-icon name="eye-outline"></ion-icon
                         ></a>
                     </h1>
@@ -228,10 +228,12 @@
               $AC = DB::table('a_c_ratings')->where('category_id',$Category->id)->get();
             ?>
             @foreach ($AC as $ac)
-            <div class="preview_laminate_thickness_right_div jan">
-                <img src="{{url('/')}}/uploads/ac_ratings/{{$ac->image}}" alt="Image 3" />
-                <p class="ac-text">{{$ac->title}}</p>
-            </div>
+                <div class="preview_laminate_thickness_right_div jan">
+                    <img src="{{url('/')}}/uploads/ac_ratings/{{$ac->image}}" alt="Image 3" />
+                        <p class="ac-text">
+                            <a href="{{url('/')}}/products/ac-rating/{{$Category->slung}}/{{$ac->slung}}">{{$ac->title}}</a>
+                        </p>
+                </div>
             @endforeach
         </div>
     </div>
@@ -263,7 +265,9 @@
                         <div>
                             <img src="{{url('/')}}/uploads/colors/{{$color->image}}" alt="" />
                         </div>
-                        <p>{{$color->title}}</p>
+                        <p>
+                            <a href="{{url('/')}}/products/color/{{$Category->slung}}/{{$color->title}}">{{$color->title}}</a>
+                        </p>
                     </div>
                     @endforeach
                 </div>
@@ -284,7 +288,9 @@
                         <div>
                             <img src="{{url('/')}}/uploads/species/{{$species->image}}" alt="" />
                         </div>
-                        <p>{{$species->title}}</p>
+                        <p>
+                            <a href="{{url('/')}}/products/species/{{$Category->slung}}/{{$species->title}}">{{$species->title}}</a>
+                        </p>
                     </div>
                     @endforeach
                 </div>
@@ -304,28 +310,18 @@
     </div>
 
     <div class="real_scene_title">
-        <h3>Real Scene</h3>
+        <h3>Real Scenes Portfolio</h3>
     </div>
 
     <div class="real_scene">
+        <?php
+           $Portfolio = DB::table('portfolios')->where('category_id',$Category->id)->get();
+        ?>
+        @foreach ($Portfolio as $portfolio)
         <div>
-            <img src="{{asset('version/assets/images/r1.jpg')}}" alt="" />
+            <img src="{{url('/')}}/uploads/portfolios/{{$portfolio->image_one}}" alt="" />
         </div>
-        <div>
-            <img src="{{asset('version/assets/images/r2.jpg')}}" alt="" />
-        </div>
-        <div>
-            <img src="{{asset('version/assets/images/r3.jpg')}}" alt="" />
-        </div>
-        <div>
-            <img src="{{asset('version/assets/images/r4.jpg')}}" alt="" />
-        </div>
-        <div>
-            <img src="{{asset('version/assets/images/r5.jpg')}}" alt="" />
-        </div>
-        <div>
-            <img src="{{asset('version/assets/images/r6.jpg')}}" alt="" />
-        </div>
+        @endforeach
     </div>
 
     <div class="scene-map">

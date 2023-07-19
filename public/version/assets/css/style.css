@@ -5962,3 +5962,6 @@
     text-align: center;
     line-height:normal;
 }
+.text-center{
+    text-align: center !important;
+}
