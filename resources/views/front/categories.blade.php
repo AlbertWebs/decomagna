@@ -255,107 +255,38 @@
                     </p>
                 </div>
                 <div class="slider-content_version_right">
+                    <?php
+                        $Color = DB::table('colors')->where('category_id',$Category->id)->get();
+                    ?>
+                    @foreach ($Color as $color)
                     <div>
                         <div>
-                            <img src="{{asset('version/assets/images/c1.jpg')}}" alt="" />
+                            <img src="{{url('/')}}/uploads/colors/{{$color->image}}" alt="" />
                         </div>
-                        <p>Black</p>
+                        <p>{{$color->title}}</p>
                     </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/c2.jpg')}}" alt="" />
-                        </div>
-                        <p>Brown</p>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/c3.jpg')}}" alt="" />
-                        </div>
-                        <p>Golden</p>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/c4.jpg')}}" alt="" />
-                        </div>
-                        <p>Gray</p>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/c5.jpg')}}" alt="" />
-                        </div>
-                        <p>Red</p>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/c6.jpg')}}" alt="" />
-                        </div>
-                        <p>White</p>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="slider-content_version hidden" id="slide2">
                 <div class="slider-content_version_left">
-                    <h3>Selection Of Color</h3>
+                    <h3>Selection Of Species</h3>
                     <p>
-                        We've prepared a variety of color options, and
-                        the tan laminate makes your room look bigger and
-                        more open. You'll also get that wonderful, rich
-                        warmth from slightly darker tones. In addition
-                        to looking chic and stylish, the gray laminate
-                        sets the tone for a cool modern home.
+                        {!!html_entity_decode($Category->species)!!}
                     </p>
                 </div>
                 <div class="slider-content_version_right">
+                    <?php
+                    $Specie = DB::table('species')->where('category_id',$Category->id)->get();
+                    ?>
+                    @foreach ($Specie as $species)
                     <div>
                         <div>
-                            <img src="{{asset('version/assets/images/w1.jpg')}}" alt="" />
+                            <img src="{{url('/')}}/uploads/species/{{$species->image}}" alt="" />
                         </div>
-                        <p>Acacia</p>
+                        <p>{{$species->title}}</p>
                     </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/w2.jpg')}}" alt="" />
-                        </div>
-                        <p>Cherry</p>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/w3.jpg')}}" alt="" />
-                        </div>
-                        <p>Eucalyptus</p>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/w10.jpg')}}" alt="" />
-                        </div>
-                        <p>Hickory</p>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/w7.jpg')}}" alt="" />
-                        </div>
-                        <p>Mahogany</p>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/w6.jpg')}}" alt="" />
-                        </div>
-                        <p>Murple</p>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/w8.jpg')}}" alt="" />
-                        </div>
-                        <p>Oak</p>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img src="{{asset('version/assets/images/w9.jpg')}}" alt="" />
-                        </div>
-                        <p>Walnut</p>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
