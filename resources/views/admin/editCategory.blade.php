@@ -18,7 +18,7 @@
         @include('admin.sidebar')
 
         <!--== BODY INNER CONTAINER ==-->
-        
+
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
@@ -29,7 +29,7 @@
                     <li class="page-back"><a href="{{url('/')}}/admin/categories"><i class="fa fa-backward" aria-hidden="true"></i> All Categories</a>
                     </li>
                 </ul>
-               
+
             </div>
             <div class="sb2-2-add-blog sb2-2-1">
                 <h2>Edit {{$Category->title}}</h2>
@@ -38,7 +38,7 @@
                     @if(Session::has('message'))
                                   <div class="alert alert-success">{{ Session::get('message') }}</div>
                    @endif
-   
+
                    @if(Session::has('messageError'))
                                   <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
                    @endif
@@ -52,11 +52,16 @@
                         </div>
                     </div>
                     <div class="row">
+
                         <div class="input-field col s12">
+                            <label for="textarea1">Descriptions:</label>
+                            <br>
                             <textarea required id="article-ckeditor" name="content" class="materialilze-textarea" placeholder="content">{{$Category->content}}</textarea>
-                            {{-- <label for="textarea1">Blog Descriptions:</label> --}}
+
+
                         </div>
                     </div><br><br>
+
                     <script src="https://amanivehiclesounds.co.ke/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                     <script>
                         CKEDITOR.replace( 'article_ckeditor' );

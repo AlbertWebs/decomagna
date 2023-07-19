@@ -22,6 +22,7 @@ use App\Http\Controllers\BlogController;
 // });
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [HomeController::class, 'products']);
+Route::get('/products/{slung}', [HomeController::class, 'categories']);
 Route::get('/product', [HomeController::class, 'product']);
 Route::get('/categories', [HomeController::class, 'categories']);
 Route::get('/portfolio', [HomeController::class, 'portfolio']);
@@ -153,6 +154,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::get('addCategory', [AdminsController::class, 'addCategory']);
         Route::post('add_Category', [AdminsController::class, 'add_Category']);
         Route::get('editCategories/{id}', [AdminsController::class, 'editCategories']);
+        Route::get('extras/{id}', [AdminsController::class, 'extras']);
         Route::post('edit_Category/{id}', [AdminsController::class, 'edit_Category']);
         Route::get('deleteCategory/{id}', [AdminsController::class, 'deleteCategory']);
 

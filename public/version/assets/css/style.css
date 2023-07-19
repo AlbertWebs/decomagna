@@ -2301,7 +2301,7 @@
     height: 50vh;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    /* margin: auto; */
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -2315,16 +2315,16 @@
     width: 100%;
     min-height: 100%;
     flex-direction: column;
-    color: rgb(132,118,110) !important;
+    color: rgb(87,68,57) !important;
   }
 
   .product_version_before_slider_right_h3 {
     color: rgb(39,30,25);
-    margin: 20px;
+    /* margin: 20px; */
   }
 
   .before_slider_right > p {
-    color: rgb(132,118,110) !important;
+    color: rgb(87,68,57) !important;
     margin: 20px;
   }
 
@@ -2351,7 +2351,7 @@
   }
 
   .preview_laminate_thickness_left > p {
-    color: rgb(132,118,110) !important;
+    color: rgb(87,68,57) !important;
     margin: 20px 0;
   }
 
@@ -2485,7 +2485,7 @@
       }
 
       .slider-content_version_left > p {
-        color: rgb(132,118,110);
+        color: rgb(87,68,57);
       }
 
       .slider-content_version_right {
@@ -2815,7 +2815,7 @@
       }
 
       .product_version_before_slider_right > p {
-        color: rgb(132,118,110);
+        color: rgb(87,68,57);
         margin: 20px;
       }
 
@@ -2843,7 +2843,7 @@
       }
 
       .preview_laminate_thickness_left > p {
-        color: rgb(132,118,110);
+        color: rgb(87,68,57);
         margin: 20px 0;
       }
 
@@ -2982,7 +2982,7 @@
   }
 
   .slider-content_version_left > p {
-    color: rgb(132,118,110);
+    color: rgb(87,68,57);
   }
 
   .slider-content_version_right {
@@ -3317,7 +3317,7 @@
       }
 
       .product_version_before_slider_right > p {
-        color: rgb(132,118,110);
+        color: rgb(87,68,57);
         margin: 20px;
       }
 
@@ -3345,7 +3345,7 @@
       }
 
       .preview_laminate_thickness_left > p {
-        color: rgb(132,118,110);
+        color: rgb(87,68,57);
         margin: 20px 0;
       }
 
@@ -3484,7 +3484,7 @@
   }
 
   .slider-content_version_left > p {
-    color: rgb(132,118,110);
+    color: rgb(87,68,57);
   }
 
   .slider-content_version_right {
@@ -4120,7 +4120,7 @@
     }
 
     .rifi {
-        background-color: rgb(132,118,110);
+        background-color: rgb(87,68,57);
     }
 
     .more_diti {
@@ -4444,7 +4444,7 @@
         }
 
         .rifi {
-            background-color: rgb(132,118,110);
+            background-color: rgb(87,68,57);
         }
 
         .more_diti {
@@ -4771,7 +4771,7 @@
         }
 
         .rifi {
-            background-color: rgb(132,118,110);
+            background-color: rgb(87,68,57);
         }
 
         .more_diti {
@@ -5946,4 +5946,9 @@
         .faq-law > div:hover > a {
             background-color: rgb(230,102,34);
         }
+    }
+
+    .text-black{
+        /* color:#000000; */
+        color:rgb(87,68,57);
     }

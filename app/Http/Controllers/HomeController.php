@@ -33,10 +33,10 @@ class HomeController extends Controller
     }
 
 
-    public function categories()
+    public function categories($slung)
     {
-        $Products = DB::table('products')->get();
-        return view('front.categories', compact('Products'));
+        $Categories = DB::table('categories')->where('slung',$slung)->get();
+        return view('front.categories', compact('Categories'));
     }
 
 

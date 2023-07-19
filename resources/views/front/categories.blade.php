@@ -1,41 +1,35 @@
 @extends('front.master')
 
 @section('content')
+@foreach ($Categories as $Category)
 {{--  --}}
 <div class="product_version">
     <span class="product_verion_link">
-        <a href="index.html"
+        <a href="{{url('/')}}"
             >Home <ion-icon name="chevron-forward-outline"></ion-icon
         ></a>
-        <a href="index.html">Laminate flooring</a>
+
+        <a href="{{url('/')}}">{{$Category->title}}</a>
     </span>
 
-    <h2 class="product_version_h2">LAMINATE FLOORING</h2>
+    <h2 class="product_version_h2">{{$Category->title}}</h2>
 
     <h3 class="product_version_h3">
-        Faux wood flooring is currently the hottest trend of flooring.
-        Although there are other rising trends, such as vinyl or ceramic
-        tiles, laminate flooring is a low-maintenance and durable
-        solution, and it is still the main wood flooring substitute.
-        Richwood's laminate flooring provides the texture of real logs,
-        from every tree to every board, from visual design to
-        installation functionality, we never slack off.
+        {!!html_entity_decode($Category->content)!!}
     </h3>
     <h3 class="product_version_h3_2">
-        The cheap, low-maintenance Richwood laminate flooring can
-        realize the wood-grain flooring of your dreams.
+        {!!html_entity_decode($Category->heading_two)!!}
     </h3>
 
     <div class="product_version_div_one">
         <div class="product_version_div_one_left">
-            <img src="{{asset('version/assets/images/wordup.png')}}" alt="" />
+            <img src="{{url('/')}}/uploads/categories/{{$Category->image}}" alt="{{$Category->title}}" />
         </div>
         <div class="product_version_div_one_right">
             <div class="product_version_div_one_right_header">
                 <img src="{{asset('version/assets/images/rocky.png')}}" alt="" />
                 <h3>
-                    LAMINATE FLOORING IS COMPOSED OF MANY LAYERS,
-                    INCLUDING:
+                    {!!html_entity_decode($Category->heading_two_section)!!}
                 </h3>
             </div>
 
@@ -104,34 +98,31 @@
             </div>
         </div>
     </div>
+    <?php
+        $Extras = DB::table('extras')->where('category_id',$Category->id)->get();
+        $Order = 1;
+    ?>
+    @if($Extras->isEmpty())
 
-    <h3 class="product_version_h_link">
-        WHY YOU WOULD LIKE OUR LAMINATE FLOORING
+    @else
+    <h3 class="product_version_h_link" style="text-transform: uppercase">
+        WHY YOU WOULD LIKE OUR {{$Category->title}}
     </h3>
 
-    <div class="product_version_before_slider">
+    @foreach ($Extras as $extra)
+      @if($Order % 2 == 0)
+      <div class="product_version_before_slider" style="background-color: #ffffff !important">
         <div class="product_version_before_slider_left">
             <div class="great_order">
                 <div class="slider-container" id="slider1">
                     <div class="slider">
-                        <div class="slide">
+                        <div class="slides">
                             <img
-                                src="{{asset('version/assets/images/dog.png')}}"
+                                src="{{url('/')}}/uploads/extras/{{$extra->image}}"
                                 alt="Image 1"
                             />
                         </div>
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/pexels-photo-2549018.jpeg')}}"
-                                alt="Image 2"
-                            />
-                        </div>
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/pexels-photo-2549018.jpeg')}}"
-                                alt="Image 3"
-                            />
-                        </div>
+
                         <!-- Add more slide elements with appropriate images -->
                     </div>
 
@@ -143,169 +134,50 @@
         </div>
         <div class="product_version_before_slider_right">
             <h3 class="product_version_before_slider_right_h3">
-                Durability And Abrasion Resistance
+                {{$extra->title}}
             </h3>
-            <p>
-                The laminate has a strong wear-resistant layer, the
-                overlayer is made of melamine, and the laminated
-                wear-resistant covering paper is produced under high
-                temperature and pressure, thus the covering is highly
-                resistant. Protects the floor from scratches, dents,
-                wear, burns and stains and provides a realistic look and
-                feel to the floor. The durability of Richwood laminate
-                flooring makes it suitable for any scenario, especially
-                in high-traffic commercial uses or families with
-                children and pets.
+            <p class="text-black">
+                {!!html_entity_decode($extra->content)!!}
             </p>
         </div>
-    </div>
+      </div>
+        @else
+        <div class="product_version_before_slider" >
+            <div class="product_version_before_slider_left">
+                <div class="great_order">
+                    <div class="slider-container" id="slider1">
+                        <div class="slider">
+                            <div class="slides">
+                                <img
+                                    src="{{url('/')}}/uploads/extras/{{$extra->image}}"
+                                    alt="Image 1"
+                                />
+                            </div>
 
-    <div class="product_version_before_slider">
-        <div class="product_version_before_slider_left">
-            <div class="great_order">
-                <div class="slider-container" id="slider1">
-                    <div class="slider">
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/coal1.png')}}"
-                                alt="Image 1"
-                            />
+                            <!-- Add more slide elements with appropriate images -->
                         </div>
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/col2.png')}}"
-                                alt="Image 2"
-                            />
-                        </div>
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/col3.png')}}"
-                                alt="Image 3"
-                            />
-                        </div>
-                        <!-- Add more slide elements with appropriate images -->
-                    </div>
 
-                    <div class="preview">
-                        <!-- Preview images will be generated dynamically through JavaScript -->
+                        <div class="preview">
+                            <!-- Preview images will be generated dynamically through JavaScript -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="product_version_before_slider_right">
-            <h3 class="product_version_before_slider_right_h3">
-                Realistic Wood And Stone Looks:
-            </h3>
-            <p>
-                Laminate flooring typically has some surface details to
-                further mimic that appearance of natural hardwood and
-                may have the appearance and feel of hand scraped
-                hardwood, pressed flowers, imitation hardwood, or
-                textured or smooth. Unlike real solid wood flooring,
-                laminate flooring has better stability and consistent
-                quality. It all comes from EIR Surface.
-            </p>
-        </div>
-    </div>
-
-    <div class="product_version_before_slider">
-        <div class="product_version_before_slider_left">
-            <div class="great_order">
-                <div class="slider-container" id="slider1">
-                    <div class="slider">
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/waterproof.jpg')}}"
-                                alt="Image 1"
-                            />
-                        </div>
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/pexels-photo-2549018.jpeg')}}"
-                                alt="Image 2"
-                            />
-                        </div>
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/pexels-photo-2549018.jpeg')}}"
-                                alt="Image 3"
-                            />
-                        </div>
-                        <!-- Add more slide elements with appropriate images -->
-                    </div>
-
-                    <div class="preview">
-                        <!-- Preview images will be generated dynamically through JavaScript -->
-                    </div>
-                </div>
+            <div class="product_version_before_slider_right">
+                <h3 class="product_version_before_slider_right_h3">
+                    {{$extra->title}}
+                </h3>
+                <p class="text-black">
+                    {!!html_entity_decode($extra->content)!!}
+                </p>
             </div>
         </div>
-        <div class="product_version_before_slider_right">
-            <h3 class="product_version_before_slider_right_h3">
-                Waterproof
-            </h3>
-            <p>
-                Progress in structure is improving the waterproof
-                capacity of the laminate flooring. Most new laminate
-                floors can withstand localized moisture. Proper
-                installation helps prevent water from penetrating into
-                the board. In addition to installation and construction,
-                you can also upgrade the substrate to meet the best
-                waterproof requirements, that is, our other series -
-                Aqua Floor!
-            </p>
-        </div>
-    </div>
+        @endif
 
-    <div class="product_version_before_slider">
-        <div class="product_version_before_slider_left">
-            <div class="great_order">
-                <div class="slider-container" id="slider1">
-                    <div class="slider">
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/health.jpg')}}"
-                                alt="Image 1"
-                            />
-                        </div>
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/pexels-photo-2549018.jpeg')}}"
-                                alt="Image 2"
-                            />
-                        </div>
-                        <div class="slide">
-                            <img
-                                src="{{asset('version/assets/images/pexels-photo-2549018.jpeg')}}"
-                                alt="Image 3"
-                            />
-                        </div>
-                        <!-- Add more slide elements with appropriate images -->
-                    </div>
+        <?php $Order = $Order+1; ?>
 
-                    <div class="preview">
-                        <!-- Preview images will be generated dynamically through JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product_version_before_slider_right">
-            <h3 class="product_version_before_slider_right_h3">
-                Health And Safety
-            </h3>
-            <p>
-                FloorScore testing and certification make the Richwood
-                Flooring free of harmful chemicals that can cause bad
-                indoor air quality and safety problems. FloorScore
-                certification: California has been a leader in indoor
-                air quality initiatives. FloorScore certification
-                indicates that a specific product has been certified for
-                indoor air quality and safety in accordance with
-                California standards. So basically, it meets the highest
-                standards.
-            </p>
-        </div>
-    </div>
+    @endforeach
+    @endif
 
     <div class="preview_laminate_thickness">
         <div class="preview_laminate_thickness_left">
@@ -614,4 +486,5 @@
 @include('script.map')
 <div id="map"></div>
 {{--  --}}
+@endforeach
 @endsection
