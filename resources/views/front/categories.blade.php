@@ -181,22 +181,24 @@
 
     <div class="preview_laminate_thickness">
         <div class="preview_laminate_thickness_left">
-            <h3>The Laminate Thicknesses</h3>
+            <h3>The {{$Category->title}} Thicknesses</h3>
             <p>
-                The laminate has different thicknesses, ranging from 7mm
-                to 12mm, and usually the thicker the laminate, the more
-                likely you are to hear natural wood under your feet.
+                {!!html_entity_decode($Category->thicknesses)!!}
             </p>
 
             <div>
                 <button>More Thickness Introduction</button>
-                <button>Get Free Sample</button>
+                <button onclick="window.location.href='/contact-us'">Get Free Sample</button>
             </div>
         </div>
         <div class="preview_laminate_thickness_right">
+            <?php
+                $Thickness = DB::table('thicknesses')->where('category_id',$Category->id)->get();
+            ?>
+            @foreach ($Thickness as $Thick)
             <div class="preview_laminate_thickness_right_div may">
                 <img src="{{asset('version/assets/images/gret.png')}}" alt="Image 3" />
-                <p>7mm</p>
+                <p>{{$Thick->title}}</p>
                 <div class="preview_laminate_thickness_right_div_div">
                     <h1>
                         <a href="allproduct.html"
@@ -205,106 +207,32 @@
                     </h1>
                 </div>
             </div>
-            <div class="preview_laminate_thickness_right_div may">
-                <img src="{{asset('version/assets/images/gret.png')}}" alt="Image 3" />
-                <p>8mm</p>
-                <div class="preview_laminate_thickness_right_div_div">
-                    <h1>
-                        <a href="allproduct.html"
-                            ><ion-icon name="eye-outline"></ion-icon
-                        ></a>
-                    </h1>
-                </div>
-            </div>
-            <div class="preview_laminate_thickness_right_div may">
-                <img src="{{asset('version/assets/images/gret.png')}}" alt="Image 3" />
-                <p>10mm</p>
-                <div class="preview_laminate_thickness_right_div_div">
-                    <h1>
-                        <a href="allproduct.html"
-                            ><ion-icon name="eye-outline"></ion-icon
-                        ></a>
-                    </h1>
-                </div>
-            </div>
-            <div class="preview_laminate_thickness_right_div may">
-                <img src="{{asset('version/assets/images/gret.png')}}" alt="Image 3" />
-                <p>12mm</p>
-                <div class="preview_laminate_thickness_right_div_div">
-                    <h1>
-                        <a href="allproduct.html"
-                            ><ion-icon name="eye-outline"></ion-icon
-                        ></a>
-                    </h1>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
     <div class="preview_laminate_thickness">
-        <div class="preview_laminate_thickness_left">
+        <div class="preview_laminate_thickness_left preview_ac_thickness_left">
             <h3>The AC Rating</h3>
             <p>
-                The AC rating represents the wear rating and is the
-                number you should pay attention to. The AC value of a
-                product reflects its applicability to a particular level
-                of traffic, which will help you find the best floor for
-                you. The laminate flooring is subject to a series of
-                tests to determine the durability of the flooring and
-                the appropriate mounting area. The laminate flooring has
-                six AC ratings:
+                {!!html_entity_decode($Category->a_c_ratings)!!}
             </p>
 
-            <div>
-                <button>More AC Introduction</button>
-                <button>Get Free Sample</button>
+            <div class="ac-btns">
+                <button>More AC Rating</button>
+                <button onclick="window.location.href='/contact-us'">Get Free Sample</button>
             </div>
         </div>
         <div class="preview_laminate_thickness_right">
+            <?php
+              $AC = DB::table('a_c_ratings')->where('category_id',$Category->id)->get();
+            ?>
+            @foreach ($AC as $ac)
             <div class="preview_laminate_thickness_right_div jan">
-                <img src="{{asset('version/assets/images/ac1.png')}}" alt="Image 3" />
-                <p>Embossed-in-Register (EIR) Collection E8050</p>
-                <div class="preview_laminate_thickness_right_div_div">
-                    <h1>
-                        <a href="#"
-                            ><ion-icon name="eye-outline"></ion-icon
-                        ></a>
-                    </h1>
-                </div>
+                <img src="{{url('/')}}/uploads/ac_ratings/{{$ac->image}}" alt="Image 3" />
+                <p class="ac-text">{{$ac->title}}</p>
             </div>
-            <div class="preview_laminate_thickness_right_div jan">
-                <img src="{{asset('version/assets/images/ac2.png')}}" alt="Image 3" />
-                <p>Embossed-in-Register (EIR) Collection E8050</p>
-                <div class="preview_laminate_thickness_right_div_div">
-                    <h1>
-                        <a href="allproduct.html"
-                            ><ion-icon name="eye-outline"></ion-icon
-                        ></a>
-                    </h1>
-                </div>
-            </div>
-            <div class="preview_laminate_thickness_right_div jan">
-                <img src="{{asset('version/assets/images/ac3.png')}}" alt="Image 3" />
-                <p>Embossed-in-Register (EIR) Collection E8050</p>
-                <div class="preview_laminate_thickness_right_div_div">
-                    <h1>
-                        <a href="allproduct.html"
-                            ><ion-icon name="eye-outline"></ion-icon
-                        ></a>
-                    </h1>
-                </div>
-            </div>
-            <div class="preview_laminate_thickness_right_div jan">
-                <img src="{{asset('version/assets/images/ac4.png')}}" alt="Image 3" />
-                <p>Embossed-in-Register (EIR) Collection E8050</p>
-                <div class="preview_laminate_thickness_right_div_div">
-                    <h1>
-                        <a href="allproduct.html"
-                            ><ion-icon name="eye-outline"></ion-icon
-                        ></a>
-                    </h1>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -323,12 +251,7 @@
                 <div class="slider-content_version_left">
                     <h3>Selection Of Color</h3>
                     <p>
-                        We've prepared a variety of color options, and
-                        the tan laminate makes your room look bigger and
-                        more open. You'll also get that wonderful, rich
-                        warmth from slightly darker tones. In addition
-                        to looking chic and stylish, the gray laminate
-                        sets the tone for a cool modern home.
+                        {!!html_entity_decode($Category->color)!!}
                     </p>
                 </div>
                 <div class="slider-content_version_right">

@@ -2347,7 +2347,7 @@
 
   .preview_laminate_thickness_left > h3 {
     color: rgb(51,51,51);
-    max-width: 50%;
+    /* max-width: 50%; */
   }
 
   .preview_laminate_thickness_left > p {
@@ -2387,6 +2387,8 @@
     color: rgb(230,104,37);
   }
 
+  /*  */
+
   .preview_laminate_thickness_right {
     display: flex;
     width: 100%;
@@ -2420,7 +2422,7 @@
   }
 
   .jan {
-    height: 60vh;
+    /* height: 60vh; */
   }
 
   .preview_laminate_thickness_right_div:hover > .preview_laminate_thickness_right_div_div {
@@ -5952,3 +5954,11 @@
         /* color:#000000; */
         color:rgb(87,68,57);
     }
+.ac-btns button{
+    padding:10px;
+}
+.ac-text{
+    font-size: 20px;
+    text-align: center;
+    line-height:normal;
+}
