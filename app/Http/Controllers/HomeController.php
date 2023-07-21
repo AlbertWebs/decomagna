@@ -42,6 +42,14 @@ class HomeController extends Controller
         return view('front.categories', compact('Categories'));
     }
 
+    public function faq($slung)
+    {
+        $Faq = DB::table('faq')->where('slung',$slung)->get();
+        return view('front.faq', compact('Faq'));
+    }
+
+
+
     public function thickness($category,$slung)
     {
         $Category = DB::table('categories')->where('slung',$category)->get();

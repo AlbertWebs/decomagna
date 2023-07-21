@@ -23,6 +23,8 @@ use App\Http\Controllers\BlogController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [HomeController::class, 'products']);
 Route::get('/contact-us', [HomeController::class, 'contact']);
+Route::get('/frequently-asked-questions/{slung}', [HomeController::class, 'faq']);
+
 Route::get('/products/{slung}', [HomeController::class, 'categories']);
 Route::get('/products/thickness/{category}/{slung}', [HomeController::class, 'thickness']);
 Route::get('/products/ac-rating/{category}/{slung}', [HomeController::class, 'ac']);
