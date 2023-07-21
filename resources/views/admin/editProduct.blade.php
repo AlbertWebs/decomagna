@@ -82,6 +82,64 @@
 
                                 <div class="section-space col s12"></div>
                             </div>
+                            {{--  --}}
+                            <?php $Thickness = DB::table('thicknesses')->get(); ?>
+                            {{--  --}}
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <select required name="thickness" class="icons" id="mydiv">
+                                        <option value="{{$Product->thickness}}" selected>{{$Product->thickness}}</option>
+                                        @foreach ($Thickness as $thickness)
+                                        <option value="{{$thickness->title}}" data-icon="{{url('/')}}/uploads/thicknesses/{{$thickness->image}}" class="circle">{{$thickness->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose Thickness</label>
+                                </div>
+                                <?php $ACRating = DB::table('a_c_ratings')->get(); ?>
+                                <div class="input-field col s6">
+                                    <select required name="a_c_ratings" class="icons" id="mydiv">
+                                        <?php
+                                            $ACRatings = DB::table('a_c_ratings')->where('slung',$Product->a_c_ratings)->get();
+                                        ?>
+                                        @foreach ($ACRatings as $acRatings)
+
+                                            <option value="" disabled selected> {{$acRatings->title}}</option>
+                                        @endforeach
+                                        @foreach ($ACRating as $a_c_ratings)
+                                            <option value="{{$a_c_ratings->slung}}" data-icon="{{url('/')}}/uploads/ac_ratings/{{$a_c_ratings->image}}" class="circle">{{$a_c_ratings->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose AC Ratings</label>
+                                </div>
+                                <div class="section-space col s12"></div>
+                            </div>
+                            {{--  --}}
+
+
+                            <?php $Color = DB::table('colors')->get(); ?>
+                            {{--  --}}
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <select required name="color" class="icons" id="mydiv">
+                                        <option value="{{$Product->color}}" disabled selected>{{$Product->color}}</option>
+                                        @foreach ($Color as $color)
+                                        <option value="{{$color->title}}" data-icon="{{url('/')}}/uploads/colors/{{$color->image}}" class="circle">{{$color->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose Color</label>
+                                </div>
+                                <?php $Species = DB::table('species')->get(); ?>
+                                <div class="input-field col s6">
+                                    <select required name="species" class="icons" id="mydiv">
+                                        <option value="{{$Product->species}}" disabled selected>{{$Product->species}}</option>
+                                        @foreach ($Species as $species)
+                                        <option value="{{$species->title}}" data-icon="{{url('/')}}/uploads/species/{{$species->image}}" class="circle">{{$species->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose Species</label>
+                                </div>
+                            </div>
+                            {{--  --}}
 
                             <div class="row">
                             {{-- Stock --}}

@@ -1,6 +1,7 @@
 @extends('front.master')
 
 @section('content')
+@foreach ($Products as $product)
 <main>
     <div class="product_version">
         <div class="sing_single_product">
@@ -9,21 +10,21 @@
                     <div class="slider">
                         <div class="slide">
                             <img
-                                src="{{asset('version/assets/images/pro.jpg')}}"
-                                alt="Image 1"
+                                src="{{url('/')}}/uploads/products/{{$product->image_one}}"
+                                alt="{{$product->name}}"
                             />
                         </div>
                         <div class="slide">
                             <img
-                                src="{{asset('version/assets/images/pexels-photo-2549018.jpeg')}}"
-                                alt="Image 2"
+                                src="{{url('/')}}/uploads/products/{{$product->image_one}}"
+                                alt="{{$product->name}}"
                             />
                         </div>
                         <div class="slide">
                             <img
-                                src="{{asset('version/assets/images/pexels-photo-2549018.jpeg')}}"
-                                alt="Image 3"
-                            />
+                            src="{{url('/')}}/uploads/products/{{$product->image_one}}"
+                            alt="{{$product->name}}"
+                        />
                         </div>
                         <!-- Add more slide elements with appropriate images -->
                     </div>
@@ -37,25 +38,24 @@
             <div class="sing_single_product_overlay">
                 <div>
                     <h4>
-                        Commercial HDF Embossed Oak V-Grooved Waterproof
-                        Laminate Flooring Laminate Flooring
+                        {{$product->name}}
                     </h4>
 
-                    <div>
+                    {{-- <div>
                         <img src="{{asset('version/assets/images/email.png')}}" alt="" />
                         <h4>Email us: <span>info@decomana.com</span></h4>
-                    </div>
+                    </div> --}}
 
                     <div>
                         <img src="{{asset('version/assets/images/rocky.png')}}" alt="" />
-                        <h4>Model: E1601</h4>
+                        <h4>SKU: {{$product->sku}}</h4>
                     </div>
 
                     <h4>Product description</h4>
-                    <p>•Size: 1215*196*7mm/8mm/10mm/12mm</p>
-                    <p>•Suitable for residential and commercial use</p>
-                    <p>•Emboss in Register (EIR)</p>
-                    <a href="contact.html" alt="">Contact us</a>
+                    <p>{!!html_entity_decode($product->meta)!!}</p>
+                    <a href="{{url('/')}}">
+                        Request Quotation
+                    </a>
                 </div>
             </div>
         </div>
@@ -63,13 +63,18 @@
         <div class="left_side_bar_products">
             <div class="left_side_bar_products_left">
                 <h5>
-                    <a href="index.html"> Home </a>
+                    <a href="{{url('/')}}"> Home </a>
                     <ion-icon name="chevron-forward-outline"></ion-icon>
-                    <a href="index.html">Products</a>
+                    <a href="{{url('/')}}/products">Products</a>
                 </h5>
 
                 <div class="sidebar">
-                    <span>Laminate flooring</span>
+                    {{--  --}}
+                    <?php
+                       $Categories = DB::table('categories')->get();
+                    ?>
+                    @foreach ($Categories as $categories)
+                    <span><strong>{{$categories->title}}</strong></span>
                     <ul class="main-list">
                         <li class="nav-item with-submenu">
                             <a href="#">
@@ -79,10 +84,12 @@
                                 Thickness
                             </a>
                             <ul class="sub-menu">
-                                <li><a href="#">7mm</a></li>
-                                <li><a href="#">8mm</a></li>
-                                <li><a href="#">10mm</a></li>
-                                <li><a href="#">12mm</a></li>
+                                <?php
+                                  $Thickness = App\Models\Product::select('thickness')->distinct()->where('category',$categories->id)->get();
+                                ?>
+                                @foreach ($Thickness as $thick)
+                                <li><a href="{{url('/')}}/products/thickness/{{$categories->slung}}/{{$thick->thickness}}">{{$thick->thickness}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
 
@@ -94,90 +101,46 @@
                                 Color
                             </a>
                             <ul class="sub-menu">
-                                <li><a href="#">Color</a></li>
-                                <li><a href="#">Style</a></li>
+                                <?php
+                                  $Color = App\Models\Product::select('color')->distinct()->where('category',$categories->id)->get();
+                                ?>
+                                @foreach ($Color as $color)
+                                <li><a href="{{url('/')}}/products/color/{{$categories->slung}}/{{$color->color}}">{{$color->color}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
+
 
                         <li class="nav-item with-submenu">
                             <a href="#">
                                 <ion-icon
                                     name="chevron-forward-outline"
                                 ></ion-icon>
-                                Ac
+                                AC Ratings
                             </a>
                             <ul class="sub-menu">
-                                <li><a href="#">AC1</a></li>
-                                <li><a href="#">AC2</a></li>
-                                <li><a href="#">AC3</a></li>
-                                <li><a href="#">AC4</a></li>
-                                <li><a href="#">AC5</a></li>
-                                <li><a href="#">AC6</a></li>
+                                <?php
+                                  $ACs = App\Models\Product::select('a_c_ratings')->distinct()->where('category',$categories->id)->get();
+                                ?>
+                                @foreach ($ACs as $acs)
+                                <li><a target="new" href="{{url('/')}}/products/ac-rating/{{$categories->slung}}/{{$acs->a_c_ratings}}">
+                                    <?php
+                                        $ACRatings = DB::table('a_c_ratings')->where('slung',$acs->a_c_ratings)->get();
+                                    ?>
+                                    @foreach ($ACRatings as $acRatings)
+                                    {{$acRatings->title}}
+                                    @endforeach
+                                </a></li>
+                                @endforeach
                             </ul>
                         </li>
+
+
+
+
                     </ul>
-
-                    <span>Aqua flooring</span>
-                    <ul class="main-list">
-                        <li class="nav-item with-submenu">
-                            <a href="#">
-                                <ion-icon
-                                    name="chevron-forward-outline"
-                                ></ion-icon>
-                                Thickness
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="#">7mm</a></li>
-                                <li><a href="#">8mm</a></li>
-                                <li><a href="#">10mm</a></li>
-                                <li><a href="#">12mm</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item with-submenu">
-                            <a href="#">
-                                <ion-icon
-                                    name="chevron-forward-outline"
-                                ></ion-icon>
-                                Color
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="#">Color</a></li>
-                                <li><a href="#">Style</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <span>Spc flooring</span>
-                    <ul class="main-list">
-                        <li class="nav-item with-submenu">
-                            <a href="#">
-                                <ion-icon
-                                    name="chevron-forward-outline"
-                                ></ion-icon>
-                                Thickness
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="#">7mm</a></li>
-                                <li><a href="#">8mm</a></li>
-                                <li><a href="#">10mm</a></li>
-                                <li><a href="#">12mm</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item with-submenu">
-                            <a href="#">
-                                <ion-icon
-                                    name="chevron-forward-outline"
-                                ></ion-icon>
-                                Color
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="#">Color</a></li>
-                                <li><a href="#">Style</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    {{--  --}}
+                    @endforeach
                 </div>
             </div>
 
@@ -185,20 +148,11 @@
                 <h2>Product overview</h2>
 
                 <p>
-                    Embossed -In-Register(EIR)is a manufacturing process
-                    that intensifies the depth, texture and authentic look
-                    of the flooring by an embossment surface which is
-                    totally matching the wooden vein of the decoration paper
-                    to indulge you in a feeling of real wood. This amazing
-                    technology creates an natural and authentic look, and
-                    provides increased traction and improved slip
-                    resistance. This EIR collection was created based on
-                    this point, it gives an ideal choice for those who want
-                    their floor to look as close to real wood as possible
-                    and looks fantastic.
+                    {!!html_entity_decode($product->content)!!}
                 </p>
 
-                <h3>Dimension</h3>
+
+                {{-- <h3>Dimension</h3>
 
                 <p>Length</p>
 
@@ -343,9 +297,10 @@
                         </div>
                         <p>Fire prevention</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
 </main>
+@endforeach
 @endsection

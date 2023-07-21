@@ -726,8 +726,6 @@ class AdminsController extends Controller
         }
 
 
-
-
         $updateDetails = array(
             'name'=>$request->title,
             'slung' => Str::slug($request->title),
@@ -738,6 +736,10 @@ class AdminsController extends Controller
             'stock'=>$new_stock,
             'price'=>$request->price,
             'category'=>$request->category,
+            'a_c_ratings'=>$request->a_c_ratings,
+            'thickness'=>$request->thickness,
+            'color'=>$request->color,
+            'species'=>$request->species,
             'image_one'=>$image_one,
             'image_two'=>$image_two,
             'image_three'=>$image_three,

@@ -23,12 +23,15 @@ class HomeController extends Controller
     public function products()
     {
         $Products = DB::table('products')->get();
-        return view('front.products', compact('Products'));
+        $CategoryTitle = "Quick-Step flooring Kenya - Decomagna ltd";
+        $CategorySlung = "#";
+        $PageTitle = "Our Products";
+        return view('front.products', compact('Products','CategoryTitle','CategorySlung','PageTitle'));
     }
 
-    public function product()
+    public function product($slung)
     {
-        $Products = DB::table('products')->get();
+        $Products = DB::table('products')->where('slung',$slung)->get();
         return view('front.product', compact('Products'));
     }
 

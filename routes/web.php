@@ -28,7 +28,7 @@ Route::get('/products/thickness/{category}/{slung}', [HomeController::class, 'th
 Route::get('/products/ac-rating/{category}/{slung}', [HomeController::class, 'ac']);
 Route::get('/products/color/{category}/{slung}', [HomeController::class, 'color']);
 Route::get('/products/species/{category}/{slung}', [HomeController::class, 'species']);
-Route::get('/product', [HomeController::class, 'product']);
+Route::get('/product/{slung}', [HomeController::class, 'product']);
 Route::get('/categories', [HomeController::class, 'categories']);
 Route::get('/portfolio', [HomeController::class, 'portfolio']);
 Route::get('/blogs', [HomeController::class, 'blog']);
