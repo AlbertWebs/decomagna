@@ -120,45 +120,19 @@
                     </li> --}}
 
 
+                    <?php
+                        $Category = DB::table('categories')->get();
+                    ?>
+                    @foreach($Category as $category)
                     <li class="navbar-item">
-                        <a href="product.html" class="navbar-link hover-underline">
+                        <a href="{{url('/')}}/products/{{$category->slung}}" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
-                            <span class="span">Laminate Flooring</span>
+                            <span class="span">{{$category->name}}</span>
                         </a>
                     </li>
+                    @endforeach
 
-                    <li class="navbar-item">
-                        <a href="gallery.html" class="navbar-link hover-underline">
-                            <div class="separator"></div>
-
-                            <span class="span">Doors</span>
-                        </a>
-                    </li>
-
-                    <li class="navbar-item">
-                        <a href="gallery.html" class="navbar-link hover-underline">
-                            <div class="separator"></div>
-
-                            <span class="span">Accessories</span>
-                        </a>
-                    </li>
-
-                    <li class="navbar-item">
-                        <a href="about.html" class="navbar-link hover-underline">
-                            <div class="separator"></div>
-
-                            <span class="span">About us</span>
-                        </a>
-                    </li>
-
-                    <li class="navbar-item">
-                        <a href="contact.html" class="navbar-link hover-underline">
-                            <div class="separator"></div>
-
-                            <span class="span">Contact</span>
-                        </a>
-                    </li>
                 </ul>
 
                 <div class="text-center">
