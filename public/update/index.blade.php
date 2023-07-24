@@ -8,44 +8,45 @@
       - #HERO
     -->
 
-    <div class="container_slider">
-        <div class="slideshow">
-            <div class="slider-container" id="slider1">
-                <div class="slider">
-                    @foreach ($Slider as $slider)
-                    <div class="slide">
-                        <img src="{{url('/')}}/uploads/slider/{{$slider->image}}" />
-                        <div>
+        <div class="container_slider">
+            <div class="slideshow">
+                <div class="slider-container" id="slider1">
+                    <div class="slider">
+                        @foreach ($Slider as $slider)
+                        <div class="slide">
+                            <img src="{{url('/')}}/uploads/slider/{{$slider->image}}" />
                             <div>
-                                <img src="{{asset('version/assets/images/Artboard-82.png')}}" width="160"
-                                    height="50" loading="lazy" alt="grilli home" />
+                                <div>
+                                    <img src="{{asset('version/assets/images/Artboard-82.png')}}" width="160"
+                                        height="50" loading="lazy" alt="grilli home" />
+                                </div>
+                                <h3>ELEVATE YOUR SPACE, PREMIUM FLOORS</h3>
+                                <h5>lorem ipsum</h5>
+                                <a href="#">discover more</a>
                             </div>
-                            <h3>ELEVATE YOUR SPACE, PREMIUM FLOORS</h3>
-                            <h5>lorem ipsum</h5>
-                            <a href="#">discover more</a>
                         </div>
+                        @endforeach
+                        <!-- Add more slide elements with appropriate images -->
                     </div>
-                    @endforeach
-                    <!-- Add more slide elements with appropriate images -->
+
+                    <div class="bottom-dome"></div>
+
+                    <div class="preview prev_force">
+                        <!-- Preview images will be generated dynamically through JavaScript -->
+                    </div>
                 </div>
 
-                <div class="bottom-dome"></div>
 
-                <div class="preview prev_force">
-                    <!-- Preview images will be generated dynamically through JavaScript -->
-                </div>
+
+
+
+                <a href="#intro" class="scroll-down control">
+                    <img src="{{asset('version/assets/images/scroll-down.svg')}}" width="40" height="66" loading="lazy"
+                        alt="mouse scroll" />
+                </a>
             </div>
-
-
-
-
-
-            <a href="#intro" class="scroll-down control">
-                <img src="{{asset('version/assets/images/scroll-down.svg')}}" width="40" height="66" loading="lazy"
-                    alt="mouse scroll" />
-            </a>
         </div>
-    </div>
+
         <!--
       - #SERVICE
     -->
@@ -58,7 +59,7 @@
             <section id="intro" class="section service service-white text-center" aria-label="service">
                 <div class="container">
                     @foreach ($About as $about)
-                    <h2 class="headline-intro" style="color:#2944d1 !important; text-shadow: 1px 1px 0px #E34C8A;">{{$about->title}}</h2>
+                    <h2 class="headline-intro">{{$about->title}}</h2>
                     <p>
                         <font color="#676767">
                             <span style=" line-height: 1.6;">
@@ -88,7 +89,7 @@
 
                     </div>
 
-                    <img src="{{url('/')}}/uploads/sections/Laminate.png" width="246" height="412"
+                    <img src="{{asset('version/assets/images/OIP__1_-removebg-preview.png')}}" width="246" height="412"
                         loading="lazy" alt="shape" class="shape shape-1 move-anim" />
                 </div>
 
@@ -188,7 +189,7 @@
     -->
 
             <section class="section menu" aria-label="menu-label" id="menu">
-                <h2 class="headline-1 section-title text-center">Our Project Gallery</h2>
+                <h2 class="headline-1 section-title text-center">Our gallery</h2>
                 <div class="image-grid">
                     <?php
             $Portfolio = DB::table('portfolios')->where('home','1')->where('big','1')->limit('1')->get();
@@ -402,19 +403,47 @@
                 <div class="container">
                     <h2 class="headline-1 section-title text-black-blacky text-center">Frequently asked questions</h1>
                         <div class="faq-law">
-                            <?php
-                                $Faq = DB::table('faq')->limit('4')->get();
-                            ?>
-                            @foreach ($Faq as $faq)
                             <div class="text-black-blacky">
-                                <h3 class="marg-left">{{$faq->title}}</h3>
-                                <p>{!!html_entity_decode($faq->meta)!!}</p>
-                                <a href="{{url('/')}}/frequently-asked-questions/{{$faq->slung}}">
-                                    <span>{{date('d/m', strtotime($faq->created_at))}}</span>
-                                    <span>{{date('Y', strtotime($faq->created_at))}}</span>
+                                <h3 class="marg-left">Can you buy high quality but cheap waterproof laminate flooring
+                                    here?</h3>
+                                <p>If you are looking for high-quality but cheap waterproof laminate flooring​, you have
+                                    come to the right place. We are a leading supplier of cheap waterproof laminate
+                                    flooring, and we are committed to ...</p>
+                                <a href="#">
+                                    <span>06/08</span>
+                                    <span>2023</span>
                                 </a>
                             </div>
-                            @endforeach
+                            <div class="text-black-blacky">
+                                <h3>How can AC rating laminate floorings be chosen and purchased effectively?</h3>
+                                <p>If you are looking for high-quality but cheap waterproof laminate flooring​, you have
+                                    come to the right place. We are a leading supplier of cheap waterproof laminate
+                                    flooring, and we are committed to ...</p>
+                                <a href="#">
+                                    <span>05/11</span>
+                                    <span>2023</span>
+                                </a>
+                            </div>
+                            <div class="text-black-blacky">
+                                <h3>Is high gloss laminate flooring waterproof?</h3>
+                                <p>With the increasing trend of modern decoration, people have higher and higher
+                                    requirements for indoor floor materials. One popular indoor flooring material is a
+                                    high gloss waterproof flooring​. While ...</p>
+                                <a href="#">
+                                    <span>04/13</span>
+                                    <span>2023</span>
+                                </a>
+                            </div>
+                            <div class="text-black-blacky">
+                                <h3>Is High Gloss Laminate Flooring Durable?</h3>
+                                <p>When it comes to enhancing your home's interior design, high gloss laminate flooring​
+                                    is a great option. High gloss laminate flooring is a type of floor covering that
+                                    offers elegance and beauty with i...</p>
+                                <a href="#">
+                                    <span>03/23</span>
+                                    <span>2023</span>
+                                </a>
+                            </div>
                         </div>
                 </div>
             </section>

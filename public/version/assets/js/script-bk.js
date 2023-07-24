@@ -27,8 +27,6 @@ const addEventOnElements = function (elements, eventType, callback) {
     const slides = slider.querySelectorAll(".slide");
     const preview = container.querySelector(".preview");
     let activeSlideIndex = 0;
-    let isPaused = false;
-    const slideInterval = 10000; // 10 seconds interval, you can adjust this as needed
 
     slides.forEach((slide, index) => {
       const img = slide.querySelector("img");
@@ -37,12 +35,6 @@ const addEventOnElements = function (elements, eventType, callback) {
       previewImg.alt = img.alt;
       previewImg.addEventListener("click", () => {
         setActiveSlide(index);
-      });
-      previewImg.addEventListener("mouseenter", () => {
-        isPaused = true;
-      });
-      previewImg.addEventListener("mouseleave", () => {
-        isPaused = false;
       });
       preview.appendChild(previewImg);
     });
@@ -68,27 +60,7 @@ const addEventOnElements = function (elements, eventType, callback) {
       });
     }
 
-    function nextSlide() {
-      if (!isPaused) {
-        activeSlideIndex = (activeSlideIndex + 1) % slides.length;
-        updateSliderPosition();
-        updateActivePreview();
-      }
-    }
-
-    // Start the automatic slide movement
-    let slideIntervalId = setInterval(nextSlide, slideInterval);
-
-    // Pause the automatic slide movement when hovering on the preview images
-    preview.addEventListener("mouseenter", () => {
-      isPaused = true;
-    });
-
-    preview.addEventListener("mouseleave", () => {
-      isPaused = false;
-    });
   });
-
 
 
 

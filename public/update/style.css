@@ -2317,7 +2317,7 @@
     height: 50vh;
     display: flex;
     flex-direction: column;
-    /* margin: auto; */
+    margin: auto;
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -2331,16 +2331,16 @@
     width: 100%;
     min-height: 100%;
     flex-direction: column;
-    color: rgb(87,68,57) !important;
+    color: rgb(132,118,110) !important;
   }
 
   .product_version_before_slider_right_h3 {
     color: rgb(39,30,25);
-    /* margin: 20px; */
+    margin: 20px;
   }
 
   .before_slider_right > p {
-    color: rgb(87,68,57) !important;
+    color: rgb(132,118,110) !important;
     margin: 20px;
   }
 
@@ -2363,11 +2363,11 @@
 
   .preview_laminate_thickness_left > h3 {
     color: rgb(51,51,51);
-    /* max-width: 50%; */
+    max-width: 50%;
   }
 
   .preview_laminate_thickness_left > p {
-    color: rgb(87,68,57) !important;
+    color: rgb(132,118,110) !important;
     margin: 20px 0;
   }
 
@@ -2436,7 +2436,7 @@
   }
 
   .jan {
-    /* height: 60vh; */
+    height: 60vh;
   }
 
   .preview_laminate_thickness_right_div:hover > .preview_laminate_thickness_right_div_div {
@@ -2501,7 +2501,7 @@
       }
 
       .slider-content_version_left > p {
-        color: rgb(87,68,57);
+        color: rgb(132,118,110);
       }
 
       .slider-content_version_right {
@@ -2835,7 +2835,7 @@
       }
 
       .product_version_before_slider_right > p {
-        color: rgb(87,68,57);
+        color: rgb(132,118,110);
         margin: 20px;
       }
 
@@ -2863,7 +2863,7 @@
       }
 
       .preview_laminate_thickness_left > p {
-        color: rgb(87,68,57);
+        color: rgb(132,118,110);
         margin: 20px 0;
       }
 
@@ -3002,7 +3002,7 @@
   }
 
   .slider-content_version_left > p {
-    color: rgb(87,68,57);
+    color: rgb(132,118,110);
   }
 
   .slider-content_version_right {
@@ -3341,7 +3341,7 @@
       }
 
       .product_version_before_slider_right > p {
-        color: rgb(87,68,57);
+        color: rgb(132,118,110);
         margin: 20px;
       }
 
@@ -3369,7 +3369,7 @@
       }
 
       .preview_laminate_thickness_left > p {
-        color: rgb(87,68,57);
+        color: rgb(132,118,110);
         margin: 20px 0;
       }
 
@@ -3508,7 +3508,7 @@
   }
 
   .slider-content_version_left > p {
-    color: rgb(87,68,57);
+    color: rgb(132,118,110);
   }
 
   .slider-content_version_right {
@@ -4209,7 +4209,7 @@
     }
 
     .rifi {
-        background-color: rgb(87,68,57);
+        background-color: rgb(132,118,110);
     }
 
     .more_diti {
@@ -4533,7 +4533,7 @@
         }
 
         .rifi {
-            background-color: rgb(87,68,57);
+            background-color: rgb(132,118,110);
         }
 
         .more_diti {
@@ -4860,7 +4860,7 @@
         }
 
         .rifi {
-            background-color: rgb(87,68,57);
+            background-color: rgb(132,118,110);
         }
 
         .more_diti {
@@ -6036,19 +6036,3 @@
             background-color: rgb(230,102,34);
         }
     }
-
-.text-black{
-    /* color:#000000; */
-    color:rgb(87,68,57);
-}
-.ac-btns button{
-    padding:10px;
-}
-.ac-text{
-    font-size: 20px;
-    text-align: center;
-    line-height:normal;
-}
-.text-center{
-    text-align: center !important;
-}
