@@ -25,6 +25,10 @@ Route::get('/products', [HomeController::class, 'products']);
 Route::get('/contact-us', [HomeController::class, 'contact']);
 Route::get('/frequently-asked-questions/{slung}', [HomeController::class, 'faq']);
 
+Route::get('/terms-and-conditions', [HomeController::class, 'terms']);
+Route::get('/privacy-policy', [HomeController::class, 'privacy']);
+Route::get('/copyright', [HomeController::class, 'copyright']);
+
 Route::get('/products/{slung}', [HomeController::class, 'categories']);
 Route::get('/products/thickness/{category}/{slung}', [HomeController::class, 'thickness']);
 Route::get('/products/ac-rating/{category}/{slung}', [HomeController::class, 'ac']);

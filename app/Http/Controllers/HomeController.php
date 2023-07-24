@@ -48,6 +48,23 @@ class HomeController extends Controller
         return view('front.faq', compact('Faq'));
     }
 
+    public function terms()
+    {
+        $Terms = DB::table('terms')->get();
+        return view('front.terms', compact('Terms'));
+    }
+
+    public function copyright()
+    {
+        $Terms = DB::table('copyright')->get();
+        return view('front.copyright', compact('Terms'));
+    }
+
+    public function privacy()
+    {
+        $Terms = DB::table('privacies')->get();
+        return view('front.privacy', compact('Terms'));
+    }
 
 
     public function thickness($category,$slung)
