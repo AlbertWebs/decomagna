@@ -97,18 +97,18 @@
             </li>
             {{--  --}}
 
-             {{--  --}}
-             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-folder" aria-hidden="true"></i> Categories </a>
-                <div class="collapsible-body left-sub-menu">
-                    <ul>
-                        <li><a href="{{url('/')}}/admin/categories">All Category </a>
-                        </li>
-                        <li><a href="{{url('/')}}/admin/addCategory">Add Category</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
             {{--  --}}
+            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-folder" aria-hidden="true"></i> Categories </a>
+            <div class="collapsible-body left-sub-menu">
+                <ul>
+                    <li><a href="{{url('/')}}/admin/categories">All Category </a>
+                    </li>
+                    <li><a href="{{url('/')}}/admin/addCategory">Add Category</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {{--  --}}
 
             {{--  --}}
             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-suitcase" aria-hidden="true"></i> Portfolio </a>
