@@ -91,6 +91,14 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::post('edit_Faq/{id}', [AdminsController::class, 'edit_Faq']);
         Route::get('delete_Faq/{id}', [AdminsController::class, 'delete_Faq']);
 
+        // Extras
+        Route::get('extras/{id}', [AdminsController::class, 'extras']);
+        Route::get('addExtra/{id}', [AdminsController::class, 'addExtra']);
+        Route::get('editExtra/{id}', [AdminsController::class, 'editExtra']);
+        Route::post('add_Extra', [AdminsController::class, 'add_Extra']);
+        Route::post('edit_Extra/{id}', [AdminsController::class, 'edit_Extra']);
+        Route::get('delete_Extra/{id}', [AdminsController::class, 'delete_Extra']);
+
         // Risks Declaration
         Route::get('editRisk', [AdminsController::class, 'editRisk']);
         Route::post('edit_Risk', [AdminsController::class, 'edit_Risk']);
@@ -267,6 +275,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
         // AJAX REQUESTS
         Route::post('addCategoryAjaxRequest', [AdminsController::class, 'addCategoryAjaxRequest']);
+        Route::post('deleteExtraAjax', [AdminsController::class, 'deleteExtraAjaxRequest']);
         Route::post('deleteBlogAjax', [AdminsController::class, 'deleteBlogAjax']);
         Route::put('updateSiteSettingsAjax', [AdminsController::class, 'updateSiteSettingsAjax']);
         Route::put('updateMailerAjax', [AdminsController::class, 'updateMailerAjax']);

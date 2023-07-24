@@ -8,6 +8,8 @@ use App\Models\Term;
 
 use App\Models\Privacy;
 
+use App\Models\Extra;
+
 use App\Models\Section;
 
 use App\Models\Copyright;
@@ -2123,6 +2125,13 @@ class AdminsController extends Controller
         return response()->json(['success'=>'Deleted Successfully!']);
     }
 
+    public function deleteExtraAjaxRequest(Request $request){
+        activity()->log('Evoked a delete Extras Request');
+        $id = $request->id;
+        DB::table('extras')->where('id',$id)->delete();
+        return response()->json(['success'=>'Deleted Successfully!']);
+    }
+
     public function deleteB2BAjax(Request $request){
         activity()->log('Evoked a delete B2B Transaction Request');
         $id = $request->id;
@@ -2439,6 +2448,86 @@ class AdminsController extends Controller
         }
         return "Done";
     }
+
+    // Extra
+    public function extras($id){
+        activity()->log('Accessed All Extras');
+        $Extra = Extra::where('category_id',$id)->get();
+        $page_title = 'list';
+        $page_name = 'Extras';
+        return view('admin.extras',compact('page_title','Extra','page_name','id'));
+    }
+
+    public function addExtra($id){
+        $Category = Category::all();
+        activity()->log('Accessed Add Extra Page');
+        $page_title = 'formfiletext';
+        $page_name = 'Add Extra';
+        return view('admin.addExtra',compact('page_title','page_name','Category','id'));
+    }
+
+    public function add_Extra(Request $request){
+        activity()->log('Evoked add Extra Operation');
+        $path = public_path('uploads/extras');
+        if(isset($request->image)){
+            $file = $request->file('image');
+            $filename = $file->getClientOriginalName();
+            $file->move($path, $filename);
+            $image = $filename;
+        }else{
+            $image = "0";
+        }
+
+
+
+        $Extra = new Extra;
+        $Extra->title = $request->title;
+        $Extra->content = $request->content;
+        $Extra->category_id = $request->category_id;
+        $Extra->image = $image;
+        $Extra->save();
+        Session::flash('message', "Extra Has Been Added");
+        return Redirect::back();
+    }
+
+    public function editExtra($id){
+        $Category = Category::all();
+        activity()->log('Access Edit Extra ID number '.$id.' ');
+        $Extra = Extra::find($id);
+        $page_title = 'formfiletext';
+        $page_name = 'Edit Home Page Slider';
+        return view('admin.editExtra',compact('page_title','Extra','page_name','Category'));
+    }
+
+    public function edit_Extra(Request $request, $id){
+        activity()->log('Evoked Edit Extra For Extra ID number '.$id.' ');
+        $path = public_path('uploads/extras');
+            if(isset($request->image)){
+                $file = $request->file('image');
+                $filename = $file->getClientOriginalName();
+                $file->move($path, $filename);
+                $image = $filename;
+            }else{
+                $image = $request->image_cheat;
+            }
+
+
+        $updateDetails = array(
+            'title'=>$request->title,
+            'content'=>$request->content,
+            'image'=>$image,
+        );
+        DB::table('extras')->where('id',$id)->update($updateDetails);
+        Session::flash('message', "Changes have been saved");
+        return Redirect::back();
+    }
+
+    public function deleteExtra($id){
+        activity()->log('Deleted Extra ID number '.$id.' ');
+        DB::table('extras')->where('id',$id)->delete();
+        return Redirect::back();
+    }
+
 
 }
 

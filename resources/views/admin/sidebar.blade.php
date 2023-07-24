@@ -67,14 +67,14 @@
                         </li>
                         <li><a href="{{url('/')}}/admin/addProduct">Add Product</a>
                         </li>
-                        <li><a href="{{url('/')}}/admin/variations/color">All Color Variations </a>
+                        {{-- <li><a href="{{url('/')}}/admin/variations/color">All Color Variations </a>
                         </li>
                         <li><a href="{{url('/')}}/admin/variations/size">All Size Variations </a>
                         </li>
                         <li><a href="{{url('/')}}/admin/addVariation/color">Add Color Variation</a>
                         </li>
                         <li><a href="{{url('/')}}/admin/addVariation/size">Add Size Variation</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </li>
@@ -97,6 +97,19 @@
             </li>
             {{--  --}}
 
+             {{--  --}}
+             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-folder" aria-hidden="true"></i> Categories </a>
+                <div class="collapsible-body left-sub-menu">
+                    <ul>
+                        <li><a href="{{url('/')}}/admin/categories">All Category </a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/addCategory">Add Category</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            {{--  --}}
+
             {{--  --}}
             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-suitcase" aria-hidden="true"></i> Portfolio </a>
                 <div class="collapsible-body left-sub-menu">
@@ -113,18 +126,7 @@
             </li>
             {{--  --}}
 
-            {{--  --}}
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-folder" aria-hidden="true"></i> Categories </a>
-                <div class="collapsible-body left-sub-menu">
-                    <ul>
-                        <li><a href="{{url('/')}}/admin/categories">All Category </a>
-                        </li>
-                        <li><a href="{{url('/')}}/admin/addCategory">Add Category</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            {{--  --}}
+
 
             {{--  --}}
             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-comment" aria-hidden="true"></i> Testimonials </a>
