@@ -145,7 +145,7 @@
                 </div>
             </nav>
 
-            <a href="product.html" class="btn btn-secondary">
+            <a href="{{url('/')}}/contact-us" class="btn btn-secondary">
                 <span class="text text-1">Find A Floor</span>
 
                 <span class="text text-2" aria-hidden="true">Find A Floor</span>

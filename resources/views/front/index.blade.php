@@ -17,11 +17,13 @@
                         <img src="{{url('/')}}/uploads/slider/{{$slider->image}}" />
                         <div>
                             <div>
-                                <img src="{{asset('version/assets/images/Artboard-82.png')}}" width="160"
+                                <img src="{{url('/')}}/uploads/slider/{{$slider->thumbnail}}" width="160"
                                     height="50" loading="lazy" alt="grilli home" />
                             </div>
-                            <h3>ELEVATE YOUR SPACE, PREMIUM FLOORS</h3>
-                            <h5>lorem ipsum</h5>
+                            <h3 style="color:#2944d1 !important; text-shadow: 1px 1px 0px #ffffff;">{{$slider->name}}</h3>
+                            <h5 style="max-width:750px; line-height:normal; font-weight:100;">
+                                {!!html_entity_decode($slider->content)!!}
+                            </h5>
                             <a href="#">discover more</a>
                         </div>
                     </div>
