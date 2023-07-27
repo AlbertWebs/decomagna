@@ -37,6 +37,7 @@ Route::get('/products/species/{category}/{slung}', [HomeController::class, 'spec
 Route::get('/product/{slung}', [HomeController::class, 'product']);
 Route::get('/categories', [HomeController::class, 'categories']);
 Route::get('/portfolio', [HomeController::class, 'portfolio']);
+Route::get('/portfolio/{slung}', [HomeController::class, 'folio']);
 Route::get('/blogs', [HomeController::class, 'blog']);
 Route::get('/blogs/{slung}', [HomeController::class, 'blog_single']);
 

@@ -92,7 +92,7 @@
         <div class="container">
             {{-- <a href="{{url('/')}}" class="logo">
                 <img src="{{asset('version/assets/images/decomagna N-14.jpg')}}" width="160" height="50"
-                    alt="Grilli - Home" />
+                    alt="Deocmagna - Home" />
             </a> --}}
 
             <a href="{{url('/')}}" class="logo">
@@ -107,7 +107,7 @@
 
                 <a href="{{url('/')}}" class="logo">
                     <img src="{{asset('version/assets/images/decomagna_N-15-removebg-preview2.png')}}" width="160"
-                        height="50" alt="Grilli - Home" />
+                        height="50" alt="Deocmagna - Home" />
                 </a>
 
                 <ul class="navbar-list">
@@ -148,7 +148,7 @@
             <a href="{{url('/')}}/contact-us" class="btn btn-secondary">
                 <span class="text text-1">Find A Floor</span>
 
-                <span class="text text-2" aria-hidden="true">Find A Floor</span>
+                <span class="text text-2" aria-hidden="true">Request Catalogue</span>
             </a>
 
             <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>

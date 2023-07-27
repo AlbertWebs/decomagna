@@ -48,6 +48,14 @@ class HomeController extends Controller
         return view('front.faq', compact('Faq'));
     }
 
+    public function folio($slung)
+    {
+        $Folio = DB::table('portfolios')->where('slung',$slung)->get();
+        return view('front.folio', compact('Folio'));
+    }
+
+
+
     public function terms()
     {
         $Terms = DB::table('terms')->get();

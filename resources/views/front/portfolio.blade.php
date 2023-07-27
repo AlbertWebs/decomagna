@@ -4,26 +4,36 @@
 
 <main>
     <div class="container">
-      <!-- about section -->
-      <section class="about_section">
-        <div class="container">
-          <h1 class='container_gallery_header'>Decomagna gallery</h1>
-          <div class="containeryy">
-              @foreach ($Portfolio as $Por)
-              <div class="gallery-container w h">
-                <div class="gallery-item">
-                  <div class="image">
-                    <img src="{{url('/')}}/uploads/portfolios/{{$Por->image_one}}" alt="nature">
-                  </div>
-                  <div class="text">{{$Por->name}}</div>
+      <!-- Gallery -->
+      <section class="section menu" aria-label="menu-label" id="menu">
+        <h2 class="headline-1 section-title text-center">Our Project Gallery</h2>
+        <div class="image-grid">
+
+
+            <?php
+                $Portfolio = DB::table('portfolios')->get();
+            ?>
+            @foreach ($Portfolio as $Portfolio)
+            <div class="image-grid-col-1 image-curve ">
+                <div class="containerm">
+                    <div class="card">
+                        <div class="front">
+                            <img class="image-curve"
+                                src="{{url('/')}}/uploads/portfolios/{{$Portfolio->image_one}}"
+                                alt="{{$Portfolio->name}}" />
+                        </div>
+                        <div class="back" style="max-height: 100%; overflow:scroll;">
+                            <h3 class="text-center"><a href="{{url('/')}}/portfolio/{{$Portfolio->slung}}">{{$Portfolio->name}}</a></h3>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              @endforeach
-
+            </div>
+            @endforeach
         </div>
-      </section>
-      <!-- End of about us page -->
+
+    </section>
+
+      {{--  --}}
     </div>
   </main>
 

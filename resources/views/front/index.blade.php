@@ -20,11 +20,11 @@
                                 <img src="{{url('/')}}/uploads/slider/{{$slider->thumbnail}}" width="160"
                                     height="50" loading="lazy" alt="grilli home" />
                             </div>
-                            <h3 style="color:#2944d1 !important; text-shadow: 1px 1px 0px #ffffff;">{{$slider->name}}</h3>
+                            <h2 style="color:#2944d1 !important; text-shadow: 1px 1px 0px #ffffff; max-width:750px; text-align:center">{{$slider->name}}</h2>
                             <h5 style="max-width:750px; line-height:normal; font-weight:100;">
                                 {!!html_entity_decode($slider->content)!!}
                             </h5>
-                            <a href="#">discover more</a>
+                            {{-- <a href="#">discover more</a> --}}
                         </div>
                     </div>
                     @endforeach
@@ -94,7 +94,7 @@
                         loading="lazy" alt="shape" class="shape shape-1 move-anim" />
                 </div>
 
-                <a href="product.html" class="btn btn-primary centy">
+                <a href="{{url('/')}}/products" class="btn btn-primary centy">
                     <span class="text text-1">View all products</span>
 
                     <span class="text text-2" aria-hidden="true">View all products</span>
@@ -236,7 +236,7 @@
                     </div>
                     @endforeach
                 </div>
-                <a href="#" class="btn btn-primary">
+                <a href="{{url('/')}}/portfolio" class="btn btn-primary">
                     <span class="text text-1">Visit gallery</span>
 
                     <span class="text text-2" aria-hidden="true">Visit gallery</span>
@@ -307,7 +307,7 @@
                             style="background-image: url('{{asset('version/assets/images/pexels-photo-1250283.jpeg')}}');">
                             <h2 class="headline-1 text-center">Contact Us</h2>
 
-                            <p class="contact-label">Make a call</p>
+                            <p class="contact-label">Give Us a Call</p>
 
                             <a href="tel:+254 796 110511" class="body-1 contact-number hover-underline">+254 796
                                 110511</a>
