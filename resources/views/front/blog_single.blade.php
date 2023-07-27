@@ -23,17 +23,13 @@
 
         <div class="special-dish-content bg-black-10">
           <div class="container">
-            <h2 class="headline-1 section-title text-center">{{$blog->title}}</h2>
+            <h2 class="headline-1s section-title text-center line-height-normal capitalize bolder" >{{$blog->title}}</h2>
 
             <p class="section-text">
                 {!!html_entity_decode($blog->content)!!}
             </p>
 
-            <a href="contact.html" class="btn btn-primary">
-              <span class="text text-1">Contact us</span>
 
-              <span class="text text-2" aria-hidden="true">Contact us</span>
-            </a>
           </div>
         </div>
       </section>
@@ -88,6 +84,7 @@
 
             <span class="text text-2" aria-hidden="true">View Our Blog</span>
           </a>
+
         </div>
       </section>
     </article>

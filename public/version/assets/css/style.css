@@ -2327,7 +2327,17 @@
     overflow: hidden;
   }
 
-
+  .great_orders {
+    width: 80%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    /* margin: auto; */
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin:0 auto;
+  }
 
 
   .product_version_before_slider_right {
@@ -6055,4 +6065,31 @@
 }
 .text-center{
     text-align: center !important;
+}
+
+.line-height-normal{
+    line-height:1.2em !important;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.bolder{
+    font-weight: 800;
+}
+
+.folio-text{
+    width:75%;
+    color:#000000 !important;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .folio-text{
+        width:95%;
+    }
+}
+
+.blue-heading{
+    color: #2944d1 !important;
+    text-shadow: 1px 1px 0px #E34C8A;
 }

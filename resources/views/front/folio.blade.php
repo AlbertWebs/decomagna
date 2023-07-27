@@ -3,21 +3,39 @@
 @section('content')
 
   <main style="position: relative; clear:both; padding:100px; background-color: #ffffff !important">
-    <div class="">
-
     @foreach ($Folio as $item)
-    <div class="product_version_before_slider" style="background-color: #ffffff !important">
-        <div class="product_version_before_slider_left">
-            <div class="great_order">
+    <div class="product_versions" style="text-align: center; line-height:normal; background-color: rgb(238,238,240); padding:100px">
+        <h1 class="blue-heading">{{$item->name}}</h1>
+
+
+         <h3 class="product_version_h3" style="font-weight: 100; max-width:700px; margin:0px auto; color: rgb(87,68,57);">
+            {!!html_entity_decode($item->meta)!!}
+         </h3>
+
+     </div>
+
+
+
+
+    <div class="product_version_before_slider">
+            <div class="great_orders">
                 <div class="slider-container" id="slider1">
                     <div class="slider">
-                        <div class="slides">
-                            <img src="{{url('/')}}/uploads/portfolios/{{$item->image_one}}" alt="{{$item->name}}" />
-
-
+                        <div class="slide">
+                            <img
+                                src="{{url('/')}}/uploads/portfolios/{{$item->image_one}}"
+                            />
                         </div>
-
-
+                        <div class="slide">
+                            <img
+                                src="{{url('/')}}/uploads/portfolios/{{$item->image_two}}"
+                            />
+                        </div>
+                        <div class="slide">
+                            <img
+                                src="{{url('/')}}/uploads/portfolios/{{$item->image_three}}"
+                            />
+                        </div>
                         <!-- Add more slide elements with appropriate images -->
                     </div>
 
@@ -26,18 +44,12 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="product_version_before_slider_right">
-            <h3 class="product_version_before_slider_right_h3">
-                {{$item->name}}
-            </h3>
-            <p class="text-black">
-                {!!html_entity_decode($item->content)!!}
-            </p>
-        </div>
-      </div>
-    @endforeach
     </div>
+    <div class="great_orders folio-text">
+            {!!html_entity_decode($item->content)!!}
+    </div>
+    @endforeach
+
   </main>
 
 @endsection
