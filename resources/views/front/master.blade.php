@@ -189,13 +189,13 @@
                         <div class="separator"></div>
                     </div>
 
-                    <p class="title-1">Get News & Offers</p>
+                    <p class="title-1">Professional & Reliable Flooring Installation Services</p>
 
                     <p class="label-1">
-                        Subscribe us & Get <span class="span">25% Off.</span>
+                        <span style="color:#000000">We take our&nbsp;<strong>client satisfaction</strong>&nbsp;very seriously...&nbsp; that’s why we have<strong> perfected</strong>&nbsp;the art of&nbsp;<strong>flooring</strong> <strong>installations </strong>with our team of seasoned technicians across Kenya.</span>
                     </p>
 
-                    <form action="" class="input-wrapper">
+                    {{-- <form action="" class="input-wrapper">
                         <div class="icon-wrapper">
                             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
 
@@ -208,7 +208,7 @@
 
                             <span class="text text-2" aria-hidden="true">Subscribe</span>
                         </button>
-                    </form>
+                    </form> --}}
                 </div>
 
                 <ul class="footer-list">
@@ -229,7 +229,7 @@
                     </li>
 
                     <li>
-                        <a href="#" class="label-2 footer-link hover-underline">CONTACT</a>
+                        <a href="tel:+254796110511" class="label-2 footer-link hover-underline">CONTACT</a>
                     </li>
                 </ul>
 
