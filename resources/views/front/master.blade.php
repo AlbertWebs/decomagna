@@ -221,7 +221,7 @@
                     </li>
 
                     <li>
-                        <a href="#" class="label-2 footer-link hover-underline">OUR PORTFOLIO</a>
+                        <a href="{{url('/')}}/portfolio" class="label-2 footer-link hover-underline">OUR PORTFOLIO</a>
                     </li>
 
                     <li>
