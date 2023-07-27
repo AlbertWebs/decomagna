@@ -19,7 +19,7 @@
       <!-- Gallery -->
       <section class="section menu" aria-label="menu-label" id="menu">
         {{-- <h2 class="headline-1 section-title text-center" style="color:#2944d1; text-shadow: 1px 1px 0px #E34C8A;">Our Project Gallery</h2> --}}
-        <div class="image-grid">
+        <div class="image-grid" style=" --num-cols: 3;">
 
 
             <?php

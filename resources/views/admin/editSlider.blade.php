@@ -141,7 +141,7 @@
                                                 </span>
                                                 <input type="text" class="form-control" readonly>
                                             </div>
-                                            <img class="image-preview" style="width:auto;" src="{{url('/')}}/uploads/transparent-icon.webp" id='img-upload'/>
+                                            <img class="image-preview" style="width:auto;" src="{{url('/')}}/uploads/slider/{{$Slider->thumbnail}}" id='img-upload'/>
                                         </div>
                                     </div>
                                 </div>
