@@ -15,7 +15,7 @@
     <h2 class="product_version_h2">{{$Category->title}}</h2>
 
     <h3 class="product_version_h3">
-        {!!html_entity_decode($Category->content)!!}
+        {!!html_entity_decode($Category->meta)!!}
     </h3>
     <h3 class="product_version_h3_2">
         {!!html_entity_decode($Category->heading_two)!!}
@@ -34,68 +34,18 @@
             </div>
 
             <div class="product_version_div_one_right_body">
-                <div class="product_version_div_one_right_body_left">
+                {{-- <div class="product_version_div_one_right_body_left">
                     <h4>1</h4>
-                </div>
+                </div> --}}
                 <div class="product_version_div_one_right_body_right">
                     <h4>
-                        Melamine Overlay: The overlayer protects the
-                        floor from scratches, abrasion and stain, while
-                        providing a realistic look and feel to the
-                        floor. This is a protective cover for your floor
-                        and a waterproof seal prevents water from
-                        penetrating and damaging the floor.
+                        {!!html_entity_decode($Category->content)!!}
                     </h4>
                 </div>
             </div>
 
-            <div class="product_version_div_one_right_body">
-                <div class="product_version_div_one_right_body_left">
-                    <h4>2</h4>
-                </div>
-                <div class="product_version_div_one_right_body_right">
-                    <h4>
-                        Decorative Paper: Just below the overlayer, the
-                        decorative layer retains the floor pattern or
-                        print. This gives your floor an incredibly
-                        realistic and beautiful wood or stone look.
-                    </h4>
-                </div>
-            </div>
 
-            <div class="product_version_div_one_right_body">
-                <div class="product_version_div_one_right_body_left">
-                    <h4>3</h4>
-                </div>
-                <div class="product_version_div_one_right_body_right">
-                    <h4>
-                        HDF Core: Below the decorative paper, decides
-                        the quality and stability of the floor. Usually
-                        made of High Density Fiberboard, this layer is
-                        where the waterproof properties work. The
-                        fiberboard in a laminate floor may contain more
-                        resin, making it less likely to expand in water.
-                    </h4>
-                </div>
-            </div>
 
-            <div class="product_version_div_one_right_body">
-                <div class="product_version_div_one_right_body_left">
-                    <h4>4</h4>
-                </div>
-                <div class="product_version_div_one_right_body_right">
-                    <h4>
-                        Balance Layer: This layer also helps to provide
-                        stability to the floor and helps prevent water
-                        from penetrating the floor from below. Backing
-                        layer is often used to help seal moisture from
-                        the subfloor, and you may encounter moisture in
-                        the concrete floor or basement, so that each
-                        plank is resistant to moisture from above and
-                        below.
-                    </h4>
-                </div>
-            </div>
         </div>
     </div>
     <?php

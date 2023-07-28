@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->text('thicknesses')->nullable();
             $table->text('a_c_ratings')->nullable();
+            $table->text('meta')->nullable();
             $table->string('slung')->nullable();
             $table->text('content')->nullable();
             $table->text('image')->nullable();
