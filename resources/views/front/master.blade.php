@@ -192,7 +192,7 @@
                     <p class="title-1">Professional & Reliable Flooring Installation Services</p>
 
                     <p class="label-1">
-                        <span style="color:#000000">We take our&nbsp;<strong>client satisfaction</strong>&nbsp;very seriously...&nbsp; that’s why we have<strong> perfected</strong>&nbsp;the art of&nbsp;<strong>flooring</strong> <strong>installations </strong>with our team of seasoned technicians across Kenya.</span>
+                        <span style="color: rgb(166,166,166)">We take our&nbsp;<strong>client satisfaction</strong>&nbsp;very seriously...&nbsp; that’s why we have<strong> perfected</strong>&nbsp;the art of&nbsp;<strong>flooring</strong> <strong>installations </strong>with our team of seasoned technicians across Kenya.</span>
                     </p>
 
                     {{-- <form action="" class="input-wrapper">
