@@ -30,6 +30,7 @@ Route::get('/privacy-policy', [HomeController::class, 'privacy']);
 Route::get('/copyright', [HomeController::class, 'copyright']);
 
 Route::get('/products/{slung}', [HomeController::class, 'categories']);
+Route::get('/products/explore/{slung}', [HomeController::class, 'categories_explore']);
 Route::get('/products/thickness/{category}/{slung}', [HomeController::class, 'thickness']);
 Route::get('/products/ac-rating/{category}/{slung}', [HomeController::class, 'ac']);
 Route::get('/products/color/{category}/{slung}', [HomeController::class, 'color']);

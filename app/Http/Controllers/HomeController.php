@@ -29,6 +29,39 @@ class HomeController extends Controller
         return view('front.products', compact('Products','CategoryTitle','CategorySlung','PageTitle'));
     }
 
+
+    public function categories_explore($slung)
+    {
+        $Categories = \App\Models\Category::where('slung',$slung)->get();
+        foreach($Categories as $cat){
+            $Products = DB::table('products')->where('category',$cat->id)->get();
+            // dd(count($Products));
+            $PageTitle = $cat->title;
+            $CategoryTitle = "Quick-Step flooring Kenya - Decomagna ltd";
+            $CategorySlung = "#";
+            $catslung = $slung;
+            $Categories = DB::table('categories')->where('slung',$slung)->get();
+            return view('front.categories-bk', compact('Categories','CategorySlung','CategoryTitle','PageTitle','Products','catslung'));
+        }
+
+    }
+
+    public function categories($slung)
+    {
+        $Categories = \App\Models\Category::where('slung',$slung)->get();
+        foreach($Categories as $cat){
+            $Products = DB::table('products')->where('category',$cat->id)->get();
+            // dd(count($Products));
+            $PageTitle = $cat->title;
+            $CategoryTitle = "Quick-Step flooring Kenya - Decomagna ltd";
+            $CategorySlung = "#";
+            $catslung = $slung;
+            $Categories = DB::table('categories')->where('slung',$slung)->get();
+            return view('front.categories', compact('Categories','CategorySlung','CategoryTitle','PageTitle','Products','catslung'));
+        }
+
+    }
+
     public function product($slung)
     {
         $Products = DB::table('products')->where('slung',$slung)->get();
@@ -36,11 +69,7 @@ class HomeController extends Controller
     }
 
 
-    public function categories($slung)
-    {
-        $Categories = DB::table('categories')->where('slung',$slung)->get();
-        return view('front.categories', compact('Categories'));
-    }
+
 
     public function faq($slung)
     {

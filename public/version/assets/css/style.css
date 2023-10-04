@@ -6095,3 +6095,18 @@
     color: #2944d1 !important;
     text-shadow: 1px 1px 0px #E34C8A;
 }
+
+.main-select{
+  width:100%;
+  float: left;
+  display: block;
+}
+
+.left-select{
+    width:50%;
+
+}
+.right-select{
+    width:50%;
+    float:right;
+}
