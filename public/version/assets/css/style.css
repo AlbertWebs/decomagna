@@ -4312,6 +4312,42 @@
         color: rgb(53,53,53);
     }
 
+    .filterComponent {
+      width: fit-content;
+      display: flex;
+      margin: 0 auto;
+      gap: 20px;
+      background: linear-gradient(to right, #ecebeb, #f8f6f1);
+      padding: 10px 20px;
+    }
+
+    .filterComponent > input {
+      padding: 5px 10px;
+      border: 1px solid #342f71;
+      background-color: #f8f6f1 ;
+      color: #333333;
+    }
+
+    .filterComponent > select {
+      padding: 5px 10px;
+      border: 1px solid #342f71;
+      background-color: #f8f6f1 ;
+      color: #333333;
+    }
+
+    .filterComponent > button {
+      border: 1px solid #e66622;
+      padding: 5px 20px;
+      background-color: #e66622;
+      color: white;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .filterComponent > button:hover {
+      background-color: white;
+      color: #e66622;
+    }
+
 
     @media (max-width: 767px) {
         .sing_single_product {
@@ -4651,6 +4687,43 @@
         .dra_dagger > div > p {
             color: rgb(53,53,53);
         }
+
+        .filterComponent {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+          gap: 20px;
+          background: linear-gradient(to right, #ecebeb, #f8f6f1);
+          padding: 10px 20px;
+        }
+    
+        .filterComponent > input {
+          padding: 5px 10px;
+          border: 1px solid #342f71;
+          background-color: #f8f6f1 ;
+          color: #333333;
+        }
+    
+        .filterComponent > select {
+          padding: 5px 10px;
+          border: 1px solid #342f71;
+          background-color: #f8f6f1 ;
+          color: #333333;
+        }
+    
+        .filterComponent > button {
+          border: 1px solid #e66622;
+          padding: 5px 20px;
+          background-color: #e66622;
+          color: white;
+          transition: all 0.3s ease-in-out;
+        }
+    
+        .filterComponent > button:hover {
+          background-color: white;
+          color: #e66622;
+        }
       }
 
 
@@ -4679,6 +4752,10 @@
           .slider {
             display: flex;
             transition: transform 0.3s ease-in-out;
+          }
+
+          .slide > div {
+            width: 80%;
           }
 
           .slide {
@@ -4979,6 +5056,43 @@
 
         .dra_dagger > div > p {
             color: rgb(53,53,53);
+        }
+
+        .filterComponent {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+          gap: 20px;
+          background: linear-gradient(to right, #ecebeb, #f8f6f1);
+          padding: 10px 20px;
+        }
+    
+        .filterComponent > input {
+          padding: 5px 10px;
+          border: 1px solid #342f71;
+          background-color: #f8f6f1 ;
+          color: #333333;
+        }
+    
+        .filterComponent > select {
+          padding: 5px 10px;
+          border: 1px solid #342f71;
+          background-color: #f8f6f1 ;
+          color: #333333;
+        }
+    
+        .filterComponent > button {
+          border: 1px solid #e66622;
+          padding: 5px 20px;
+          background-color: #e66622;
+          color: white;
+          transition: all 0.3s ease-in-out;
+        }
+    
+        .filterComponent > button:hover {
+          background-color: white;
+          color: #e66622;
         }
       }
 

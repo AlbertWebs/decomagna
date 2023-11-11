@@ -16,6 +16,27 @@
 
         <h2 class="product_version_h2">{{$PageTitle}}</h2>
 
+        <div class='filterComponent'>
+            <input type="search" placeholder="Search floor" />
+
+            <select>
+                <option value="">Select color</option>
+                <option value="Red">Red</option>
+            </select>
+
+            <select>
+                <option value="">Select thickness</option>
+                <option value="7mm">7mm</option>
+            </select>
+
+            <select>
+                <option value="">Select AC rating</option>
+                <option value="AC1">AC1</option>
+            </select>
+
+            <button>SEARCH</button>
+        </div>
+
         <div class="commercial_laminate">
             @foreach ($Products as $products)
             <div class="">
