@@ -1569,7 +1569,19 @@
   }
 
   .feature-card {
-    padding: 30px 20px 40px;
+    padding: 10px;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #000000;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+  }
+
+  .feature-card:hover {
+    transform: rotateY(180deg);
   }
 
   .feature-item:nth-child(2n + 1) .feature-card {
@@ -1585,10 +1597,34 @@
   }
 
   .feature-card .card-icon {
+    height: 100%;
     width: 100%;
     margin: auto;
-    height: 20vh;
-    transition: var(--transition-2);
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: white;
+  }
+
+  .feature-card .card-content {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feature-card:hover .card-content {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    display: flex;
   }
 
   .feature-card .card-icon > img {
@@ -1597,9 +1633,10 @@
     object-fit: contain;
   }
 
-  .feature-card:hover .card-icon {
-    transform: scale(-1) rotate(180deg);
-  }
+  /* .feature-card:hover .card-icon {
+    transform: rotate(180deg);
+  } */
+
 
   .feature-card .card-title {
     margin-block: 20px;
@@ -4307,6 +4344,21 @@
             flex: 0 0 100%;
           }
 
+          .slide > div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            background-color: rgba(255,255,255, .6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+          }
+
           .slide img {
             width: 100%;
             height: auto;
@@ -5853,46 +5905,7 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .banner_overview_content_image {
-      margin-top: 100px;
-    }
 
-    .about .container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .youtube-div {
-        width: 98%;
-        height: 40vh;
-        margin: 40px auto 0 auto;
-      }
-
-    .top-topper {
-      margin-top: 50px;
-    }
-    .royaly {
-      width: 90%;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .royalty_child {
-      background-color: white;
-      height: 40vh;
-      width: 100%;
-    }
-
-    .royalty_child > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      mix-blend-mode: darken;
-    }
-  }
 
   .owl-dots {
     text-align: center;
@@ -6010,6 +6023,60 @@
 
     .faq-law > div:hover > a {
         background-color: rgb(230,102,34);
+    }
+
+    @media (max-width: 768px) {
+      .banner_overview_content_image {
+        margin-top: 100px;
+      }
+  
+      .about .container {
+          display: flex;
+          flex-direction: column;
+      }
+  
+      .youtube-div {
+          width: 98%;
+          height: 40vh;
+          margin: 40px auto 0 auto;
+        }
+  
+      .top-topper {
+        margin-top: 50px;
+      }
+      .royaly {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+  
+      .royalty_child {
+        background-color: white;
+        height: 40vh;
+        width: 100%;
+      }
+  
+      .royalty_child > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mix-blend-mode: darken;
+      }
+  
+      .owl-dots {
+        text-align: center;
+        margin-top: 40px;
+        display: flex;
+        margin-left: 0;
+        transform: translateX(-0%);
+        overflow-x: auto;
+      }
+
+      .owl-dots::-webkit-scrollbar {
+          display: none;
+      }
     }
 
     @media (max-width: 768px) {

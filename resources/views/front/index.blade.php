@@ -20,8 +20,8 @@
                                 <img src="{{url('/')}}/uploads/slider/{{$slider->thumbnail}}" width="160"
                                     height="50" loading="lazy" alt="grilli home" />
                             </div>
-                            <h2 style="color:#2944d1 !important; text-shadow: 1px 1px 0px #ffffff; max-width:750px; text-align:center">{{$slider->name}}</h2>
-                            <h5 style="max-width:750px; line-height:normal; font-weight:100; color: rgb(70, 46, 5);">
+                            <h2 style="color:#2944d1 !important; text-shadow: 1px 1px 0px #ffffff; max-width:95%; text-align:center">{{$slider->name}}</h2>
+                            <h5 class="container-slider-h" style="max-width:750px; line-height:normal; font-weight:100; color: rgb(70, 46, 5);">
                                 {!!html_entity_decode($slider->content)!!}
                             </h5>
                             {{-- <a href="#">discover more</a> --}}
@@ -336,6 +336,10 @@
                                 <div class="card-icon">
                                     <img src="{{url('/')}}/uploads/partners/{{$partners->image}}" loading="lazy"
                                         alt="{{$partners->name}}" />
+                                </div>
+
+                                <div class='card-content'>
+                                    <h4>{{$partners->name}}</h4>
                                 </div>
                             </div>
                         </li>
