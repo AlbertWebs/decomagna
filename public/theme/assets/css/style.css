@@ -375,7 +375,7 @@ button, a { transition: var(--transition); }
 .header-contact { display: none; }
 
 .header {
-  background: rgba(69, 74, 80, .8);
+  background: #fff;
   position: fixed;
   top: 0;
   left: 0;

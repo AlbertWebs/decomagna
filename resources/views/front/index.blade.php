@@ -21,7 +21,7 @@
                                     height="50" loading="lazy" alt="grilli home" />
                             </div>
                             <h2 style="color:#2944d1 !important; text-shadow: 1px 1px 0px #ffffff; max-width:95%; text-align:center">{{$slider->name}}</h2>
-                            <h5 class="container-slider-h" style="max-width:750px; line-height:normal; font-weight:100; color: rgb(70, 46, 5);">
+                            <h5 class="container-slider-h" style="max-width:750px; line-height:normal; font-weight:800; color: rgb(70, 46, 5);">
                                 {!!html_entity_decode($slider->content)!!}
                             </h5>
                             {{-- <a href="#">discover more</a> --}}
@@ -42,7 +42,7 @@
 
 
             <a href="#intro" class="scroll-down control">
-                <img src="{{asset('version/assets/images/scroll-down.svg')}}" width="40" height="66" loading="lazy"
+                <img src="{{asset('version/assets/images/arrowdown.svg')}}" width="60" height="66" loading="lazy"
                     alt="mouse scroll" />
             </a>
         </div>
@@ -56,10 +56,10 @@
         {{-- <section class="section service service-white text-center" aria-label="service"
             style="background-color:#D9D9D9"> --}}
 
-            <section id="intro" class="section service service-white text-center" aria-label="service">
+            <section id="intro" class="section service service-white text-center paddingTen" aria-label="service">
                 <div class="container">
                     @foreach ($About as $about)
-                    <h2 class="headline-intro" style="color:#2944d1 !important; text-shadow: 1px 1px 0px #E34C8A;">{{$about->title}}</h2>
+                    <h2 class="headline-intro" style="color:#2944d1 !important;">{{$about->title}}</h2>
                     <p>
                         <font color="#676767">
                             <span style=" line-height: 1.6;">
@@ -69,7 +69,7 @@
                     </p>
                     @endforeach
 
-                    <div class="royaly owl-carousel margin-top-100">
+                    <div class="royaly owl-carousel" style="margin-top: 50px;">
                         <?php $Categories = DB::table("categories")->get(); ?>
                         @foreach ($Categories as $cat)
                         <div class="royalty_child">
@@ -127,12 +127,12 @@
                     </div>
 
                     <figure class="about-banner">
-                        <img src="{{url('/')}}/uploads/sections/{{$sectionhome->image}}" width="670" height="570"
+                        <img src="{{url('/')}}/uploads/sections/{{$sectionhome->image}}" class="youtubeFrame" height="570"
                             loading="lazy" alt=" {{$sectionhome->name}}" class="w-100s" data-parallax-item
                             data-parallax-speed="1" />
 
                         <div class="youtube-div">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rw34dko8ty8">
+                            <iframe height="100%" src="https://www.youtube.com/embed/rw34dko8ty8" class="youtubeFrame">
 
                             </iframe>
                         </div>
@@ -162,8 +162,6 @@
 
                 <div class="special-dish-content bg-black-10 text-center">
                     <div class="container">
-                        <img src="{{asset('version/assets/images/badge-1.png')}}" width="28" height="41" loading="lazy"
-                            alt="badge" class="abs-img" />
 
                         <h3 class="product-intro-title section-title text-center margin-top-100">{{$sectionhome->name}}
                         </h3>
@@ -255,12 +253,12 @@
                 style="background-image: url('{{asset('uploads/sections/')}}/{{$sectionhome->image}}')"
                 aria-label="testimonials">
                 <div class="container">
-                    {{-- <div class="quote trans360">”</div> --}}
-                    <p class="headline-2 testi-text">
+                    <div class="" style="background-color: rgba(255,255,255,.6); padding: 20px">
+                        <p class="headline-2 testi-text">
 
-                        {!!html_entity_decode($sectionhome->content)!!}
-                    </p>
-                    {{-- <div class="quote">”</div> --}}
+                            {!!html_entity_decode($sectionhome->content)!!}
+                        </p>
+                    </div>
                 </div>
                 <div class="margin-center margin-top-50">
                     <center>
