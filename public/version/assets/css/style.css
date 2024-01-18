@@ -2230,7 +2230,7 @@
   .youtube-div {
     width: 90%;
     height: 50vh;
-    margin: 40px auto 0 auto;
+    margin: 40px 0;
   }
 
   @keyframes scrollDown {
@@ -5442,6 +5442,11 @@
      * CUSTOM PROPERTY
      */
 
+     .imgHalf {
+      width: 50% !important;
+      object-fit: cover;
+     }
+
      .youtubeFrame {
       width: 600px;
      }
@@ -6182,7 +6187,7 @@
       .youtube-div {
           width: 98%;
           height: 40vh;
-          margin: 40px auto 0 auto;
+          margin: 40px 0;
         }
   
       .top-topper {

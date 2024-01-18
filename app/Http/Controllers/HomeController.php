@@ -170,6 +170,12 @@ class HomeController extends Controller
         return view('front.blog_single', compact('Blog'));
     }
 
+    public function contact()
+    {
+        $Slider = DB::table('sliders')->orderBy('id','ASC')->get();
+        return view('front.contact', compact('Slider'));
+    }
+
 
 
 

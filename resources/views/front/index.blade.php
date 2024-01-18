@@ -262,7 +262,7 @@
                 </div>
                 <div class="margin-center margin-top-50">
                     <center>
-                        <a href="{{$sectionhome->action}}" class="btn btn-secondary margin-center">
+                        <a href="/contact-us" class="btn btn-secondary margin-center">
                             <span class="text text-1">{{$sectionhome->action_name}}</span>
                             <span class="text text-2" aria-hidden="true">{{$sectionhome->action_name}}</span>
                         </a>

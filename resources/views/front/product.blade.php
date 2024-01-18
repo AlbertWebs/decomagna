@@ -12,18 +12,21 @@
                             <img
                                 src="{{url('/')}}/uploads/products/{{$product->image_one}}"
                                 alt="{{$product->name}}"
+                                class="imgHalf"
                             />
                         </div>
                         <div class="slide">
                             <img
                                 src="{{url('/')}}/uploads/products/{{$product->image_one}}"
                                 alt="{{$product->name}}"
+                                class="imgHalf"
                             />
                         </div>
                         <div class="slide">
                             <img
                             src="{{url('/')}}/uploads/products/{{$product->image_one}}"
                             alt="{{$product->name}}"
+                            class="imgHalf"
                         />
                         </div>
                         <!-- Add more slide elements with appropriate images -->
@@ -53,7 +56,7 @@
 
                     <h4>Product description</h4>
                     <p>{!!html_entity_decode($product->meta)!!}</p>
-                    <a href="{{url('/')}}">
+                    <a href="{{url('/contact-us')}}">
                         Request Quotation
                     </a>
                 </div>

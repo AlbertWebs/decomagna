@@ -152,7 +152,7 @@
             <a href="{{url('/')}}/contact-us" class="btn btn-secondary">
                 <span class="text text-1">Find A Floor</span>
 
-                <span class="text text-2" aria-hidden="true">Request Catalogue</span>
+                <span class="text text-2" aria-hidden="true">Request a floor</span>
             </a>
 
             <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
