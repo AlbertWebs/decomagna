@@ -137,10 +137,44 @@
                                     </select>
                                     <label>Choose Species</label>
                                 </div>
+                                <div class="section-space col s12"></div>
                             </div>
                             {{--  --}}
 
 
+                            <?php $Color = DB::table('waters')->get(); ?>
+                            {{--  --}}
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <select required name="waters" class="icons" id="mydiv">
+                                        <option value="" disabled selected>Choose Water Resistant</option>
+                                        @foreach ($Color as $color)
+                                        <option value="{{$color->title}}" data-icon="{{url('/')}}/uploads/colors/{{$color->image}}" class="circle">{{$color->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose Color</label>
+                                </div>
+                                <?php $Species = DB::table('Warranties')->get(); ?>
+                                <div class="input-field col s6">
+                                    <select required name="warranties" class="icons" id="mydiv">
+                                        <option value="" disabled selected>Choose Waranty</option>
+                                        @foreach ($Species as $species)
+                                        <option value="{{$species->title}}" data-icon="{{url('/')}}/uploads/species/{{$species->image}}" class="circle">{{$species->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose Species</label>
+                                </div>
+                                <div class="section-space col s12"></div>
+                            </div>
+                            {{--  --}}
+
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea required name="dimensions" class="materialize-textarea"></textarea>
+                                    <label for="textarea1">Product Dimensions:</label>
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="input-field col s12">

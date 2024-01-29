@@ -647,6 +647,10 @@ class AdminsController extends Controller
         $Product->name = $request->title;
         $Product->slung = Str::slug($request->title);
         $Product->meta = $request->meta;
+        $Product->dimensions = $request->dimensions;
+        $Product->warranties = $request->warranties;
+        $Product->waters = $request->waters;
+
         $Product->category = $request->category;
         $Product->species = $request->species;
         $Product->color = $request->color;
