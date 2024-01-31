@@ -154,7 +154,7 @@
                                     </select>
                                     <label>Choose Color</label>
                                 </div>
-                                <?php $Species = DB::table('Warranties')->get(); ?>
+                                <?php $Species = DB::table('warranties')->get(); ?>
                                 <div class="input-field col s6">
                                     <select required name="warranties" class="icons" id="mydiv">
                                         <option value="" disabled selected>Choose Waranty</option>
