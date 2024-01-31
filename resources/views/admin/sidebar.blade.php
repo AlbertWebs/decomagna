@@ -67,14 +67,64 @@
                         </li>
                         <li><a href="{{url('/')}}/admin/addProduct">Add Product</a>
                         </li>
-                        {{-- <li><a href="{{url('/')}}/admin/variations/color">All Color Variations </a>
+                        {{--  --}}
+                        <li>
+                            <a href="">
+                                <h6>Color</h6>
+                            </a>
                         </li>
-                        <li><a href="{{url('/')}}/admin/variations/size">All Size Variations </a>
+
+                        <li>
+                            <a href="{{url('/')}}/admin/variations/color">All Color Variations</a>
                         </li>
-                        <li><a href="{{url('/')}}/admin/addVariation/color">Add Color Variation</a>
+                        <li>
+                            <a href="{{url('/')}}/admin/addColor">Add Color</a>
                         </li>
-                        <li><a href="{{url('/')}}/admin/addVariation/size">Add Size Variation</a>
-                        </li> --}}
+                        <li>
+                            <a href="">
+                                <h6>Water Resistance</h6>
+                            </a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/addResistance">Add Water Resistance</a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/resistance">All Resistance</a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h6>AC Rating</h6>
+                            </a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/addResistance">Add AC Rating</a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/resistance">All AC Ratings</a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h6>Thicknesses</h6>
+                            </a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/addThicknesses">Add Thicknesses</a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/thicknesses">All Thicknesses</a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h6>Species</h6>
+                            </a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/addSpecies">Add Species</a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/species">All Species</a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h6>Warranty</h6>
+                            </a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/addWarranty">Add Warranty</a>
+                        </li>
+                        <li><a href="{{url('/')}}/admin/warranty">All Warranty</a>
+                        </li>
                     </ul>
                 </div>
             </li>

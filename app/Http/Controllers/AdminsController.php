@@ -8,6 +8,8 @@ use App\Models\Term;
 
 use App\Models\Privacy;
 
+use App\Models\Color;
+
 use App\Models\Extra;
 
 use App\Models\Section;
@@ -2018,7 +2020,7 @@ class AdminsController extends Controller
 
     public function var_color(){
         $Product = Product::all();
-        $Variation = DB::table('variations')->where('type','color')->get();
+        $Variation = DB::table('colors')->get();
         $page_title = 'list';
         $page_name = 'Variation';
         return view('admin.var_color',compact('page_title','Variation','page_name','Product'));
@@ -2535,6 +2537,97 @@ class AdminsController extends Controller
         return Redirect::back();
     }
 
+    public function editColor($id){
+        $Color = Color::find($id);
+        return view('admin.editColor', compact('Color'));
+    }
+
+    public function edit_Color(Request $request, $id){
+        $path = public_path('uploads/colors');
+        if(isset($request->image)){
+            $file = $request->file('image');
+            $filename = $file->getClientOriginalName();
+            $file->move($path, $filename);
+            $image = $filename;
+        }else{
+            $image = $request->image_cheat;
+        }
+        $updateDetails = array(
+            'title'=>$request->title,
+            'image'=>$image
+        );
+        DB::table('colors')->where('id',$id)->update($updateDetails);
+        Session::flash('message', "Changes have been saved");
+        return Redirect::back();
+    }
+
+    public function addColor(){
+        return view('admin.addColor');
+    }
+
+    public function deleteColor($id){
+        activity()->log('Deleted Color ID number '.$id.' ');
+        DB::table('colors')->where('id',$id)->delete();
+        return Redirect::back();
+    }
+    public function add_Color(Request $request){
+        $path = public_path('uploads/colors');
+        if(isset($request->image)){
+            $file = $request->file('image');
+            $filename = $file->getClientOriginalName();
+            $file->move($path, $filename);
+            $image = $filename;
+        }else{
+            $image = "0";
+        }
+        $Color = new Color;
+        $Color->title = $request->title;
+        $Color->image = $image;
+        $Color->save();
+        Session::flash('message', "Color Has Been Added");
+        return Redirect::back();
+    }
+
+    //create functions for water  edit_water
+    public function addWater(){
+        activity()->log('Accessed Add Water Page');
+        $page_title = 'formfiletext';
+        $page_name = 'Add Water';
+        return view('admin.addWater',compact('page_title','page_name'));
+    }
+
+    public function editWater($id){
+        activity()->log('Accessed Edit Water ID number '.$id.' ');
+        $Water = Water::find($id);
+        $page_title = 'formfiletext';
+        $page_name = 'Edit Water';
+        return view('admin.editWater',compact('page_title','Water','page_name'));
+    }
+
+    public function deleteWater($id){
+        activity()->log('Deleted Water ID number '.$id.' ');
+        DB::table('water')->where('id',$id)->delete();
+        return Redirect::back();
+    }
+    public function add_Water(Request $request){
+        activity()->log('Evoked Add Water Operation');
+        $Water = new Water;
+        $Water->title = $request->title;
+        $Water->content = $request->content;
+        $Water->save();
+        Session::flash('message', "Water Has Been Added");
+        return Redirect::back();
+    }
+
+
+    public function edit_Water(Request $request, $id){
+        activity()->log('Evoked Edit Water For Water ID number '.$id.' ');
+        $updateDetails = array(
+            'title'=>$request->title,
+        );
+        Session::flash('message', "Changes have been saved");
+        return Redirect::back();
+    }
 
 }
 

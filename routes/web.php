@@ -211,6 +211,29 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::get('variations/size', [AdminsController::class, 'var_size']);
         Route::get('editVariation/{id}', [AdminsController::class, 'editVariation']);
 
+        //Color
+        Route::get('addColor', [AdminsController::class, 'addColor']);
+        Route::post('add_Color', [AdminsController::class, 'add_Color']);
+        Route::get('editColor/{id}', [AdminsController::class, 'editColor']);
+        Route::post('edit_Color/{id}', [AdminsController::class, 'edit_Color']);
+        Route::get('deleteColor/{id}', [AdminsController::class, 'deleteColor']);
+
+        //Water
+        Route::get('water', [AdminsController::class, 'water']);
+        Route::get('addWater', [AdminsController::class, 'addWater']);
+        Route::post('add_Water', [AdminsController::class, 'add_Water']);
+        Route::get('editWater/{id}', [AdminsController::class, 'editWater']);
+        Route::post('edit_Water/{id}', [AdminsController::class, 'edit_Water']);
+        Route::get('deleteWater/{id}', [AdminsController::class, 'deleteWater']);
+
+        //AcRatting
+        Route::get('acRatting', [AdminsController::class, 'acRatting']);
+        Route::get('addAcRatting', [AdminsController::class, 'addAcRatting']);
+        Route::post('add_AcRatting', [AdminsController::class, 'add_AcRatting']);
+        Route::get('editAcRatting/{id}', [AdminsController::class, 'editAcRatting']);
+        Route::post('edit_AcRatting/{id}', [AdminsController::class, 'edit_AcRatting']);
+        Route::get('deleteAcRatting/{id}', [AdminsController::class, 'deleteAcRatting']);
+
         // Categories
         Route::get('categories', [AdminsController::class, 'categories']);
         Route::get('addCategory', [AdminsController::class, 'addCategory']);

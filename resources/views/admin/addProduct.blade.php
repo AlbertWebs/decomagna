@@ -146,7 +146,7 @@
                             {{--  --}}
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <select required name="waters" class="icons" id="mydiv">
+                                    <select  name="waters" class="icons" id="mydiv">
                                         <option value="" disabled selected>Choose Water Resistant</option>
                                         @foreach ($Color as $color)
                                         <option value="{{$color->title}}" data-icon="{{url('/')}}/uploads/colors/{{$color->image}}" class="circle">{{$color->title}}</option>
@@ -156,7 +156,7 @@
                                 </div>
                                 <?php $Species = DB::table('warranties')->get(); ?>
                                 <div class="input-field col s6">
-                                    <select required name="warranties" class="icons" id="mydiv">
+                                    <select  name="warranties" class="icons" id="mydiv">
                                         <option value="" disabled selected>Choose Waranty</option>
                                         @foreach ($Species as $species)
                                         <option value="{{$species->title}}" data-icon="{{url('/')}}/uploads/species/{{$species->image}}" class="circle">{{$species->title}}</option>
