@@ -10,6 +10,8 @@ use App\Models\Privacy;
 
 use App\Models\Color;
 
+use App\Models\Water;
+
 use App\Models\Extra;
 
 use App\Models\Section;
@@ -2073,6 +2075,15 @@ class AdminsController extends Controller
         return response()->json(['success'=>'Deleted Successfully!']);
     }
 
+    public function deleteWaterAjax(Request $request){
+        activity()->log('Evoked a delete Categorgy Request');
+        $id = $request->id;
+        DB::table('waters')->where('id',$id)->delete();
+        return response()->json(['success'=>'Deleted Successfully!']);
+    }
+
+
+
     public function deleteBlogAjax(Request $request){
         activity()->log('Evoked a delete Blog Request');
         $id = $request->id;
@@ -2591,6 +2602,13 @@ class AdminsController extends Controller
     }
 
     //create functions for water  edit_water
+    public function water(){
+        activity()->log('Accessed All Water Page');
+        $Water = Water::all();
+        $page_title = 'list';
+        $page_name = 'Water';
+        return view('admin.water', compact('page_title', 'Water', 'page_name'));
+    }
     public function addWater(){
         activity()->log('Accessed Add Water Page');
         $page_title = 'formfiletext';
@@ -2615,13 +2633,11 @@ class AdminsController extends Controller
         activity()->log('Evoked Add Water Operation');
         $Water = new Water;
         $Water->title = $request->title;
-        $Water->content = $request->content;
+
         $Water->save();
         Session::flash('message', "Water Has Been Added");
         return Redirect::back();
     }
-
-
     public function edit_Water(Request $request, $id){
         activity()->log('Evoked Edit Water For Water ID number '.$id.' ');
         $updateDetails = array(

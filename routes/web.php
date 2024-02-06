@@ -219,12 +219,21 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::get('deleteColor/{id}', [AdminsController::class, 'deleteColor']);
 
         //Water
-        Route::get('water', [AdminsController::class, 'water']);
-        Route::get('addWater', [AdminsController::class, 'addWater']);
+        Route::get('resistance', [AdminsController::class, 'water']);
+        Route::get('addResistance', [AdminsController::class, 'addWater']);
         Route::post('add_Water', [AdminsController::class, 'add_Water']);
         Route::get('editWater/{id}', [AdminsController::class, 'editWater']);
         Route::post('edit_Water/{id}', [AdminsController::class, 'edit_Water']);
         Route::get('deleteWater/{id}', [AdminsController::class, 'deleteWater']);
+
+        // Warranties Routes
+        Route::get('warranties', [AdminsController::class, 'warranties']);
+        Route::get('addWarranty', [AdminsController::class, 'addWarranty']);
+        Route::post('add_Warranty', [AdminsController::class, 'add_Warranty']);
+        Route::get('editWarranty/{id}', [AdminsController::class, 'editWarranty']);
+        Route::post('edit_Warranty/{id}', [AdminsController::class, 'edit_Warranty']);
+        Route::get('deleteWarranty/{id}', [AdminsController::class, 'deleteWarranty']);
+
 
         //AcRatting
         Route::get('acRatting', [AdminsController::class, 'acRatting']);
@@ -329,7 +338,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::post('deletePartnerAjax', [AdminsController::class, 'deletePartnerAjax']);
         Route::post('deletePortfolioAjax', [AdminsController::class, 'deletePortfolioAjax']);
         Route::post('deleteSectionAjax', [AdminsController::class, 'deleteSectionAjax']);
-
+        Route::post('deleteWaterAjax', [AdminsController::class, 'deleteWaterAjax']);
 
 
         Route::get('addProductToFacebookPixel', [AdminsController::class, 'addProductToFacebookPixel']);
