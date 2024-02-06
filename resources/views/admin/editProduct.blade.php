@@ -50,22 +50,19 @@
                             {{csrf_field()}}
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input autocomplete="off" name="title" id="list-title" value="{{$Product->name}}" type="text" class="validate" required>
+                                    <input autocomplete="off" name="title" id="list-title" value="{{$Product->name}}" type="text">
                                     <label for="list-title">Product Name</label>
                                 </div>
                                 <div class="input-field col s12">
-                                    <input autocomplete="off" name="price" id="list-title" value="{{$Product->price}}" type="number" class="validate" required>
+                                    <input autocomplete="off" name="price" id="list-title" value="{{$Product->price}}" type="number">
                                     <label for="list-title">Product Price</label>
                                 </div>
                                 <div class="input-field col s12">
-                                    <input autocomplete="off" name="sku" id="list-title" value="{{$Product->sku}}" type="text" placeholder="SKU-01" class="validate" readonly required>
+                                    <input  name="sku" id="list-title" value="{{$Product->sku}}" type="text" placeholder="SKU-01">
                                     <label for="list-title">SKU</label>
                                 </div>
-
-
                             </div>
                             <div class="row">
-
                                 {{--  --}}
                                 <div class="input-field col s12">
                                     <select required name="category" class="icons" id="mydiv">
@@ -74,12 +71,11 @@
                                         <option value="{{$CatSel->id}}" selected>{{$CatSel->title}}</option>
                                         @endforeach
                                         @foreach ($Category as $Categories)
-                                        <option value="{{$Categories->id}}" data-icon="{{url('/')}}/uploads/categories/{{$Categories->image}}" class="circle">{{$Categories->title}}</option>
+                                          <option value="{{$Categories->id}}" data-icon="{{url('/')}}/uploads/categories/{{$Categories->image}}" class="circle">{{$Categories->title}}</option>
                                         @endforeach
                                     </select>
                                     <label>Choose Category</label>
                                 </div>
-
                                 <div class="section-space col s12"></div>
                             </div>
                             {{--  --}}
@@ -103,7 +99,7 @@
                                         ?>
                                         @foreach ($ACRatings as $acRatings)
 
-                                            <option value="" disabled selected> {{$acRatings->title}}</option>
+                                            <option value="{{$acRatings->slung}}" selected> {{$acRatings->title}}</option>
                                         @endforeach
                                         @foreach ($ACRating as $a_c_ratings)
                                             <option value="{{$a_c_ratings->slung}}" data-icon="{{url('/')}}/uploads/ac_ratings/{{$a_c_ratings->image}}" class="circle">{{$a_c_ratings->title}}</option>
@@ -121,7 +117,7 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                     <select required name="color" class="icons" id="mydiv">
-                                        <option value="{{$Product->color}}" disabled selected>{{$Product->color}}</option>
+                                        <option value="{{$Product->color}}" selected>{{$Product->color}}</option>
                                         @foreach ($Color as $color)
                                         <option value="{{$color->title}}" data-icon="{{url('/')}}/uploads/colors/{{$color->image}}" class="circle">{{$color->title}}</option>
                                         @endforeach
@@ -131,13 +127,42 @@
                                 <?php $Species = DB::table('species')->get(); ?>
                                 <div class="input-field col s6">
                                     <select required name="species" class="icons" id="mydiv">
-                                        <option value="{{$Product->species}}" disabled selected>{{$Product->species}}</option>
+                                        <option value="{{$Product->species}}" selected>{{$Product->species}}</option>
                                         @foreach ($Species as $species)
                                         <option value="{{$species->title}}" data-icon="{{url('/')}}/uploads/species/{{$species->image}}" class="circle">{{$species->title}}</option>
                                         @endforeach
                                     </select>
                                     <label>Choose Species</label>
                                 </div>
+                                <div class="section-space col s12"></div>
+                            </div>
+                            {{--  --}}
+
+                            <?php $Color = DB::table('waters')->get(); ?>
+                            {{--  --}}
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <select  name="waters" class="icons" id="mydiv">
+                                        <option value="{{$Product->waters}}" selected>{{$Product->waters}}</option>
+                                        @foreach ($Color as $color)
+                                        <option value="{{$color->title}}" data-icon="{{url('/')}}/uploads/colors/{{$color->image}}" class="circle">{{$color->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose Water Resistant</label>
+                                </div>
+
+                                <?php $Species = DB::table('warranties')->get(); ?>
+                                <div class="input-field col s6">
+                                    <select  name="warranties" class="icons" id="mydiv">
+                                        <option value="{{$Product->warranties}}" selected>{{$Product->warranties}}</option>
+                                        @foreach ($Species as $species)
+                                        <option value="{{$species->title}}" data-icon="{{url('/')}}/uploads/species/{{$species->image}}" class="circle">{{$species->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose Waranty</label>
+                                </div>
+
+                                <div class="section-space col s12"></div>
                             </div>
                             {{--  --}}
 

@@ -152,7 +152,7 @@
                                         <option value="{{$color->title}}" data-icon="{{url('/')}}/uploads/colors/{{$color->image}}" class="circle">{{$color->title}}</option>
                                         @endforeach
                                     </select>
-                                    <label>Choose Color</label>
+                                    <label>Choose Water Resistant</label>
                                 </div>
                                 <?php $Species = DB::table('warranties')->get(); ?>
                                 <div class="input-field col s6">

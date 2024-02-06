@@ -744,6 +744,8 @@ class AdminsController extends Controller
             'meta'=>$request->meta,
             'trending'=>$trending,
             'featured'=>$featured,
+            'warranties'=>$request->warranties,
+            'waters'=>$request->waters,
             'stock'=>$new_stock,
             'price'=>$request->price,
             'category'=>$request->category,
