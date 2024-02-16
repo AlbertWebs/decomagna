@@ -5,7 +5,7 @@
 <main>
     <div class="product_version">
         <div class="sing_single_product">
-            <div class="bank_man">
+            <div class="bank_man divHalf">
                 <div class="slider-container" id="slider1">
                     <div class="slider">
                         <div class="slide">
