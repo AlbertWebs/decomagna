@@ -1,6 +1,23 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/prompts/compare/v0.1.10...main)
+## [Unreleased](https://github.com/laravel/prompts/compare/v0.1.14...main)
+
+## [v0.1.14](https://github.com/laravel/prompts/compare/v0.1.13...v0.1.14) - 2023-12-27
+
+* Ignore new PHPStan error by [@jessarcher](https://github.com/jessarcher) in https://github.com/laravel/prompts/pull/103
+
+## [v0.1.13](https://github.com/laravel/prompts/compare/v0.1.12...v0.1.13) - 2023-10-27
+
+- Allow empty strings on `select` prompt by [@jessarcher](https://github.com/jessarcher) in https://github.com/laravel/prompts/pull/99
+
+## [v0.1.12](https://github.com/laravel/prompts/compare/v0.1.11...v0.1.12) - 2023-10-18
+
+- Add Home and End key for list prompt by [@crazywhalecc](https://github.com/crazywhalecc) in https://github.com/laravel/prompts/pull/79
+- Support for Symfony v7.0 on Laravel 11 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/prompts/pull/93
+
+## [v0.1.11](https://github.com/laravel/prompts/compare/v0.1.10...v0.1.11) - 2023-10-03
+
+- Adds support for alternate HOME and END escape keys by [@TWithers](https://github.com/TWithers) in https://github.com/laravel/prompts/pull/87
 
 ## [v0.1.10](https://github.com/laravel/prompts/compare/v0.1.9...v0.1.10) - 2023-09-29
 

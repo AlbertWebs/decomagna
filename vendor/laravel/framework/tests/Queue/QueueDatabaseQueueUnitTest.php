@@ -46,7 +46,7 @@ class QueueDatabaseQueueUnitTest extends TestCase
 
         $queue->push($job, ['data']);
 
-        $container->shouldHaveReceived('bound')->with('events')->once();
+        $container->shouldHaveReceived('bound')->with('events')->twice();
 
         Str::createUuidsNormally();
     }
@@ -87,7 +87,7 @@ class QueueDatabaseQueueUnitTest extends TestCase
 
         $queue->later(10, 'foo', ['data']);
 
-        $container->shouldHaveReceived('bound')->with('events')->once();
+        $container->shouldHaveReceived('bound')->with('events')->twice();
 
         Str::createUuidsNormally();
     }
@@ -99,7 +99,7 @@ class QueueDatabaseQueueUnitTest extends TestCase
         $job = new stdClass;
         $job->invalid = "\xc3\x28";
 
-        $queue = $this->getMockForAbstractClass(Queue::class);
+        $queue = m::mock(Queue::class)->makePartial();
         $class = new ReflectionClass(Queue::class);
 
         $createPayload = $class->getMethod('createPayload');
@@ -113,7 +113,7 @@ class QueueDatabaseQueueUnitTest extends TestCase
     {
         $this->expectException('InvalidArgumentException');
 
-        $queue = $this->getMockForAbstractClass(Queue::class);
+        $queue = m::mock(Queue::class)->makePartial();
         $class = new ReflectionClass(Queue::class);
 
         $createPayload = $class->getMethod('createPayload');

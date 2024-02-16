@@ -149,6 +149,21 @@ it('validates', function () {
     Prompt::assertOutputContains('Please choose green.');
 });
 
+it('supports the home and end keys while navigating options', function () {
+    Prompt::fake([Key::DOWN, Key::END[0], Key::SPACE, Key::HOME[0], Key::SPACE, Key::ENTER]);
+
+    $result = multisearch(
+        label: 'What are your favorite colors?',
+        options: fn () => [
+            'red' => 'Red',
+            'green' => 'Green',
+            'blue' => 'Blue',
+        ]
+    );
+
+    expect($result)->toBe(['blue', 'red']);
+});
+
 it('can fall back', function () {
     Prompt::fallbackWhen(true);
 
@@ -168,4 +183,32 @@ it('can fall back', function () {
     );
 
     expect($result)->toBe(['result']);
+});
+
+it('supports custom validation', function () {
+    Prompt::fake(['a', Key::DOWN, Key::SPACE, Key::ENTER, Key::DOWN, Key::SPACE, Key::ENTER]);
+
+    Prompt::validateUsing(function (Prompt $prompt) {
+        expect($prompt)
+            ->label->toBe('What are your favorite colors?')
+            ->validate->toBe('in:green');
+
+        return $prompt->validate === 'in:green' && ! in_array('green', $prompt->value()) ? 'And green?' : null;
+    });
+
+    $result = multisearch(
+        label: 'What are your favorite colors?',
+        options: fn () => [
+            'red' => 'Red',
+            'green' => 'Green',
+            'blue' => 'Blue',
+        ],
+        validate: 'in:green',
+    );
+
+    expect($result)->toBe(['red', 'green']);
+
+    Prompt::assertOutputContains('And green?');
+
+    Prompt::validateUsing(fn () => null);
 });

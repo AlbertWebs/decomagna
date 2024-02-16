@@ -44,6 +44,30 @@ it('completes the input using the arrow keys', function () {
     expect($result)->toBe('Black');
 });
 
+it('supports the home key while navigating options', function () {
+    Prompt::fake([Key::DOWN, Key::DOWN, Key::HOME[0], Key::ENTER]);
+
+    $result = suggest('What is your favorite color?', [
+        'Red',
+        'Blue',
+        'Green',
+    ]);
+
+    expect($result)->toBe('Red');
+});
+
+it('supports the end key while navigating options', function () {
+    Prompt::fake([Key::DOWN, Key::END[0], Key::ENTER]);
+
+    $result = suggest('What is your favorite color?', [
+        'Red',
+        'Blue',
+        'Green',
+    ]);
+
+    expect($result)->toBe('Green');
+});
+
 it('accepts a callback', function () {
     Prompt::fake(['e', 'e', Key::DOWN, Key::ENTER]);
 
@@ -152,3 +176,27 @@ it('validates the default value when non-interactive', function () {
         'Blue',
     ], required: true);
 })->throws(NonInteractiveValidationException::class, 'Required.');
+
+it('supports custom validation', function () {
+    Prompt::validateUsing(function (Prompt $prompt) {
+        expect($prompt)
+            ->label->toBe('What is your name?')
+            ->validate->toBe('min:2');
+
+        return $prompt->validate === 'min:2' && strlen($prompt->value()) < 2 ? 'Minimum 2 chars!' : null;
+    });
+
+    Prompt::fake(['A', Key::ENTER, 'n', 'd', 'r', 'e', 'a', Key::ENTER]);
+
+    $result = suggest(
+        label: 'What is your name?',
+        options: ['Jess', 'Taylor'],
+        validate: 'min:2',
+    );
+
+    expect($result)->toBe('Andrea');
+
+    Prompt::assertOutputContains('Minimum 2 chars!');
+
+    Prompt::validateUsing(fn () => null);
+});

@@ -155,6 +155,21 @@ it('support emacs style key binding', function () {
     expect($result)->toBe(['green', 'blue']);
 });
 
+it('supports the home and end keys', function () {
+    Prompt::fake([Key::END[0], Key::SPACE, Key::HOME[0], Key::SPACE, Key::ENTER]);
+
+    $result = multiselect(
+        label: 'What are your favorite colors?',
+        options: [
+            'red' => 'Red',
+            'green' => 'Green',
+            'blue' => 'Blue',
+        ]
+    );
+
+    expect($result)->toBe(['blue', 'red']);
+});
+
 it('returns an empty array when non-interactive', function () {
     Prompt::interactive(false);
 
@@ -188,3 +203,31 @@ it('validates the default value when non-interactive', function () {
         'Blue',
     ], required: true);
 })->throws(NonInteractiveValidationException::class, 'Required.');
+
+it('supports custom validation', function () {
+    Prompt::fake([Key::SPACE, Key::ENTER, Key::DOWN, Key::SPACE, Key::ENTER]);
+
+    Prompt::validateUsing(function (Prompt $prompt) {
+        expect($prompt)
+            ->label->toBe('What are your favorite colors?')
+            ->validate->toBe('in:green');
+
+        return $prompt->validate === 'in:green' && ! in_array('green', $prompt->value()) ? 'And green?' : null;
+    });
+
+    $result = multiselect(
+        label: 'What are your favorite colors?',
+        options: [
+            'red' => 'Red',
+            'green' => 'Green',
+            'blue' => 'Blue',
+        ],
+        validate: 'in:green',
+    );
+
+    expect($result)->toBe(['red', 'green']);
+
+    Prompt::assertOutputContains('And green?');
+
+    Prompt::validateUsing(fn () => null);
+});

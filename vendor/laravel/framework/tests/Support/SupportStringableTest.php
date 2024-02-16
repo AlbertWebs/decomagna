@@ -527,6 +527,12 @@ class SupportStringableTest extends TestCase
         $this->assertSame('u', (string) $this->stringable('ü')->ascii());
     }
 
+    public function testTransliterate()
+    {
+        $this->assertSame('HHH', (string) $this->stringable('🎂🚧🏆')->transliterate('H'));
+        $this->assertSame('Hello', (string) $this->stringable('🎂')->transliterate('Hello'));
+    }
+
     public function testNewLine()
     {
         $this->assertSame('Laravel'.PHP_EOL, (string) $this->stringable('Laravel')->newLine());
@@ -1171,6 +1177,13 @@ class SupportStringableTest extends TestCase
         $this->assertEquals('"value"', $this->stringable('value')->wrap('"'));
     }
 
+    public function testUnwrap()
+    {
+        $this->assertEquals('value', $this->stringable('"value"')->unwrap('"'));
+        $this->assertEquals('bar', $this->stringable('foo-bar-baz')->unwrap('foo-', '-baz'));
+        $this->assertEquals('some: "json"', $this->stringable('{some: "json"}')->unwrap('{', '}'));
+    }
+
     public function testToHtmlString()
     {
         $this->assertEquals(
@@ -1185,6 +1198,21 @@ class SupportStringableTest extends TestCase
         $this->assertSame('before<br>after', (string) $this->stringable('before<br>after')->stripTags('<br>'));
         $this->assertSame('before<br>after', (string) $this->stringable('<strong>before</strong><br>after')->stripTags('<br>'));
         $this->assertSame('<strong>before</strong><br>after', (string) $this->stringable('<strong>before</strong><br>after')->stripTags('<br><strong>'));
+    }
+
+    public function testReplaceMatches()
+    {
+        $stringable = $this->stringable('Hello world!');
+        $result = $stringable->replaceMatches('/world/', function ($match) {
+            return strtoupper($match[0]);
+        });
+
+        $this->assertSame('Hello WORLD!', $result->value);
+
+        $stringable = $this->stringable('apple orange apple');
+        $result = $stringable->replaceMatches('/apple/', 'fruit', 1);
+
+        $this->assertSame('fruit orange apple', $result->value);
     }
 
     public function testScan()
@@ -1273,5 +1301,19 @@ class SupportStringableTest extends TestCase
         $this->assertSame('t', $str[4]);
         $this->assertTrue(isset($str[2]));
         $this->assertFalse(isset($str[10]));
+    }
+
+    public function testToBase64()
+    {
+        $this->assertSame(base64_encode('foo'), (string) $this->stringable('foo')->toBase64());
+        $this->assertSame(base64_encode('foobar'), (string) $this->stringable('foobar')->toBase64());
+        $this->assertSame(base64_encode('foobarbaz'), (string) $this->stringable('foobarbaz')->toBase64());
+    }
+
+    public function testFromBase64()
+    {
+        $this->assertSame('foo', (string) $this->stringable(base64_encode('foo'))->fromBase64());
+        $this->assertSame('foobar', (string) $this->stringable(base64_encode('foobar'))->fromBase64(true));
+        $this->assertSame('foobarbaz', (string) $this->stringable(base64_encode('foobarbaz'))->fromBase64());
     }
 }
