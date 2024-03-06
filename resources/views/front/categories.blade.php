@@ -1,206 +1,89 @@
 @extends('front.master')
 
+
 @section('content')
-<main>
-    <div class="product_version">
-        <span class="product_verion_link">
-            <a href="{{url('/')}}"
-                >Home <ion-icon name="chevron-forward-outline"></ion-icon>
-            </a>
-            <a href="{{url('/')}}/products/{{$CategorySlung}}">
-                {{$CategoryTitle}}
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-            </a>
-            <a href="#">{{$PageTitle}}</a>
-        </span>
 
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 main-select">
-
-                        <h2 class="product_version_h2">{{$PageTitle}}</h2>
-
-
-                        <a href="{{url('/')}}/products/explore/{{$catslung}}" class="btn btn-secondary">
-                            <span class="text text-1">Explore {{$PageTitle}}</span>
-
-                            <span class="text text-2" aria-hidden="true">{{$PageTitle}}</span>
-                        </a>
-
+ <!-- Breadcrumb -->
+<br><br><br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 wow animated fadeInRight">
+                <div class="pq-section-title pq-style-1">
+                    <h5 class="pq-section-main-title">{{$PageTitle}}</h5>
                 </div>
+            </div>
+            <div class="col-lg-4 wow animated fadeInRight">
+                <div class="button-align">
+                    <a class="pq-button pq-button-flat" href="{{url('/')}}/products/explore/{{$catslung}}">
+                        <div class="pq-button-block">
+                        <span class="pq-button-text">Explore More </span>
+                        <span class="pq-button-line-right"></span>
+                        <i class="ion ion-ios-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="divider pq-right-border pq-45"></div>
             </div>
         </div>
-
-        <div class="commercial_laminate">
-            @foreach ($Products as $products)
-            <div class="">
-                <div>
-                    <img src="{{url('/')}}/uploads/products/{{$products->image_one}}" width="160"  height="50"  loading="lazy"  alt="{{$products->name}}" />
-                </div>
-               <h3 class="ac-text">{{$products->name}}</h3>
-                <p class="ac-text">{{$products->sku}}</p>
-                <a class="text-center" href="{{url('/')}}/product/{{$products->slung}}">Explore More</a>
-            </div>
-            @endforeach
-
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/g2.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">Commercial 8.3mm E0 AC3 Embossed Oak Waterproof</h3>
-                <p class="ac-text">E8030</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/g3.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">12.3mm HDF AC3 Embossed Cherry Waterproof Vinyl Laminate Laminated Flooring</h3>
-                <p class="ac-text">E8303</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/pro.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">Oak laminate flooring</h3>
-                <p class="ac-text">E9072</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/g4.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">V Groove HDF AC4 Imported Paper Vinyl Engineered Wood Wooden Laminated Laminate Flooring</h3>
-                <p class="ac-text">E9090</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/g5.png')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">Oak laminate floor</h3>
-                <p class="ac-text">E9072</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/g6.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">HDF waterproof laminate flooring for bathrooms</h3>
-                <p class="ac-text">E6072</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            <div class="">
-                <div>
-                    <img  src="{{asset('version/assets/images/g7.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">HDF waterproof laminated floor</h3>
-                <p class="ac-text">E9801</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            {{--  --}}
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/g1.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">Commercial HDF Embossed Oak V-Grooved Waterproof Laminate Flooring</h3>
-                <p class="ac-text">E1606</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/g2.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">Commercial 8.3mm E0 AC3 Embossed Oak Waterproof</h3>
-                <p class="ac-text">E8030</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/g3.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">12.3mm HDF AC3 Embossed Cherry Waterproof Vinyl Laminate Laminated Flooring</h3>
-                <p class="ac-text">E8303</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-            <div class="">
-                <div>
-                    <img
-                        src="{{asset('version/assets/images/pro.jpg')}}"
-                        width="160"
-                        height="50"
-                        loading="lazy"
-                        alt="grilli home"
-                    />
-                </div>
-               <h3 class="ac-text">Oak laminate flooring</h3>
-                <p class="ac-text">E9072</p>
-                <a class="text-center" href="{{url('/')}}/product/slung">Explore More</a>
-            </div>
-        </div>
-
-
     </div>
-</main>
+
+<!-- Breadcrumb -->
+
+
+
+<!-- 1-column-blog -->
+<section class="1-column-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="pq-blog pq-blog-col-3">
+                    <div class="row">
+                        @foreach ($Products as $products)
+                            <div class="col-lg-4">
+                                <div class="pq-blog-post">
+                                    <div class="pq-post-media">
+                                        <img decoding="async" src="{{url('/')}}/uploads/products/{{$products->image_one}}" alt="{{$products->name}}" style="height:409px">
+                                        <div class="pq-post-category">
+                                            <a href="{{url('/')}}/product/{{$products->slung}}">{{$products->color}}</a>
+                                        </div>
+                                    </div>
+                                    <div class="pq-blog-contain">
+                                        <h5 class="pq-blog-title">
+                                            <a href="{{url('/')}}/product/{{$products->slung}}">
+                                                {{$products->name}}
+                                            </a>
+                                        </h5>
+
+                                        <div class="pq-btn-container">
+                                            <a href="{{url('/')}}/product/{{$products->slung}}" class="pq-button pq-button-flat">
+                                                <div class="pq-button-block">
+                                                    <span class="pq-button-text">Explore  </span>
+                                                    <span class="pq-button-line-right"></span>
+                                                    <i class="ion ion-ios-arrow-right"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                        <div class="pq-pagination">
+                            <nav aria-label="Page navigation">
+                                {{-- <ul class="page-numbers">
+                                    <li><span aria-current="page" class="page-numbers current">1</span></li>
+                                    <li><a class="page-numbers" href="#">2</a></li>
+                                    <li><a class="next page-numbers">Next page</a></li>
+                                </ul> --}}
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 1-column-blog -->
+
 @endsection

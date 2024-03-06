@@ -1,144 +1,126 @@
 @extends('front.master')
 
+
 @section('content')
-{{-- --}}
-<main>
-    <article>
+ <!-- Breadcrumb -->
+ <div class="pq-breadcrumb">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                    <div class="pq-breadcrumb-title">
+                        <h1>Contact Us</h1>
+                    </div>
+                    <div class="pq-breadcrumb-container">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html"><i class="fas fa-home me-2"></i>Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Contact Us</li>
+                        </ol>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb -->
 
-
-            <?php $SectionHome = DB::table("sections")
-        ->where("page", "home")
-        ->where("position", "3rd_banner")
-        ->get(); ?>
-            @foreach ($SectionHome as $sectionhome)
-            <section class="section testi text-center has-bg-image"
-                style="background-image: url('{{asset('uploads/sections/')}}/{{$sectionhome->image}}')"
-                aria-label="testimonials">
-                <div class="container">
-                    <div class="" style="background-color: rgba(255,255,255,.6); padding: 20px; margin-top: 100px">
-                        <p class="headline-2 testi-text">
-
-                            {!!html_entity_decode($sectionhome->content)!!}
+<!-- Contact Us -->
+<section class="contact-us pb-xl-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="pq-section-title pq-style-1 pq-mb-30">
+                    <span class="pq-section-sub-title">our contact</span>
+                    <h5 class="pq-section-main-title">Get in touch with us</h5>
+                    <p class="pq-section-description">
+                        Decomagna Ltd, the official distributor of Quick-Step flooring in Kenya. We specializing in laminate flooring, engineered wood, and click vinyl, made in Belgum. In addition, we proudly present Elora bespoke wood textile luxury cabinets, adding a touch of elegance to your space.
+                    </p>
+                </div>
+                <div class="pq-icon-box pq-style-3">
+                    <div class="pq-icon">
+                        <i class="ion ion-ios-home"></i>
+                    </div>
+                    <div class="pq-icon-box-content">
+                        <h6>Visit A Office</h6>
+                        <p class="mb-0">
+                            Tumbili rd. Karen Hardy near the Giraffe Centre off Tumbili rd Navy Blue gate written quick-step , Nairobi, Kenya
                         </p>
                     </div>
                 </div>
-                <div class="margin-center margin-top-50">
-                    <center>
-                        <p class="btn btn-secondary margin-center">
-                            <span class="text text-1">{{$sectionhome->action_name}}</span>
-                            <span class="text text-2" aria-hidden="true">{{$sectionhome->action_name}}</span>
-                        </p>
-                    </center>
-                </div>
-            </section>
-            @endforeach
-
-            <!--
-            - #RESERVATION
-            -->
-
-            <section class="reservation">
-                <div class="container pad-container-bottom">
-                    <div class="form reservation-form bg-black-10">
-                        <form action="" class="form-left">
-                            <div class="input-wrapper">
-                                <input type="text" name="name" placeholder="Your Name" autocomplete="off"
-                                    class="input-field" />
-
-                                <input type="tel" name="phone" placeholder="Phone Number" autocomplete="off"
-                                    class="input-field" />
-                            </div>
-
-                            <input type="email" name="email" placeholder="Place your email" autocomplete="off"
-                                class="input-field" />
-
-                            <textarea name="message" placeholder="Message" autocomplete="off"
-                                class="input-field"></textarea>
-
-                            <button type="submit" class="btn btn-secondary">
-                                <span class="text text-1">Contact us</span>
-
-                                <span class="text text-2" aria-hidden="true">Contact us</span>
-                            </button>
-                        </form>
-
-                        <div class="form-right text-center"
-                            style="background-image: url('{{asset('version/assets/images/pexels-photo-1250283.jpeg')}}');">
-                            <h2 class="headline-1 text-center">Contact Us</h2>
-
-                            <p class="contact-label">Give Us a Call</p>
-
-                            <a href="tel:+254 796 110511" class="body-1 contact-number hover-underline">+254 796
-                                110511</a>
-
-                            <div class="separator"></div>
-
-                            <p class="contact-label">Location</p>
-
-                            <address class="body-4">Nairobi, Kenya</address>
-                        </div>
+                <div class="divider pq-my-15"></div>
+                <div class="pq-icon-box pq-style-3">
+                    <div class="pq-icon">
+                        <i class="ion ion-ios-telephone"></i>
+                    </div>
+                    <div class="pq-icon-box-content">
+                        <h6>Contact-Us</h6>
+                        <p class="mb-0"> (+254) 79-611-0511<br>+ (+254) 79-611-0511</p>
                     </div>
                 </div>
-            </section>
-
-            <section class="section features text-center bg-white-whity" aria-label="features" style="padding: 0">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127641.17044270245!2d36.76499579038322!3d-1.3030359783078311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi!5e0!3m2!1sen!2ske!4v1705604772534!5m2!1sen!2ske" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </section>    
-
-            <!--
-      - #FEATURES
-    -->
-
-            <section class="section features text-center bg-white-whity" aria-label="features">
-                <div class="container">
-                    <h2 class="headline-1 section-title text-black-blacky">Decomagna Satisfied Clients</h2>
-                    <ul class="grid-list gridme owl-carousel">
-                        <?php $Partners = DB::table("partners")->get(); ?>
-                        @foreach ($Partners as $partners)
-                        <li class="feature-item">
-                            <div class="feature-card">
-                                <div class="card-icon">
-                                    <img src="{{url('/')}}/uploads/partners/{{$partners->image}}" loading="lazy"
-                                        alt="{{$partners->name}}" />
-                                </div>
-
-                                <div class='card-content'>
-                                    <h4>{{$partners->name}}</h4>
-                                </div>
-                            </div>
-                        </li>
-                        @endforeach
-                    </ul>
+                <div class="divider pq-my-15"></div>
+                <div class="pq-icon-box pq-style-3">
+                    <div class="pq-icon">
+                        <i class="ion ion-ios-email"></i>
+                    </div>
+                    <div class="pq-icon-box-content">
+                        <h6>Email-Us</h6>
+                        <p class="mb-0">sales@decomagna.com<br>info@decomagna.com</p>
+                    </div>
                 </div>
-                <a href="#" class="btn btn-primary centy">
-                    <span class="text text-1">View all clients</span>
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0 p-xl-0">
+                <div class="pq-map pq-me-330">
+                    <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15954.645113886492!2d36.7433605!3d-1.3798952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f05afa2b62b47%3A0xe62322a0792f128b!2sQuick-Step%20flooring%20Kenya%20-%20Decomagna%20ltd!5e0!3m2!1sen!2ske!4v1709728206020!5m2!1sen!2ske" title="London Eye, London, United Kingdom" aria-label="London Eye, London, United Kingdom"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Us -->
 
-                    <span class="text text-2" aria-hidden="true">View all clients</span>
-                </a>
-            </section>
-
-
-            <section class="section event bg-white-whity" aria-label="event">
-                <div class="container">
-                    <h2 class="headline-1 section-title text-black-blacky text-center">Frequently asked questions</h1>
-                        <div class="faq-law">
-                            <?php
-                                $Faq = DB::table('faq')->limit('4')->get();
-                            ?>
-                            @foreach ($Faq as $faq)
-                            <div class="text-black-blacky">
-                                <h3 class="marg-left">{{$faq->title}}</h3>
-                                <p>{!!html_entity_decode($faq->meta)!!}</p>
-                                <a href="{{url('/')}}/frequently-asked-questions/{{$faq->slung}}">
-                                    <span>{{date('d/m', strtotime($faq->created_at))}}</span>
-                                    <span>{{date('Y', strtotime($faq->created_at))}}</span>
-                                </a>
-                            </div>
-                            @endforeach
+<!-- Contact Us Form -->
+<section class="contact-form pt-0 pb-xl-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 p-xl-0">
+                <div class="pq-contact-img">
+                    <img src="{{asset('html/images/portfolio/1.jpg')}}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0 ps-xl-5">
+                <div class="pq-section-title pq-style-1 pq-mb-30">
+                    <h5 class="pq-section-main-title">How Can We Help You ?</h5>
+                    <p class="pq-section-description">Please feel free to get in touch using the form below. We’d love to hear for you.</p>
+                </div>
+                <form action="#" class="pq-contact-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="your-name" placeholder="Your Name">
                         </div>
-                </div>
-            </section>
-    </article>
-</main>
-{{-- --}}
+                        <div class="col-md-6">
+                            <input type="email" name="your-gender" placeholder="Email">
+                        </div>
+                        <div class="col-md-12">
+                            <input type="text" name="phone-number" placeholder="Phone Number">
+                        </div>
+
+                        <div class="col-md-12">
+                            <textarea name="your-message" cols="40" rows="10" placeholder="Write Your Message"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <a class="pq-button" href="#">
+                                <div class="pq-button-block">
+                                    <span class="pq-button-text me-0">SEND NOW</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Us Form -->
 @endsection
