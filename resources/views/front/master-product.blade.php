@@ -104,7 +104,7 @@
                                        <li><a href="https://www.facebook.com/decomagnaDev/"><i class="fab fa-facebook-f"></i></a></li>
                                        <li><a href="https://www.instagram.com/decomagna_kenya/"><i class="fab fa-instagram"></i></a></li>
                                        <li><a href="https://www.instagram.com/decomagna_kenya/"><i class="fab fa-twitter"></i></a></li>
-                                       <li><a href="https://goo.gl/maps/njDLRodCvupea21D9"><i class="fab fa-map-marker"></i></a></li>
+                                       <li><a href="https://goo.gl/maps/njDLRodCvupea21D9"><i class="fa fa-map-marker"></i></a></li>
                                     </ul>
                                  </div>
                               </div>
