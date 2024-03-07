@@ -11,7 +11,7 @@
                <div class="pq-widget">
                   <div class="wp-block-group">
                      <div class="wp-block-group__inner-container">
-                        <h2>Samplea</h2>
+                        <h2>Samples</h2>
                         <div class="row">
                             <?php
                                 $Products = DB::table('products')->inRandomOrder()->limit('6')->get();
