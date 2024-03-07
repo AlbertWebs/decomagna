@@ -104,7 +104,7 @@
     $About = DB::table('abouts')->get();
  ?>
  <!-- Services -->
- <section class=" p-80">
+ <section class=" p-80" id="about">
     <div class="container">
 
        <div class="row align-items-center">
