@@ -341,6 +341,55 @@
 <!-- Warehouse -->
 @endforeach
 
+
+
+
+ <!-- Award -->
+ <section class="award pq-bg-img-1">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-8 wow animated fadeInRight">
+                <div class="pq-section-title pq-style-1">
+                    <span class="pq-section-sub-title">Clientalle</span>
+                    <h5 class="pq-section-main-title">Decomagna Satisfied Clients</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 wow animated fadeInRight">
+                <div class="button-align">
+                    <a class="pq-button pq-button-flat" href="#">
+                        <div class="pq-button-block">
+                            <span class="pq-button-text">read more</span>
+                            <span class="pq-button-line-right"></span>
+                            <i class="ion ion-ios-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="divider pq-right-border pq-45"></div>
+            </div>
+            <div class="col-lg-12 wow animated fadeInLeft">
+                <div class="pq-awardbox-1-slider pq-awardbox-1">
+                    <div class="owl-carousel owl-loaded owl-drag" data-dots="true" data-nav="false" data-desk_num="4" data-lap_num="3" data-tab_num="2" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="true" data-margin="30">
+                        <?php $Partners = DB::table("partners")->get(); ?>
+                        @foreach ($Partners as $partners)
+                        <div class="item " style="width:265px; height:265px; background-color:#ffffff">
+                            <div class="pq-awardbox-1 ">
+                                <a>
+                                    <img style="width:265px" decoding="async" src="{{url('/')}}/uploads/partners/{{$partners->image}}" alt="{{$partners->name}}">
+                                    <span class="pq-award-title">{{$partners->name}}</span>
+                                </a>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Award -->
+
 <?php $Blog = DB::table("blogs")->get(); ?>
  <!-- Blog -->
  <section class="blog">
@@ -387,8 +436,8 @@
                             <div class="pq-post-meta">
                                <ul>
                                   <li class="pq-post-meta">
-                                     <a href="{{url('/')}}/blogs/{{$blog->slung}}">November
-                                     3, 2022 {{ date('M d,Y', strtotime($blog->created_at)) }}</a>
+                                     <a href="{{url('/')}}/blogs/{{$blog->slung}}">
+                                     {{ date('M d,Y', strtotime($blog->created_at)) }}</a>
                                   </li>
                                   <li class="pq-post-comment">
                                      <a href="{{url('/')}}/blogs/{{$blog->slung}}">5
