@@ -77,71 +77,7 @@
             <i class="ion-close-round"></i>
             </a>
          </div>
-         <div class="pq-sidebar-block mCustomScrollbar" data-simplebar>
-            <div class="pq-sidebar-header">
-               <img src="{{url('/')}}/uploads/logo/decomagna-Logos-Trans-14.jpg" class="pq-sidebar-logo" alt="decomagna-sidebar-logo">
-            </div>
-            <div class="pq-sidebar-content">
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. search for will uncover
-                  many web sites still.
-               </p>
-            </div>
-            <div class="pq-sidebars">
-               <div class="pq-widget">
-                  <div class="wp-block-group">
-                     <div class="wp-block-group__inner-container">
-                        <h2>Gallery</h2>
-                        <div class="row">
-                           <div class="col-lg-4">
-                              <img src="{{asset('html/images/gallery/1.jpg')}}" alt="">
-                           </div>
-                           <div class="col-lg-4">
-                              <img src="{{asset('html/images/gallery/2.jpg')}}" alt="">
-                           </div>
-                           <div class="col-lg-4">
-                              <img src="{{asset('html/images/gallery/3.jpg')}}" alt="">
-                           </div>
-                           <div class="col-lg-4 mt-4">
-                              <img src="{{asset('html/images/gallery/4.jpg')}}" alt="">
-                           </div>
-                           <div class="col-lg-4 mt-4">
-                              <img src="{{asset('html/images/gallery/5.jpg')}}" alt="">
-                           </div>
-                           <div class="col-lg-4 mt-4">
-                              <img src="{{asset('html/images/gallery/6.jpg')}}" alt="">
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="pq-sidebar-contact">
-               <ul class="pq-contact">
-                  <li>
-                     <i class="fa fa-map-marker"></i>
-                     <span> Themeforest, Envato HQ 24 Fifth st., Los Angeles, USA </span>
-                  </li>
-                  <li>
-                     <a href="tel:+254796110511"><i class="fas fa-phone-alt"></i>
-                     <span> +254 79 611 0511</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="mailto:info@decomagna.com"><i
-                        class="fas fa-envelope"></i><span>info@decomagna.com</span>
-                     </a>
-                  </li>
-               </ul>
-            </div>
-            <div class="pq-sidebar-social">
-               <ul>
-                  <li><a href="https://www.facebook.com/decomagnaDev/"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="https://www.instagram.com/decomagna_kenya/"><i class="fab fa-instagram"></i></a></li>
-                  <li><a href="https://www.instagram.com/decomagna_kenya/"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="https://goo.gl/maps/njDLRodCvupea21D9"><i class="fab fa-map-marker"></i></a></li>
-               </ul>
-            </div>
-         </div>
+         @include('front.sidebar')
       </div>
       <header id="pq-header" class="pq-header-style-1  pq-has-sticky">
          <div class="pq-header-diff-block">

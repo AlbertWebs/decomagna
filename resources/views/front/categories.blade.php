@@ -45,8 +45,8 @@
                                 <div class="pq-blog-post">
                                     <div class="pq-post-media">
                                         <img decoding="async" src="{{url('/')}}/uploads/products/{{$products->image_one}}" alt="{{$products->name}}" style="height:409px">
-                                        <div class="pq-post-category">
-                                            <a href="{{url('/')}}/product/{{$products->slung}}">{{$products->color}}</a>
+                                        <div class="pq-post-category" style="background-color: {{$products->color}}">
+                                            <a style="background-color: {{$products->color}}" href="{{url('/')}}/product/{{$products->slung}}">{{$products->color}}</a>
                                         </div>
                                     </div>
                                     <div class="pq-blog-contain">
