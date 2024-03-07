@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use App\Models\Product;
 class HomeController extends Controller
 {
 
@@ -177,6 +177,15 @@ class HomeController extends Controller
     }
 
 
+    public function search(){
+        $search = request()->s;
+        $Products = Product::where('name','LIKE',"%{$search}%")->get();
+
+        $CategoryTitle = "Quick-Step flooring Kenya - Decomagna ltd";
+        $CategorySlung = "#";
+        $PageTitle = "Our Products";
+        return view('front.products-search', compact('Products','CategoryTitle','CategorySlung','PageTitle','search'));
+    }
 
 
 
