@@ -439,10 +439,7 @@
                                      <a href="{{url('/')}}/blogs/{{$blog->slung}}">
                                      {{ date('M d,Y', strtotime($blog->created_at)) }}</a>
                                   </li>
-                                  <li class="pq-post-comment">
-                                     <a href="{{url('/')}}/blogs/{{$blog->slung}}">5
-                                     Comments</a>
-                                  </li>
+
                                </ul>
                             </div>
                             <h5 class="pq-blog-title">
