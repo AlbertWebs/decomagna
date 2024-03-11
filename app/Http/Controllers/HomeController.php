@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Product;
+use App\Models\SendMail;
 class HomeController extends Controller
 {
 
@@ -188,8 +189,32 @@ class HomeController extends Controller
     }
 
 
+// create post request method for contact form
+    public function contact_form(Request $request){
+        $name = $request->name;
+        $email = $request->email;
+        $subject = $request->subject;
+        $message = $request->message;
+        $phone_number = $request->phone_number;
 
+        // send email
+        $data = array(
+            'name' => $name,
+            'email' => $email,
+            'subject' => $subject,
+            'message' => $message,
+            'phone_number' => $phone_number,
+        );
 
+        SendMail::send($data);
+
+        Session::flash('message', "Your Message Has Been Sent Successfully");
+        return back()->with('success', 'Your message has been sent successfully!');
+    }
+
+    public  function email(){
+        return view('mail');
+    }
 
 
 }

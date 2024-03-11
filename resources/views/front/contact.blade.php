@@ -94,27 +94,37 @@
                     <h5 class="pq-section-main-title">How Can We Help You ?</h5>
                     <p class="pq-section-description">Please feel free to get in touch using the form below. We’d love to hear for you.</p>
                 </div>
-                <form action="#" class="pq-contact-form">
+                <center>
+                    @if(Session::has('message'))
+                                  <div class="alert alert-success">{{ Session::get('message') }}</div>
+                   @endif
+
+                   @if(Session::has('messageError'))
+                                  <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
+                   @endif
+                </center>
+                <form action="{{route('contact-form')}}" class="pq-contact-form" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" name="your-name" placeholder="Your Name">
+                            <input type="text" name="name" placeholder="Your Name">
                         </div>
                         <div class="col-md-6">
-                            <input type="email" name="your-gender" placeholder="Email">
+                            <input type="email" name="email" placeholder="Email">
                         </div>
                         <div class="col-md-12">
-                            <input type="text" name="phone-number" placeholder="Phone Number">
+                            <input type="text" name="phone_number" placeholder="Phone Number">
                         </div>
 
                         <div class="col-md-12">
-                            <textarea name="your-message" cols="40" rows="10" placeholder="Write Your Message"></textarea>
+                            <textarea name="message" cols="40" rows="10" placeholder="Write Your Message"></textarea>
                         </div>
                         <div class="col-md-12">
-                            <a class="pq-button" href="#">
+                            <button type="submit" class="pq-button" href="#">
                                 <div class="pq-button-block">
                                     <span class="pq-button-text me-0">SEND NOW</span>
                                 </div>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </form>

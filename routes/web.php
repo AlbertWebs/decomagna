@@ -43,6 +43,10 @@ Route::get('/portfolio', [HomeController::class, 'portfolio']);
 Route::get('/portfolio/{slung}', [HomeController::class, 'folio']);
 Route::get('/blogs', [HomeController::class, 'blog']);
 Route::get('/blogs/{slung}', [HomeController::class, 'blog_single']);
+Route::post('/contact-form', [HomeController::class, 'contact_form'])->name('contact-form');
+Route::get('/email', [HomeController::class, 'email'])->name('email');
+
+
 
 
 
