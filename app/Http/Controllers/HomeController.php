@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Product;
+use Session;
 use App\Models\SendMail;
 class HomeController extends Controller
 {
