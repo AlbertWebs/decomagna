@@ -15,7 +15,7 @@
                         <div class="item">
                             <img style="max-height:500px; width:100%" src="{{url('/')}}/uploads/products/{{$product->image_one}}" class="img-fluid" alt="">
                         </div>
-                        @if($product->image_two == null OR $product->image_two =="")
+                        @if($product->image_two == null OR $product->image_two =="0")
 
                         @else
                         <div class="item">
@@ -23,7 +23,7 @@
                         </div>
                         @endif
 
-                        @if($product->image_three == null OR $product->image_three =="")
+                        @if($product->image_three == null OR $product->image_three =="0")
 
                         @else
                         <div class="item">
@@ -59,9 +59,11 @@
                     </div>
                 </div>
                 <h3>{{$product->name}}</h3>
-                <p>{!!html_entity_decode($product->meta)!!}</p>
+                {{-- <p>{!!html_entity_decode(str_replace($product->meta, "<p>&nbsp;</p>", ""))!!}</p> --}}
+                <p>{!!html_entity_decode(str_replace("<p>&nbsp;</p>", "", $product->meta))!!}</p>
                 <div class="divider pq-right-border pq-45"></div>
-                <p>{!!html_entity_decode($product->content)!!}</p>
+                {{-- <p>{!!html_entity_decode($product->content)!!}</p> --}}
+                <p>{!!html_entity_decode(str_replace("<p>&nbsp;</p>", "", $product->content))!!}</p>
             </div>
         </div>
     </div>

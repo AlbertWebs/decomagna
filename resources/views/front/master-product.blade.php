@@ -95,7 +95,7 @@
                                     <ul>
                                        <li>
                                           <i class="ti-timer"></i>
-                                          <span>Mon to Fri 9:00 am to 6:00pm</span>
+                                          <span>Mon to Fri 8:30 am to 5:00pm</span>
                                        </li>
                                     </ul>
                                  </div>
