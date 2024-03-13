@@ -27,9 +27,13 @@ Route::get('/search-product', [HomeController::class, 'search'])->name('search')
 Route::get('/contact-us', [HomeController::class, 'contact']);
 Route::get('/frequently-asked-questions/{slung}', [HomeController::class, 'faq']);
 
+Route::get('/clients', [HomeController::class, 'clients']);
+
 Route::get('/terms-and-conditions', [HomeController::class, 'terms']);
 Route::get('/privacy-policy', [HomeController::class, 'privacy']);
 Route::get('/copyright', [HomeController::class, 'copyright']);
+
+
 
 Route::get('/products/{slung}', [HomeController::class, 'categories']);
 Route::get('/products/explore/{slung}', [HomeController::class, 'categories_explore']);

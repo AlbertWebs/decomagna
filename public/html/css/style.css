@@ -57,7 +57,7 @@ Fonts
 Moz Selection
 ++++++++++++++++++++++++++++++++++++++++*/
 :root {
-	--primary-color: #e4c590;
+	--primary-color: #1c186c;
 	--dark-color: #30373f;
 	--secondary-color: #616161;
 	--grey-color: #f6f4f5;
@@ -7214,3 +7214,21 @@ Custom Css
     position:relative;
     padding-top:200px;
   }
+
+  .partners-img{
+     width:286px;
+     height:188px;
+     border:3px solid #000000;
+     margin:10px;
+     display: flex;
+  }
+
+  .partners-img img{
+    width:60%;
+    object-fit: contain !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding:10px;
+ }
+

@@ -217,5 +217,9 @@
       <script src="{{asset('html/js/load-more.js')}}"></script>
       <!-- Custom -->
       <script src="{{asset('html/js/custom.js')}}"></script>
+      {{--  --}}
+
+      @include('front.schema')
+      {{--  --}}
    </body>
 </html>

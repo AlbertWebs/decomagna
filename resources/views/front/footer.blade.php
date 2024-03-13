@@ -42,9 +42,14 @@
                            <ul>
                               <li>
                                  <a href="tel:+254 79 611 0511"><i class="fas fa-phone-alt"></i>
-                                 <span>  +254 79 611 0511</span>
+                                 <span> &nbsp; &nbsp; +254 79 611 0511</span>
                                  </a>
                               </li>
+                              <li>
+                                <a href="mailto:info@decomagna.com"><i class="fas fa-envelope"></i>
+                                <span> &nbsp; &nbsp; info@decomagna.com </span>
+                                </a>
+                             </li>
                            </ul>
                         </div>
                      </div>
@@ -101,12 +106,7 @@
                                        </span>
                                     </li>
 
-                                    <li>
-                                       <a href="mailto:info@decomagna.com">
-                                       <i class="fas fa-envelope"></i>
-                                       <span>info@decomagna.com</span>
-                                       </a>
-                                    </li>
+
                                  </ul>
                               </div>
                            </div>

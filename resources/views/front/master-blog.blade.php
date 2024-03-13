@@ -31,14 +31,14 @@
       <!-- Responsive -->
       <link rel="stylesheet" href="{{asset('html/css/responsive.css')}}">
 
-      @foreach ($Categories as $Product)
+      @foreach ($Blog as $Product)
       {{-- SEO SKELETON STRUCTURE --}}
-      <title>{{$Product->title}} - Decomagna Kenya </title>
+      <title>{{$Product->title}} - Decomagna- Kenya</title>
       <meta name="robots" content="index,follow">
       <meta name="googlebot" content="index,follow">
       <!-- Google Specific -->
       <meta name="subject"
-         content="{{$Product->title}} - Decomagna- Kenya ">
+         content="{{$Product->title}} - Decomagna- Kenya">
       <meta name="rating" content="General">
       <meta name="google-site-verification" value="" content="verification_token">
       <meta name="referrer" content="no-referrer">
@@ -46,8 +46,8 @@
       <meta property="og:url" content="{{url('/')}}/product/{{$Product->slung}}">
       <meta property="og:type" content="website">
       <meta property="og:title"
-         content="{{$Product->title}} - Decomagna- Kenya ">
-      <meta property="og:image" content="{{url('/')}}/uploads/categories/{{$Product->image}}">
+         content="{{$Product->title}} - Decomagna- Kenya">
+      <meta property="og:image" content="{{url('/')}}/uploads/blogs/{{$Product->image_one}}">
       <meta property="og:description"
          content="{{$Product->meta}}">
       <meta property="og:site_name" content="DecoMagna">
@@ -57,12 +57,13 @@
       <meta name="twitter:site" content="@Decomagna_Kenya">
       <meta name="twitter:url" content="{{url('/')}}/product/{{$Product->slung}}">
       <meta name="twitter:title"
-         content="{{$Product->title}} - Decomagna- Kenya ">
+         content="{{$Product->title}} - Decomagna- Kenya">
       <meta name="twitter:description"
          content="{{$Product->meta}}">
-      <meta name="twitter:image" content="{{url('/')}}/uploads/categories/{{$Product->image}}">
+      <meta name="twitter:image" content="{{url('/')}}/uploads/blogs/{{$Product->image_one}}">
       @endforeach
       {{-- SEO --}}
+
    </head>
    <body>
       <!-- Loading -->

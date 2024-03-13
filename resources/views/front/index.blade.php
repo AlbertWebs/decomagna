@@ -2,103 +2,61 @@
 
 
 @section('content')
- <!-- Banner -->
- <div class="banner py-0">
-    <!-- START home 6 REVOLUTION SLIDER 6.5.31 -->
-    <p class="rs-p-wp-fix"></p>
-    <rs-module-wrap id="rev_slider_14_1_wrapper" data-alias="home-4-1" data-source="gallery"
-          style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-        <rs-module id="rev_slider_14_1" data-version="6.5.31">
-            <rs-slides>
-                @foreach ($Slider as $slider)
-                <rs-slide style="position: absolute;" data-key="rs-4{{$slider->id}}" data-title="Slide"
+      <!-- Banner -->
+      <div class="banner py-0">
+        <!-- START home 6 REVOLUTION SLIDER 6.5.31 -->
+        <p class="rs-p-wp-fix"></p>
+        <rs-module-wrap id="rev_slider_14_1_wrapper" data-alias="home-4-1" data-source="gallery"
+           style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+           <rs-module id="rev_slider_14_1" data-version="6.5.31">
+              <?php $Order = 6; ?>
+              <rs-slides>
+                 @foreach ($Slider as $slider)
+                 <rs-slide style="position: absolute;" data-key="rs-4{{$Order}}" data-title="Slide"
                     data-thumb="{{asset('html/rev/assets/Banner-1-2-50x100.jpg')}}" data-anim="adpr:false;ms:300;" data-in="o:0;"
                     data-out="a:false;">
-                    <img src="{{asset('html/rev/assets/dummy.png')}}" alt="" title="Banner-1" width="1920" height="810"
-                    class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{url('/')}}/uploads/slider/{{$slider->image}}"
-                    data-no-retina style="filter: brightness(50%) !important;">
+                    <img  src="{{url('/')}}/uploads/slider/{{$slider->image}}" alt="" title="Banner-1" width="1920" height="800"
+                       class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{url('/')}}/uploads/slider/{{$slider->image}}"
+                       data-no-retina>
                     <!--
-                    -->
-                    <rs-layer id="slider-14-slide-46-layer-0" class="rs-subtitle-font" data-type="text" data-color="#e6af5d"
-                    data-rsp_ch="on" data-xy="x:l,l,c,c;xo:70px,70px,0,0;y:m,m,m,t;yo:-94px,-50px,-70px,170px;"
-                    data-text="w:normal;s:16,14,14,12;l:24,24,22,20;ls:1.6px;fw:600;"
-                    data-padding="t:0,5,5,5;r:0,20,20,20;b:0,5,5,5;l:0,20,20,20;" data-frame_0="y:50,39,29,17;"
-                    data-frame_1="st:300;sp:1000;sR:300;"
-                    data-frame_999="y:50,39,29,17;o:0;st:8000;sp:1000;sR:6700;"
-                    style="z-index:11;font-family:'Plus Jakarta Sans';text-transform:uppercase;">We are Decomagna
-                    </rs-layer>
-                    <!--
-                    -->
-                    <rs-layer id="slider-14-slide-46-layer-1" class="rs-title-font" data-type="text" data-rsp_ch="on"
-                    data-xy="x:l,l,c,c;xo:30px,30px,0,0;y:m,m,m,t;yo:6px,32px,10px,195px;"
-                    data-text="w:normal;s:62,48,42,32;l:70,56,50,40;ls:0,0,0,1px;fw:600;a:left,left,center,center;"
-                    data-dim="w:737px,613px,546px,434px;" data-frame_0="y:50,39,29,17;"
-                    data-frame_1="st:500;sp:1000;sR:500;"
-                    data-frame_999="y:50,39,29,17;o:0;st:7700;sp:1000;sR:6290;"
-                    style="z-index:9;font-family:'Plus Jakarta Sans';text-transform:capitalize;">{{$slider->name}}
-                    </rs-layer>
-                    <!--
-                    -->
-                    <rs-layer id="slider-14-slide-46-layer-2" data-type="shape" data-rsp_ch="on"
-                    data-xy="x:l,l,c,c;xo:30px,30px,-170px,-135px;y:m,m,m,t;yo:-94px,-50px,-70px,185px;"
-                    data-text="w:normal;s:20,15,11,6;l:0,19,14,8;" data-dim="w:30px,30px,30px,18px;h:1px;"
-                    data-frame_0="y:50,39,29,17;" data-frame_1="st:300;sp:1000;"
-                    data-frame_999="y:50,39,29,17;o:0;st:8000;sp:1000;"
-                    style="z-index:12;background-color:#e6af5d;">
-                    </rs-layer>
-                    <!--
-                    -->
-                    @if($slider->action == null OR $slider->action == "")
 
-                        <a id="slider-14-slide-46-layer-3" class="rs-layer pq-button pq-button-flat pq-btn-font  rev-btn"
-                            href="{{url('/')}}/contact-us" target="_self" data-type="button" data-rsp_ch="on"
-                            data-xy="x:l,l,c,c;xo:30px,30px,0,0;y:m;yo:161px,170px,140px,114px;"
-                            data-text="w:normal;s:14,16,16,14;l:32,32,32,28;ls:1px,0px,0px,1px;fw:600;"
-                            data-dim="minh:0px,none,none,none;" data-padding="t:13;r:30;b:13;l:30;"
-                            data-border="bos:solid;boc:rgba(255, 255, 255, 0);bow:2px,2px,2px,2px;"
-                            data-frame_0="y:50,39,29,17;" data-frame_1="st:900;sp:1000;sR:900;"
-                            data-frame_999="y:50,39,29,17;o:0;st:7400;sp:1000;sR:5500;"
-                            data-frame_hover="c:#fff;bgc:#30373f;boc:rgba(11,11,11,0);bor:0px,0px,0px,0px;bos:solid;bow:2px,2px,2px,2px;bri:120%;"
-                            style="z-index:8;background-color:#e6af5d;font-family:'Plus Jakarta Sans';text-transform:uppercase;">
-                            <div class="pq-button-block"><span class="pq-button-text">Get In Touch </span><span
-                            class="pq-button-line-right"></span><i class="ion ion-ios-arrow-right"></i></div>
-                        </a>
-                    @else
-                        <a id="slider-14-slide-46-layer-3" class="rs-layer pq-button pq-button-flat pq-btn-font  rev-btn"
-                            href="{{$slider->action}}" target="_self" data-type="button" data-rsp_ch="on"
-                            data-xy="x:l,l,c,c;xo:30px,30px,0,0;y:m;yo:161px,170px,140px,114px;"
-                            data-text="w:normal;s:14,16,16,14;l:32,32,32,28;ls:1px,0px,0px,1px;fw:600;"
-                            data-dim="minh:0px,none,none,none;" data-padding="t:13;r:30;b:13;l:30;"
-                            data-border="bos:solid;boc:rgba(255, 255, 255, 0);bow:2px,2px,2px,2px;"
-                            data-frame_0="y:50,39,29,17;" data-frame_1="st:900;sp:1000;sR:900;"
-                            data-frame_999="y:50,39,29,17;o:0;st:7400;sp:1000;sR:5500;"
-                            data-frame_hover="c:#fff;bgc:#30373f;boc:rgba(11,11,11,0);bor:0px,0px,0px,0px;bos:solid;bow:2px,2px,2px,2px;bri:120%;"
-                            style="z-index:8;background-color:#e6af5d;font-family:'Plus Jakarta Sans';text-transform:uppercase;">
-                            <div class="pq-button-block"><span class="pq-button-text">{{$slider->action_name}} </span><span
-                            class="pq-button-line-right"></span><i class="ion ion-ios-arrow-right"></i></div>
-                        </a>
-
-                    @endif
-
-                    <!--
-                    -->
-                    <rs-layer id="slider-14-slide-46-layer-4" data-type="shape" data-rsp_ch="on"
-                    data-xy="x:l,l,c,c;xo:30px,30px,170px,135px;y:m,m,m,t;yo:-94px,-50px,-70px,185px;"
-                    data-text="w:normal;s:20,15,11,6;l:0,19,14,8;" data-dim="w:30px,30px,30px,18px;h:1px;"
-                    data-frame_0="y:50,39,29,17;" data-frame_1="st:300;sp:1000;"
-                    data-frame_999="y:50,39,29,17;o:0;st:8000;sp:1000;"
-                    style="z-index:10;background-color:#e6af5d;">
+                       -->
+                    <rs-layer id="slider-14-slide-4{{$Order}}-layer-1" class="rs-title-font" data-type="text" data-rsp_ch="on"
+                       data-xy="x:l,l,c,c;xo:30px,30px,0,0;y:m,m,m,t;yo:6px,32px,10px,195px;"
+                       data-text="w:normal;s:62,48,42,32;l:70,56,50,40;ls:0,0,0,1px;fw:600;a:left,left,center,center;"
+                       data-dim="w:737px,613px,546px,434px;" data-frame_0="y:50,39,29,17;"
+                       data-frame_1="st:500;sp:1000;sR:500;"
+                       data-frame_999="y:50,39,29,17;o:0;st:7700;sp:1000;sR:6290;"
+                       style="z-index:9;font-family:'Plus Jakarta Sans';text-transform:capitalize; background-color: rgba(0,0,0,0.3); border:6px solid rgba(255,255,255,0.3); padding:10px;">{{$slider->name}}
                     </rs-layer>
                     <!--
+
                     -->
-                </rs-slide>
-                @endforeach
-            </rs-slides>
-        </rs-module>
-    </rs-module-wrap>
-    <!-- END REVOLUTION SLIDER -->
-</div>
-<!-- Banner -->
+                    <a id="slider-14-slide-4{{$Order}}-layer-3" class="rs-layer pq-button pq-button-flat pq-btn-font  rev-btn"
+                       href="about-us.html" target="_self" data-type="button" data-rsp_ch="on"
+                       data-xy="x:l,l,c,c;xo:30px,30px,0,0;y:m;yo:161px,170px,140px,114px;"
+                       data-text="w:normal;s:14,16,16,14;l:32,32,32,28;ls:1px,0px,0px,1px;fw:600;"
+                       data-dim="minh:0px,none,none,none;" data-padding="t:13;r:30;b:13;l:30;"
+                       data-border="bos:solid;boc:rgba(255, 255, 255, 0);bow:2px,2px,2px,2px;"
+                       data-frame_0="y:50,39,29,17;" data-frame_1="st:900;sp:1000;sR:900;"
+                       data-frame_999="y:50,39,29,17;o:0;st:7400;sp:1000;sR:5500;"
+                       data-frame_hover="c:#fff;bgc:#30373f;boc:rgba(11,11,11,0);bor:0px,0px,0px,0px;bos:solid;bow:2px,2px,2px,2px;bri:120%;"
+                       style="z-index:8;background-color:#1c186c ;font-family:'Plus Jakarta Sans';text-transform:uppercase;">
+                       <div class="pq-button-block"><span class="pq-button-text">read more </span><span
+                          class="pq-button-line-right"></span><i class="ion ion-ios-arrow-right"></i></div>
+                    </a>
+                 </rs-slide>
+                 <?php $Order = $Order+1; ?>
+                 @endforeach
+
+              </rs-slides>
+           </rs-module>
+        </rs-module-wrap>
+        <!-- END REVOLUTION SLIDER -->
+     </div>
+     <!-- Banner -->
+
+
 
 
  <?php
@@ -115,7 +73,7 @@
                 <h5 class="pq-section-main-title">provides best services</h5> --}}
                 {{--  --}}
                 @foreach ($About as $about)
-                <h2 class="headline-intro" style="color:#2944d1 !important;">{{$about->title}}</h2>
+                <h2 class="headline-intro" style="color:#1c186c!important;">{{$about->title}}</h2>
                 <p>
                     <font color="#676767">
                         <span style=" line-height: 1.6;">
@@ -185,7 +143,7 @@
                 <div class="pq-section-title pq-style-1 pq-mb-30">
                     {{-- <span class="pq-section-sub-title">{{$sectionhome->name}}</span> --}}
                     {{-- <h5 class="pq-section-main-title"> {{$sectionhome->name}}</h5> --}}
-                    <h5 class="pq-section-main-titles pq-text-white" style="color:#e4c590 !important">{{$sectionhome->name}}</h5>
+                    <h5 class="pq-section-main-titles pq-text-white" style="color:#1c186c !important">{{$sectionhome->name}}</h5>
                     <p class="pq-section-description">
                         {!!html_entity_decode($sectionhome->content)!!}
                     </p>
@@ -302,7 +260,7 @@
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-8 wow animated fadeInLeft">
                 <div class="pq-section-title pq-style-1">
-                    <span class="pq-section-sub-title">choose your Taste</span>
+                    <span class="pq-section-sub-title" style="color:#ffffff !important;">choose your Taste</span>
                     <h5 class="pq-section-main-title pq-text-white">Choice Assorted</h5>
                 </div>
             </div>
@@ -357,7 +315,7 @@
             </div>
             <div class="col-lg-4 col-md-4 wow animated fadeInRight">
                 <div class="button-align">
-                    <a class="pq-button pq-button-flat" href="#">
+                    <a class="pq-button pq-button-flat" href="{{url('/')}}/clients">
                         <div class="pq-button-block">
                             <span class="pq-button-text">read more</span>
                             <span class="pq-button-line-right"></span>

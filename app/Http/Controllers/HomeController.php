@@ -126,7 +126,7 @@ class HomeController extends Controller
             $CategoryTitle = $category->title;
             $CategorySlung = $category->slung;
             $PageTitle = "$slung $CategoryTitle";
-            return view('front.products', compact('Products','CategoryTitle','CategorySlung','PageTitle'));
+            return view('front.products', compact('Products','CategoryTitle','CategorySlung','PageTitle','slung'));
         }
     }
 
@@ -177,6 +177,14 @@ class HomeController extends Controller
         $Slider = DB::table('sliders')->orderBy('id','ASC')->get();
         return view('front.contact', compact('Slider'));
     }
+
+    public function clients()
+    {
+        $Partners = DB::table("partners")->get();
+        return view('front.clients', compact('Partners'));
+    }
+
+
 
 
     public function search(){
