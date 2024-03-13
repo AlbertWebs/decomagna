@@ -248,17 +248,17 @@
                     $Portfolio = DB::table('portfolios')->where('home','1')->where('big','0')->limit('6')->get();
                     ?>
                     @foreach ($Portfolio as $Portfolio)
-                    <div class="pq-grid-item pq-filter-items pq-col-6    59 ">
+                    <div class="pq-grid-item pq-filter-items pq-col-6 59">
                         <div class="pq-portfoliobox-3">
                             <div class="pq-portfolio-img">
-                                <a href="#">
+                                <a href="{{url('/')}}/portfolio/{{$Portfolio->slung}}">
                                     <img style="border-radius:10px" decoding="async" src="{{url('/')}}/uploads/portfolios/{{$Portfolio->image_one}}" alt="{{$Portfolio->name}}">
                                 </a>
                             </div>
                             <div class="pq-portfolio-info">
                                 <div class="pq-portfolio-content">
-                                    <span><a href="#">Laminate</a></span>
-                                    <h5><a href="#">{{$Portfolio->name}}</a></h5>
+                                    <span><a href="{{url('/')}}/portfolio/{{$Portfolio->slung}}">Laminate</a></span>
+                                    <h5><a href="{{url('/')}}/portfolio/{{$Portfolio->slung}}">{{$Portfolio->name}}</a></h5>
                                 </div>
                             </div>
                         </div>

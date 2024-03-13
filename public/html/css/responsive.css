@@ -1491,3 +1491,10 @@ Design and Developed by: Peacefulqode
 		display: block !important;
 	}
 }
+
+@media(max-width:768px) {
+    .breadcrumbs{
+        position:relative;
+        padding-top:50px;
+    }
+}
