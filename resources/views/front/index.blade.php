@@ -27,7 +27,7 @@
                        data-dim="w:737px,613px,546px,434px;" data-frame_0="y:50,39,29,17;"
                        data-frame_1="st:500;sp:1000;sR:500;"
                        data-frame_999="y:50,39,29,17;o:0;st:7700;sp:1000;sR:6290;"
-                       style="z-index:9;font-family:'Plus Jakarta Sans';text-transform:capitalize; background-color: rgba(0,0,0,0.3); border:6px solid rgba(255,255,255,0.3); padding:10px;">{{$slider->name}}
+                       style="z-index:9;font-family:'Plus Jakarta Sans';text-transform:capitalize; background-color: rgba(0,0,0,0.3); border:6px solid rgba(255,255,255,0.3); padding:10px; text-shadow: 0 0 4px rgba(0,0,0,.8);">{{$slider->name}}
                     </rs-layer>
                     <!--
 

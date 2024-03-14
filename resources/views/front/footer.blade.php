@@ -4,27 +4,29 @@
             <div class="pq-subscribe align-items-center">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12" style="margin:0 auto">
                             <div class="pq-subscribe-bg">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-6 col-md-6">
+                                <div class="row align-items-center" style="margin:0 auto">
+                                    <div class="col-lg-6 col-md-6" style="margin:0 auto">
                                         <div class="pq-footer-logo">
                                             <img src="{{url('/')}}/uploads/logo/decomagna-Logos-Trans-15.png" class="pq-footer-logo"
                                                 alt="Decomagna-footer-logo">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 align-self-center">
+                                    {{-- <div class="col-lg-6 col-md-6 align-self-center">
                                         <div class="pq-subscribe-from">
-                                            <form>
+                                            <form action="/subscribe" method="POST">
+                                                @csrf
+
                                                 <div class="subscribe-form">
-                                                    <input type="email" name="EMAIL" placeholder="Your email address"
+                                                    <input type="email" name="email" placeholder="Your email address"
                                                         class="form-control" required="">
                                                     <input class="submit" type="submit" value="Sign up">
                                                     <i class="ion-ios-paperplane"></i>
                                                 </div>
                                             </form>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

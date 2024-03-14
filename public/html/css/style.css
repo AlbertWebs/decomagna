@@ -1879,7 +1879,7 @@ footer#pq-footer .widget:first-child {
 }
 
 footer#pq-footer .pq-footer-logo {
-	height: 150px;
+	/* height: 150px; */
 	width: auto;
 }
 
@@ -2902,7 +2902,7 @@ Footer
 	color: var(--white-color);
 	background: transparent;
 	padding: 0;
-	text-transform: capitalize;
+	text-transform: none;
 }
 
 .pq-subscribe-from input.form-control:hover,
@@ -2968,7 +2968,7 @@ footer#pq-footer:before {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url(../images/background-Images/pexels-max-vakhtbovycn-7031603.jpg);
+	background-image: url(../images/background-Images/quick.jpg);
 }
 
 

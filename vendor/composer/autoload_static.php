@@ -87,6 +87,8 @@ class ComposerStaticInit76f05591930302e15d56dabbb76e56d5
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\Newsletter\\' => 18,
+            'Spatie\\MailcoachSdk\\' => 20,
             'Spatie\\LaravelPackageTools\\' => 27,
             'Spatie\\LaravelIgnition\\' => 23,
             'Spatie\\Ignition\\' => 16,
@@ -166,6 +168,7 @@ class ComposerStaticInit76f05591930302e15d56dabbb76e56d5
         ),
         'D' => 
         array (
+            'DrewM\\MailChimp\\' => 16,
             'Dotenv\\' => 7,
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Deprecations\\' => 22,
@@ -333,6 +336,14 @@ class ComposerStaticInit76f05591930302e15d56dabbb76e56d5
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\Newsletter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-newsletter/src',
+        ),
+        'Spatie\\MailcoachSdk\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src',
+        ),
         'Spatie\\LaravelPackageTools\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/laravel-package-tools/src',
@@ -379,8 +390,8 @@ class ComposerStaticInit76f05591930302e15d56dabbb76e56d5
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -520,6 +531,10 @@ class ComposerStaticInit76f05591930302e15d56dabbb76e56d5
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
         ),
+        'DrewM\\MailChimp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/drewm/mailchimp-api/src',
+        ),
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
@@ -625,6 +640,7 @@ class ComposerStaticInit76f05591930302e15d56dabbb76e56d5
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\MailchimpController' => __DIR__ . '/../..' . '/app/Http/Controllers/MailchimpController.php',
         'App\\Http\\Controllers\\WarrantyController' => __DIR__ . '/../..' . '/app/Http/Controllers/WarrantyController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -676,6 +692,7 @@ class ComposerStaticInit76f05591930302e15d56dabbb76e56d5
         'App\\Models\\STKMpesaTransaction' => __DIR__ . '/../..' . '/app/Models/STKMpesaTransaction.php',
         'App\\Models\\STKRequest' => __DIR__ . '/../..' . '/app/Models/STKRequest.php',
         'App\\Models\\Section' => __DIR__ . '/../..' . '/app/Models/Section.php',
+        'App\\Models\\SendMail' => __DIR__ . '/../..' . '/app/Models/SendMail.php',
         'App\\Models\\SendMails' => __DIR__ . '/../..' . '/app/Models/SendMails.php',
         'App\\Models\\Signal' => __DIR__ . '/../..' . '/app/Models/Signal.php',
         'App\\Models\\Slider' => __DIR__ . '/../..' . '/app/Models/Slider.php',
@@ -1330,6 +1347,9 @@ class ComposerStaticInit76f05591930302e15d56dabbb76e56d5
         'Dotenv\\Util\\Regex' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Util/Regex.php',
         'Dotenv\\Util\\Str' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Util/Str.php',
         'Dotenv\\Validator' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Validator.php',
+        'DrewM\\MailChimp\\Batch' => __DIR__ . '/..' . '/drewm/mailchimp-api/src/Batch.php',
+        'DrewM\\MailChimp\\MailChimp' => __DIR__ . '/..' . '/drewm/mailchimp-api/src/MailChimp.php',
+        'DrewM\\MailChimp\\Webhook' => __DIR__ . '/..' . '/drewm/mailchimp-api/src/Webhook.php',
         'Egulias\\EmailValidator\\EmailLexer' => __DIR__ . '/..' . '/egulias/email-validator/src/EmailLexer.php',
         'Egulias\\EmailValidator\\EmailParser' => __DIR__ . '/..' . '/egulias/email-validator/src/EmailParser.php',
         'Egulias\\EmailValidator\\EmailValidator' => __DIR__ . '/..' . '/egulias/email-validator/src/EmailValidator.php',
@@ -6367,6 +6387,35 @@ class ComposerStaticInit76f05591930302e15d56dabbb76e56d5
         'Spatie\\LaravelPackageTools\\Exceptions\\InvalidPackage' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Exceptions/InvalidPackage.php',
         'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
         'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
+        'Spatie\\MailcoachSdk\\Actions\\ManagesCampaigns' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Actions/ManagesCampaigns.php',
+        'Spatie\\MailcoachSdk\\Actions\\ManagesEmailLists' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Actions/ManagesEmailLists.php',
+        'Spatie\\MailcoachSdk\\Actions\\ManagesSubscribers' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Actions/ManagesSubscribers.php',
+        'Spatie\\MailcoachSdk\\Actions\\ManagesTransactionalMails' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Actions/ManagesTransactionalMails.php',
+        'Spatie\\MailcoachSdk\\Exceptions\\ActionFailed' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Exceptions/ActionFailed.php',
+        'Spatie\\MailcoachSdk\\Exceptions\\InvalidData' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Exceptions/InvalidData.php',
+        'Spatie\\MailcoachSdk\\Exceptions\\ResourceNotFound' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Exceptions/ResourceNotFound.php',
+        'Spatie\\MailcoachSdk\\Exceptions\\Unauthorized' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Exceptions/Unauthorized.php',
+        'Spatie\\MailcoachSdk\\Mailcoach' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Mailcoach.php',
+        'Spatie\\MailcoachSdk\\MakesHttpRequests' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/MakesHttpRequests.php',
+        'Spatie\\MailcoachSdk\\Resources\\ApiResource' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/ApiResource.php',
+        'Spatie\\MailcoachSdk\\Resources\\Campaign' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/Campaign.php',
+        'Spatie\\MailcoachSdk\\Resources\\CampaignBounce' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/CampaignBounce.php',
+        'Spatie\\MailcoachSdk\\Resources\\CampaignClick' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/CampaignClick.php',
+        'Spatie\\MailcoachSdk\\Resources\\CampaignOpen' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/CampaignOpen.php',
+        'Spatie\\MailcoachSdk\\Resources\\CampaignUnsubscribe' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/CampaignUnsubscribe.php',
+        'Spatie\\MailcoachSdk\\Resources\\EmailList' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/EmailList.php',
+        'Spatie\\MailcoachSdk\\Resources\\Subscriber' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/Subscriber.php',
+        'Spatie\\MailcoachSdk\\Resources\\Tag' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/Tag.php',
+        'Spatie\\MailcoachSdk\\Support\\PaginatedResults' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Support/PaginatedResults.php',
+        'Spatie\\Newsletter\\Drivers\\Driver' => __DIR__ . '/..' . '/spatie/laravel-newsletter/src/Drivers/Driver.php',
+        'Spatie\\Newsletter\\Drivers\\MailChimpDriver' => __DIR__ . '/..' . '/spatie/laravel-newsletter/src/Drivers/MailChimpDriver.php',
+        'Spatie\\Newsletter\\Drivers\\MailcoachDriver' => __DIR__ . '/..' . '/spatie/laravel-newsletter/src/Drivers/MailcoachDriver.php',
+        'Spatie\\Newsletter\\Exceptions\\CouldNotUpdateMember' => __DIR__ . '/..' . '/spatie/laravel-newsletter/src/Exceptions/CouldNotUpdateMember.php',
+        'Spatie\\Newsletter\\Exceptions\\InvalidNewsletterList' => __DIR__ . '/..' . '/spatie/laravel-newsletter/src/Exceptions/InvalidNewsletterList.php',
+        'Spatie\\Newsletter\\Facades\\Newsletter' => __DIR__ . '/..' . '/spatie/laravel-newsletter/src/Facades/Newsletter.php',
+        'Spatie\\Newsletter\\NewsletterServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-newsletter/src/NewsletterServiceProvider.php',
+        'Spatie\\Newsletter\\Support\\Lists' => __DIR__ . '/..' . '/spatie/laravel-newsletter/src/Support/Lists.php',
+        'Spatie\\Newsletter\\Support\\NewsletterList' => __DIR__ . '/..' . '/spatie/laravel-newsletter/src/Support/NewsletterList.php',
         'Stringable' => __DIR__ . '/..' . '/myclabs/php-enum/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',

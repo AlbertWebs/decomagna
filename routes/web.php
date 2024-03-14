@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailChimpController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
 
@@ -32,6 +33,9 @@ Route::get('/clients', [HomeController::class, 'clients']);
 Route::get('/terms-and-conditions', [HomeController::class, 'terms']);
 Route::get('/privacy-policy', [HomeController::class, 'privacy']);
 Route::get('/copyright', [HomeController::class, 'copyright']);
+
+
+Route::post('/subscribe', [MailChimpController::class, 'subscribe']);
 
 
 
