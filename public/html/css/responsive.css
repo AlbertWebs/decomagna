@@ -1512,4 +1512,9 @@ Design and Developed by: Peacefulqode
        display: block;
        padding:10px;
     }
+
+    header#pq-header .pq-bottom-header .navbar .navbar-brand img {
+        height: 60px;
+    }
+
 }

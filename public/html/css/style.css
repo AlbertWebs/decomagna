@@ -2142,7 +2142,7 @@ header#pq-header .pq-bottom-header .navbar .navbar-brand {
 }
 
 header#pq-header .pq-bottom-header .navbar .navbar-brand img {
-	height: 100px;
+	height: 90px;
 }
 
 /*++++++ Header Navbar Bar +++++*/
@@ -2968,7 +2968,7 @@ footer#pq-footer:before {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url(../images/background-Images/1.jpg);
+	background-image: url(../images/background-Images/pexels-max-vakhtbovycn-7031603.jpg);
 }
 
 

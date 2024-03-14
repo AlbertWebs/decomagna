@@ -63,7 +63,7 @@
     $About = DB::table('abouts')->get();
  ?>
  <!-- Services -->
- <section class=" p-80" id="about">
+ <section class="sp-80" id="about">
     <div class="container">
 
        <div class="row align-items-center">
@@ -87,7 +87,7 @@
           </div>
           <div class="col-lg-4 col-md-4 wow animated fadeInRight">
              <div class="button-align">
-                <a class="pq-button pq-button-flat" href="{{url('/')}}">
+                <a class="pq-button pq-button-flat" download href="{{url('/')}}/uploads/files/QS-Laminate-Brochure-2016-Z2-english.pdf">
                    <div class="pq-button-block">
                       <span class="pq-button-text">Browse Catalogue </span>
                       <span class="pq-button-line-right"></span>
