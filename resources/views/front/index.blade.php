@@ -15,7 +15,7 @@
                  <rs-slide style="position: absolute;" data-key="rs-4{{$Order}}" data-title="Slide"
                     data-thumb="{{asset('html/rev/assets/Banner-1-2-50x100.jpg')}}" data-anim="adpr:false;ms:300;" data-in="o:0;"
                     data-out="a:false;">
-                    <img  src="{{url('/')}}/uploads/slider/{{$slider->image}}" alt="" title="Banner-1" width="1920" height="800"
+                    <img  src="{{url('/')}}/uploads/slider/{{$slider->image}}" alt="" title="Banner-1"
                        class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{url('/')}}/uploads/slider/{{$slider->image}}"
                        data-no-retina>
                     <!--
@@ -109,11 +109,19 @@
                       <img class="ser-img" decoding="async" src="{{url('/')}}/uploads/categories/{{$cat->image}}" alt="{{$cat->title}}">
                    </div>
                 </div>
-                <div class="pq-service-info">
-                   <h5 class="pq-service-title">
-                    <a class="category-title" href="{{url('/')}}/products/{{$cat->slung}}">{{$cat->title}}</a>
-                   </h5>
-                </div>
+                @if($cat->id == 1)
+                    <div class="pq-service-info">
+                    <h5 class="pq-service-title">
+                        <a class="category-title" href="{{url('/')}}/products/{{$cat->slung}}">{{$cat->title}}</a>
+                    </h5>
+                    </div>
+                @else
+                    <div class="pq-service-info">
+                        <h5 class="pq-service-title">
+                        <a class="category-title" href="{{url('/')}}/products/explore/{{$cat->slung}}">{{$cat->title}}</a>
+                        </h5>
+                    </div>
+                @endif
              </div>
           </div>
           @endforeach

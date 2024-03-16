@@ -79,7 +79,7 @@
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-8 wow animated fadeInLeft">
                 <div class="pq-section-title pq-style-1">
-                    <span class="pq-section-sub-title">Portfolio</span>
+                    <span class="pq-section-sub-title" style="color:#ffffff">Portfolio</span>
                     <h5 class="pq-section-main-title pq-text-white">Seen Our Work Yet?</h5>
                 </div>
             </div>
@@ -163,7 +163,7 @@
                         @else
                             <div class="row align-items-center">
 
-                                <div class="col-xl-6 ps-xl-60 mt-4 mt-xl-0 wow animated fadeInRight">
+                                <div class="col-xl-6 ps-xl-60 mt-4 mt-xl-0 wow animated fadeInLeft">
                                     <div class="pq-section-title pq-style-1 pq-mb-30">
                                         @if($Order == "1")
                                         <span class="pq-section-sub-title">WHY YOU WOULD LIKE OUR {{$Category->title}}</span>
@@ -177,7 +177,7 @@
 
                                 <div class="col-xl-6 pe-xl-90">
                                     <div class="pq-faq-img">
-                                        <img src="{{url('/')}}/uploads/extras/{{$extra->image}}" class="img-fluid wow animated fadeInLeft" alt="faq-img">
+                                        <img src="{{url('/')}}/uploads/extras/{{$extra->image}}" class="img-fluid wow animated fadeInRight" alt="faq-img">
                                     </div>
                                 </div>
 
@@ -186,10 +186,178 @@
                     </div>
                 </section>
                 <!-- FAQ -->
-
-
+                <div class="col-lg-12">
+                    <div class="divider pq-left-border pq-45"></div>
+                </div>
             <?php $Order = $Order+1; ?>
         @endforeach
     @endif
+
+    {{--  --}}
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <div class="row" style="margin:0 auto">
+            {{-- <div class="col-xl-6 wow animated fadeInLeft">
+                <img src="{{url('/')}}/uploads/categories/{{$Category->image}}" class="img-fluid w-100s" alt="">
+            </div> --}}
+            <div class="col-xl-10 ps-xl-5 mt-4 mt-xl-0 wow animated fadeInRight" style="margin:0 auto">
+                <div class="pq-section-title pq-style-1 pq-mb-30">
+                    <span class="pq-section-sub-title">POPULAR QUESTIONS</span>
+                    <h5 class="pq-section-main-title">Asked Questions ?</h5>
+                    <p class="pq-section-description">
+                        Decomagna's FAQ section provides quick solutions to common questions about our products, services, and policies, ensuring a seamless user experience. From troubleshooting to subscription inquiries, it's regularly updated to offer the most relevant information.
+                    </p>
+                </div>
+                <div class="pq-accordion-block pq-style-2">
+                    <?php
+                       $faq = DB::table('faq')->get();
+                       $count = 1;
+                    ?>
+                    @foreach ($faq as $faqs)
+
+                    @if($count == 1)
+                    <div class="pq-accordion-block ">
+                        <div class="pq-accordion-box pq-active 1">
+                            <div class="pq-ad-title">
+                                <h4 class="ad-title-text">
+                                    {{$faqs->title}}
+                                    <i aria-hidden="true" class="ion ion-plus-round active"></i><i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                </h4>
+                            </div>
+                            <div class="pq-accordion-details">
+                                <p class="pq-detail-text">
+                                    {!! $faqs->content !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    @else
+                    <div class="pq-accordion-block ">
+                        <div class="pq-accordion-box 2">
+                            <div class="pq-ad-title">
+                                <h4 class="ad-title-text">
+                                    {{$faqs->title}}
+                                    <i aria-hidden="true" class="ion ion-plus-round active"></i><i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                </h4>
+                            </div>
+                            <div class="pq-accordion-details">
+                                <p class="pq-detail-text">
+                                    {!! $faqs->content !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    <?php
+                       $count = $count+1;
+                    ?>
+                    @endforeach
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FAQ -->
+    {{--  --}}
 @endforeach
+<?php $Blog = DB::table("blogs")->get(); ?>
+ <!-- Blog -->
+ <section class="blog pq-bg-grey">
+    <div class="container">
+
+       <div class="row align-items-center">
+          <div class="col-lg-8 wow animated fadeInRight">
+             <div class="pq-section-title pq-style-1">
+                <span class="pq-section-sub-title">Latest News</span>
+                <h5 class="pq-section-main-title">Quick-Step Flooring Kenya - Decomagna Limited Blogs</h5>
+             </div>
+          </div>
+          <div class="col-lg-4 wow animated fadeInRight">
+             <div class="button-align">
+                <a class="pq-button pq-button-flat" href="1-column-blog.html">
+                   <div class="pq-button-block">
+                      <span class="pq-button-text">read more </span>
+                      <span class="pq-button-line-right"></span>
+                      <i class="ion ion-ios-arrow-right"></i>
+                   </div>
+                </a>
+             </div>
+          </div>
+          <div class="col-lg-12">
+             <div class="divider pq-right-border pq-45"></div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-lg-12 wow animated fadeInUp">
+             <div class="pq-blog tex-left">
+                <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="false"
+                   data-desk_num="3" data-lap_num="2" data-tab_num="2" data-mob_num="1" data-mob_sm="1"
+                   data-autoplay="true" data-loop="true" data-margin="30">
+                   @foreach ($Blog as $blog)
+                   <div class="item">
+                      <div class="pq-blog-post">
+                         <div class="pq-post-media">
+                            <img decoding="async" src="{{url('/')}}/uploads/blogs/{{$blog->image_one}}" alt="blog-image">
+                            <div class="pq-post-category">
+                               <a href="{{url('/')}}/blogs/{{$blog->slung}}">stone</a>
+                            </div>
+                         </div>
+                         <div class="pq-blog-contain">
+                            <div class="pq-post-meta">
+                               <ul>
+                                  <li class="pq-post-meta">
+                                     <a href="{{url('/')}}/blogs/{{$blog->slung}}">
+                                     {{ date('M d,Y', strtotime($blog->created_at)) }}</a>
+                                  </li>
+
+                               </ul>
+                            </div>
+                            <h5 class="pq-blog-title">
+                               <a href="{{url('/')}}/blogs/{{$blog->slung}}">{{$blog->title}}</a>
+                            </h5>
+                            <div class="pq-btn-container">
+                               <a href="{{url('/')}}/blogs/{{$blog->slung}}"
+                                  class="pq-button pq-button-link">
+                                  <div class="pq-button-block">
+                                     <div class="pq-svg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="64.356"
+                                           height="36.52" viewBox="0 0 64.356 36.52">
+                                           <g transform="translate(-6.444 -1.74)">
+                                              <g data-name="Group 2">
+                                                 <circle data-name="Ellipse 2" cx="17" cy="17.76"
+                                                    r="17.76" transform="translate(34.78 2.24)"
+                                                    fill="none" stroke="#30373f" stroke-width="1"
+                                                    opacity="0.5"></circle>
+                                                 <circle data-name="Ellipse 3" cx="17" cy="17.76"
+                                                    r="17.76" transform="translate(34.78 2.24)"
+                                                    fill="none" stroke="#30373f" stroke-width="1">
+                                                 </circle>
+                                              </g>
+                                              <path data-name="Path 1"
+                                                 d="M49.525,14.265l-.627.779,5.583,4.5H6.444v1h48.02L48.9,24.954l.621.783L56.7,20.044Z"
+                                                 fill="#30373f"></path>
+                                           </g>
+                                        </svg>
+                                     </div>
+                                     <span class="pq-button-text">read more </span>
+                                  </div>
+                               </a>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   @endforeach
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <!-- Blog -->
 @endsection
