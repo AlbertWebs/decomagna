@@ -69,7 +69,7 @@
       <!-- Loading -->
       <div id="pq-loading">
          <div id="pq-loading-center">
-            <img src="{{asset('uploads/logo/favicon.png')}}" alt="Loading">
+            <img src="{{asset('uploads/logo/logo-clean.png')}}" alt="Loading">
          </div>
       </div>
       <!-- Loading -->
@@ -140,25 +140,7 @@
                               </a>
                               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                  <div id="pq-menu-contain" class="pq-menu-contain">
-                                    <ul id="pq-main-menu" class="navbar-nav ml-auto">
-                                       <li class="menu-item">
-                                          <a href="{{url('/')}}">Home</a>
-                                       </li>
-                                       <?php
-                                          $Category = DB::table('categories')->get();
-                                          ?>
-                                       @foreach($Category as $category)
-                                       <li class="menu-item">
-                                          <a href="{{url('/')}}/products/{{$category->slung}}" class="navbar-link hover-underline">
-                                             <div class="separator"></div>
-                                             <span class="span">{{$category->name}}</span>
-                                          </a>
-                                       </li>
-                                       @endforeach
-                                       <li class="menu-item">
-                                          <a href="{{url('/')}}/contact-us">Contact Us</a>
-                                       </li>
-                                    </ul>
+                                    @include('front.menu')
                                  </div>
                               </div>
                               <div class="pq-menu-search-block">
