@@ -320,7 +320,7 @@
                 var val = $('#cat').val();
                 $('#sub_cat').empty()
                 $.ajax({
-                    url: `/admin/get-subcategories/${val}`,
+                    url: `/public/admin/get-subcategories/${val}`,
                     success: function(data){
                             var toAppend = '';
                             $.each(data,function(i,o){
