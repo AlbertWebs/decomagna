@@ -24,6 +24,8 @@ use App\Http\Controllers\BlogController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [HomeController::class, 'products']);
 Route::get('/search-product', [HomeController::class, 'search'])->name('search');
+Route::get('/search-filter', [HomeController::class, 'filter'])->name('search-filter');
+
 
 Route::get('/contact-us', [HomeController::class, 'contact']);
 Route::get('/frequently-asked-questions/{slung}', [HomeController::class, 'faq']);
@@ -37,7 +39,8 @@ Route::get('/copyright', [HomeController::class, 'copyright']);
 
 Route::post('/subscribe', [MailChimpController::class, 'subscribe']);
 
-
+Route::get('/class/{slung}', [HomeController::class, 'class']);
+Route::get('/child/{slung}', [HomeController::class, 'child']);
 
 Route::get('/products/{slung}', [HomeController::class, 'categories']);
 Route::get('/products/explore/{slung}', [HomeController::class, 'categories_explore']);
@@ -53,7 +56,7 @@ Route::get('/blogs', [HomeController::class, 'blog']);
 Route::get('/blogs/{slung}', [HomeController::class, 'blog_single']);
 Route::post('/contact-form', [HomeController::class, 'contact_form'])->name('contact-form');
 Route::get('/email', [HomeController::class, 'email'])->name('email');
-
+Route::get('/get-subcategories/{id}',  [HomeController::class, 'get_subcategories']);
 
 
 

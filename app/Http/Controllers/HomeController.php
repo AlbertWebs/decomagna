@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Product;
+use App\Models\SubClassification;
+use App\Models\Classification;
 use Session;
 use App\Models\SendMail;
 class HomeController extends Controller
@@ -197,6 +199,42 @@ class HomeController extends Controller
         return view('front.products-search', compact('Products','CategoryTitle','CategorySlung','PageTitle','search'));
     }
 
+    public function filter(){
+        $color = request()->color;
+        $class = request()->class;
+        $child = request()->child;
+        $search = "Your Filter";
+        $Classification = Classification::where('slung', $class)->first();
+        $SubClassification = SubClassification::where('slung', $child)->first();
+        $Products = Product::where('color',$color)->where('classifications',$Classification->id)->where('sub_classifications',$SubClassification->id)->get();
+        $CategoryTitle = "Quick-Step flooring Kenya - Decomagna ltd";
+        $CategorySlung = "#";
+        $PageTitle = "Our Products";
+        return view('front.products-search', compact('Products','CategoryTitle','CategorySlung','PageTitle','search'));
+    }
+
+
+    public function class($slung){
+        $Classification = Classification::where('slung', $slung)->first();
+        $search = "$Classification->title";
+        $Products = Product::where('classifications',$Classification->id)->get();
+        $CategoryTitle = "Quick-Step flooring Kenya - Decomagna ltd";
+        $CategorySlung = "#";
+        $PageTitle = "Our Products";
+        return view('front.products-search', compact('Products','CategoryTitle','CategorySlung','PageTitle','search'));
+    }
+
+    public function child($slung){
+        $SubClassification = SubClassification::where('slung', $slung)->first();
+        $search = "$SubClassification->title";
+        $Products = Product::where('sub_classifications',$SubClassification->id)->get();
+        $CategoryTitle = "Quick-Step flooring Kenya - Decomagna ltd";
+        $CategorySlung = "#";
+        $PageTitle = "Our Products";
+        return view('front.products-search', compact('Products','CategoryTitle','CategorySlung','PageTitle','search'));
+    }
+
+
 
 // create post request method for contact form
     public function contact_form(Request $request){
@@ -223,6 +261,14 @@ class HomeController extends Controller
 
     public  function email(){
         return view('mail');
+    }
+
+    public function get_subcategories(Request $request,$slung){
+        $CatID = Classification::where('slung', $slung)->first();
+        if ($request->ajax()) {
+            $data = SubClassification::where('classification_id', $CatID->id)->get();
+            return response()->json($data);
+        }
     }
 
 
