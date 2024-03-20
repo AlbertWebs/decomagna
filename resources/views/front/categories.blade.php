@@ -178,9 +178,10 @@
             $('.sub_cat_holder').hide();
             $('#cat').on('change', e => {
                 var val = $('#cat').val();
+                var root = location.protocol + '//' + location.host;
                 $('#sub_cat').empty()
                 $.ajax({
-                    url: `http://demo.decomagna.com/public/get-subcategories/${val}`,
+                    url: `${root}/get-subcategories/${val}`,
                     success: function(data){
                         $('.sub_cat_holder').show();
                             var toAppend = '';

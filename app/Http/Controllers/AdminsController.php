@@ -659,7 +659,8 @@ class AdminsController extends Controller
         $Product->dimensions = $request->dimensions;
         $Product->warranties = $request->warranties;
         $Product->waters = $request->waters;
-
+        $Product->classification = $request->classification;
+        $Product->sub_classification = $request->sub_classification;
         $Product->category = $request->category;
         $Product->species = $request->species;
         $Product->color = $request->color;
@@ -679,11 +680,12 @@ class AdminsController extends Controller
 
     public function editProducts($id){
         $Category = Category::all();
+        $Classification = Classification::all();
         activity()->log('Access Edit Product ID number '.$id.' ');
         $Product = Product::find($id);
         $page_title = 'formfiletext';
         $page_name = 'Edit Home Page Slider';
-        return view('admin.editProduct',compact('page_title','Product','page_name','Category'));
+        return view('admin.editProduct',compact('page_title','Product','page_name','Category','Classification'));
     }
 
     public function edit_Product(Request $request, $id){

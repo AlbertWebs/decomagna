@@ -62,6 +62,27 @@
                                     <label for="list-title">SKU</label>
                                 </div>
                             </div>
+                            <div class="section-space col s12"></div>
+                            <div class="row">
+                                {{--  --}}
+                                <div class="input-field col s6">
+                                    <select required name="classification" class="icons" id="cat">
+                                        <option value="" disabled selected>Selcet Class</option>
+                                        @foreach ($Classification as $class)
+                                        <option value="{{$class->id}}" class="circle">{{$class->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label>Choose Class</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select id="sub_cat" required name="sub_classification">
+
+                                    </select>
+                                    <label>Choose Sub Class</label>
+                                </div>
+                                {{--  --}}
+                                <div class="section-space col s12"></div>
+                            </div>
                             <div class="row">
                                 {{--  --}}
                                 <div class="input-field col s12">
@@ -391,5 +412,31 @@
 
     </div>
 </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function (e) {
+        $('#cat').on('change', e => {
+            var val = $('#cat').val();
+            var root = location.protocol + '//' + location.host;
+            $('#sub_cat').empty()
+            $.ajax({
+
+                url: `${root}/admin/get-subcategories/${val}`,
+                success: function(data){
+                        var toAppend = '';
+                        $.each(data,function(i,o){
+                        toAppend += '<option class="circle" value="'+o.id+'">'+o.title+'</option>';
+                    });
+                    $('#sub_cat').append(toAppend);
+                    $('#sub_cat').empty();
+                    $('#sub_cat').append(toAppend);
+                    $("#sub_cat").material_select()
+
+                    }
+            })
+        })
+    })
+</script>
 
 @endsection

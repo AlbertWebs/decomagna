@@ -318,9 +318,10 @@
         $(document).ready(function (e) {
             $('#cat').on('change', e => {
                 var val = $('#cat').val();
+                var root = location.protocol + '//' + location.host;
                 $('#sub_cat').empty()
                 $.ajax({
-                    url: `/public/admin/get-subcategories/${val}`,
+                    url: `${root}/admin/get-subcategories/${val}`,
                     success: function(data){
                             var toAppend = '';
                             $.each(data,function(i,o){
