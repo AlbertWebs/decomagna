@@ -180,7 +180,7 @@
                 var val = $('#cat').val();
                 $('#sub_cat').empty()
                 $.ajax({
-                    url: `public/get-subcategories/${val}`,
+                    url: `http://demo.decomagna.com/public/get-subcategories/${val}`,
                     success: function(data){
                         $('.sub_cat_holder').show();
                             var toAppend = '';
