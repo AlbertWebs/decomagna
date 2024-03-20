@@ -316,6 +316,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::get('switchStatus/{id}', [AdminsController::class, 'switchStatus']);
         Route::get('slungify', [AdminsController::class, 'slungify']);
 
+        Route::get('/get-subcategories/{id}',  [AdminsController::class, 'get_subcategories']);
+
 
         Route::get('updateSlung', [AdminsController::class, 'updateSlung']);
 

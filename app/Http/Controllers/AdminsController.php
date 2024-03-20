@@ -8,6 +8,10 @@ use App\Models\Term;
 
 use App\Models\Privacy;
 
+use App\Models\Classification;
+
+use App\Models\SubClassification;
+
 use App\Models\Color;
 
 use App\Models\Water;
@@ -611,10 +615,11 @@ class AdminsController extends Controller
 
     public function addProduct(){
         $Category = Category::all();
+        $Classification = Classification::all();
         activity()->log('Accessed Add Product Page');
         $page_title = 'formfiletext';
         $page_name = 'Add Product';
-        return view('admin.addProduct',compact('page_title','page_name','Category'));
+        return view('admin.addProduct',compact('page_title','page_name','Category','Classification'));
     }
 
     public function add_Product(Request $request){
@@ -2645,6 +2650,13 @@ class AdminsController extends Controller
         );
         Session::flash('message', "Changes have been saved");
         return Redirect::back();
+    }
+
+    public function get_subcategories(Request $request,$id){
+        if ($request->ajax()) {
+            $data = SubClassification::where('classification_id', $id)->get();
+            return response()->json($data);
+        }
     }
 
 }

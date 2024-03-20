@@ -124,6 +124,10 @@
     {{-- Process Image --}}
     <script>
         $(document).ready( function() {
+            //
+            $('select').material_select();
+            document.querySelectorAll('.select-wrapper').forEach(t => t.addEventListener('click', e=>e.stopPropagation()))
+            //
             $(document).on('change', '.btn-file :file', function() {
             var input = $(this),
                 label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
@@ -158,6 +162,10 @@
                 readURL(this);
             });
         });
+
+        //
+
+        //
     </script>
     {{-- Process Image --}}
 
