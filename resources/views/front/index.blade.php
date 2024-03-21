@@ -21,14 +21,14 @@
                     <!--
 
                        -->
-                    <rs-layer id="slider-14-slide-4{{$Order}}-layer-1" class="rs-title-font" data-type="text" data-rsp_ch="on"
+                    {{-- <rs-layer id="slider-14-slide-4{{$Order}}-layer-1" class="rs-title-font" data-type="text" data-rsp_ch="on"
                        data-xy="x:l,l,c,c;xo:30px,30px,0,0;y:m,m,m,t;yo:6px,32px,10px,195px;"
                        data-text="w:normal;s:62,48,42,32;l:70,56,50,40;ls:0,0,0,1px;fw:600;a:left,left,center,center;"
                        data-dim="w:737px,613px,546px,434px;" data-frame_0="y:50,39,29,17;"
                        data-frame_1="st:500;sp:1000;sR:500;"
                        data-frame_999="y:50,39,29,17;o:0;st:7700;sp:1000;sR:6290;"
                        style="z-index:9;font-family:'Plus Jakarta Sans';text-transform:capitalize; background-color: rgba(0,0,0,0.3); border:6px solid rgba(255,255,255,0.3); padding:10px; text-shadow: 0 0 4px rgba(0,0,0,.8);">{{$slider->name}}
-                    </rs-layer>
+                    </rs-layer> --}}
                     <!--
 
                     -->
