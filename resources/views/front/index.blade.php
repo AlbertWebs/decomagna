@@ -294,7 +294,7 @@
             <div class="col-lg-4 col-md-6 wow animated fadeInUp">
                 <div class="pq-image-box pq-style-4">
                     <div class="pq-image-box-img">
-                        <a href="{{url('/')}}/products/color/original-laminate-flooring/{{$color->title}}"><img  src="{{url('/')}}/uploads/colors/{{$color->image}}" class="img-fluid w-100" alt=""></a>
+                        <a style="height:272px; width:100%;" href="{{url('/')}}/products/color/original-laminate-flooring/{{$color->title}}"><img style="object-fit: cover"   src="{{url('/')}}/uploads/colors/{{$color->image}}" class="img-fluid w-100" alt=""></a>
                     </div>
                     <div class="pq-image-box-content">
                         <h4 class="pq-image-box-title"><a href="{{url('/')}}/products/color/original-laminate-flooring/{{$color->title}}">{{$color->title}}</a></h4>
