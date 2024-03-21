@@ -67,16 +67,31 @@
                                 {{--  --}}
                                 <div class="input-field col s6">
                                     <select required name="classification" class="icons" id="cat">
-                                        <option value="" disabled selected>Selcet Class</option>
+                                        {{--  --}}
+                                        <?php $ClassificationSelected = DB::table('classifications')->where('id',$Product->classifications)->get() ?>
+                                        @foreach ($ClassificationSelected as $ClassSelect)
+                                        <option value="{{$ClassSelect->id}}" selected>{{$ClassSelect->title}}</option>
+                                        @endforeach
+
+                                        {{--  --}}
                                         @foreach ($Classification as $class)
                                         <option value="{{$class->id}}" class="circle">{{$class->title}}</option>
                                         @endforeach
                                     </select>
                                     <label>Choose Class</label>
                                 </div>
+
                                 <div class="input-field col s6">
                                     <select id="sub_cat" required name="sub_classification">
+                                        <?php $SubClassificationSelected = DB::table('sub_classifications')->where('id',$Product->sub_classifications)->get();  ?>
+                                        @foreach ($SubClassificationSelected as $SubClassSelect)
+                                           <option selected value="{{$SubClassSelect->id}}" class="circle">{{$SubClassSelect->title}}</option>
+                                        @endforeach
 
+                                        <?php $SubClassificationSelected = DB::table('sub_classifications')->where('classification_id',$Product->classifications)->get(); ?>
+                                        @foreach ($SubClassificationSelected as $SubClassSelect)
+                                           <option value="{{$SubClassSelect->id}}" class="circle">{{$SubClassSelect->title}}</option>
+                                        @endforeach
                                     </select>
                                     <label>Choose Sub Class</label>
                                 </div>

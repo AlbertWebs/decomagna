@@ -752,6 +752,8 @@ class AdminsController extends Controller
             'content'=>$request->content,
             'meta'=>$request->meta,
             'trending'=>$trending,
+            'classifications'=>$request->classification,
+            'sub_classifications'=>$request->sub_classification,
             'featured'=>$featured,
             'warranties'=>$request->warranties,
             'waters'=>$request->waters,
