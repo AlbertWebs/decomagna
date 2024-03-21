@@ -138,7 +138,7 @@ Design and Developed by: PeacefulQode
         /*==================================================
         [ Service List ]
         ==================================================*/
-    
+
         jQuery('.pq-service-box-4-list .item:first-child .pq-service-box').addClass("active");
         jQuery('.pq-service-box-4-list .item').on({
             mouseenter: function() {

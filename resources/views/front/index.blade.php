@@ -391,7 +391,7 @@
              <div class="pq-blog tex-left">
                 <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="false"
                    data-desk_num="3" data-lap_num="2" data-tab_num="2" data-mob_num="1" data-mob_sm="1"
-                   data-autoplay="true" data-loop="true" data-margin="30">
+                   data-autoplay="false" data-loop="true" data-margin="30">
                    @foreach ($Blog as $blog)
                    <div class="item">
                       <div class="pq-blog-post">
