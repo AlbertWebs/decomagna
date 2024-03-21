@@ -1320,12 +1320,10 @@ class AdminsController extends Controller
         activity()->log('Evoked an Edit Blog Operation For Blog ID number '.$id.' ');
         $path = 'uploads/blogs';
         if(isset($request->image_one)){
-
-
                 $file = $request->file('image_one');
                 $filename = str_replace(' ', '', $file->getClientOriginalName());
                 $timestamp = new Datetime();
-                $new_timestamp = $timestamp->format('Y-m-d H:i:s');
+                $new_timestamp = "Image_one";
                 $image_main_temp = $new_timestamp.'image'.$filename;
                 $image_one = str_replace(' ', '',$image_main_temp);
                 $file->move($path, $image_one);

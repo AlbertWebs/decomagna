@@ -292,9 +292,11 @@
             ?>
             @foreach ($Color as $color)
             <div class="col-lg-4 col-md-6 wow animated fadeInUp">
-                <div class="pq-image-box pq-style-4 ">
+                <div class="pq-image-box pq-style-4">
                     <div class="pq-image-box-img">
-                        <a class="pellete-img"  href="{{url('/')}}/products/color/original-laminate-flooring/{{$color->title}}"><img   src="{{url('/')}}/uploads/colors/{{$color->image}}" class="img-fluid w-100" alt=""></a>
+                        <a class="pellete-img"  href="{{url('/')}}/products/color/original-laminate-flooring/{{$color->title}}">
+                            <img src="{{url('/')}}/uploads/colors/{{$color->image}}" class="img-fluid w-100s" alt="">
+                        </a>
                     </div>
                     <div class="pq-image-box-content">
                         <h4 class="pq-image-box-title"><a href="{{url('/')}}/products/color/original-laminate-flooring/{{$color->title}}">{{$color->title}}</a></h4>

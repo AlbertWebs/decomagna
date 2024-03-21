@@ -7359,12 +7359,21 @@ Custom Css
   }
 
 
-  .pellete-img {
-    height: 400px;
-    width: 273px;
+.pellete-img {
+    display:block;
+    width:409px;
+    height:205px;
 }
 
 .pellete-img img {
-    height: 100%;
-    width: 100%;
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+@media (max-width: 767px) {
+    .pellete-img {
+        display:block;
+        width:auto;
+        height:auto;
+    }
 }
