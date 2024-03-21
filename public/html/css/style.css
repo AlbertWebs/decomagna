@@ -7357,3 +7357,14 @@ Custom Css
 .form-white{
     background-color:#ffffff !important;
   }
+
+
+  .pellete-img {
+    height: 400px;
+    width: 273px;
+}
+
+.pellete-img img {
+    height: 100%;
+    width: 100%;
+}
