@@ -395,8 +395,8 @@
                    @foreach ($Blog as $blog)
                    <div class="item">
                       <div class="pq-blog-post">
-                         <div class="pq-post-media">
-                            <img decoding="async" src="{{url('/')}}/uploads/blogs/{{$blog->image_one}}" alt="blog-image">
+                         <div class="pq-post-media blog-img">
+                            <img decoding="async" src="{{url('/')}}/uploads/blogs/{{$blog->image_one}}" alt="{{$blog->title}}">
                             <div class="pq-post-category">
                                <a href="{{url('/')}}/blogs/{{$blog->slung}}">stone</a>
                             </div>
