@@ -21,18 +21,26 @@
                     <!--
 
                        -->
-                    {{-- <rs-layer id="slider-14-slide-4{{$Order}}-layer-1" class="rs-title-font" data-type="text" data-rsp_ch="on"
-                       data-xy="x:l,l,c,c;xo:30px,30px,0,0;y:m,m,m,t;yo:6px,32px,10px,195px;"
+                    <rs-layer id="slider-14-slide-4{{$Order}}-layer-1" class="rs-title-font" data-type="text" data-rsp_ch="on"
+                       {{-- data-xy="x:l,l,c,c;xo:30px,30px,0,0;y:m,m,m,t;yo:6px,32px,10px,195px;" --}}
+                       data-xy="x:l,l,c,c;xo:10px,10px,0,0;y:m;yo:145px,170px,140px,114px;"
                        data-text="w:normal;s:62,48,42,32;l:70,56,50,40;ls:0,0,0,1px;fw:600;a:left,left,center,center;"
                        data-dim="w:737px,613px,546px,434px;" data-frame_0="y:50,39,29,17;"
                        data-frame_1="st:500;sp:1000;sR:500;"
                        data-frame_999="y:50,39,29,17;o:0;st:7700;sp:1000;sR:6290;"
-                       style="z-index:9;font-family:'Plus Jakarta Sans';text-transform:capitalize; background-color: rgba(0,0,0,0.3); border:6px solid rgba(255,255,255,0.3); padding:10px; text-shadow: 0 0 4px rgba(0,0,0,.8);">{{$slider->name}}
-                    </rs-layer> --}}
+                            style="
+                                  z-index:9;font-family:'Plus Jakarta Sans';
+                                  text-transform:capitalize;
+                                  background-color: rgba(0,0,0,0.3);
+                                  border:6px solid rgba(255,255,255,0.3);
+                                  padding:10px;
+                                  text-shadow: 0 0 4px rgba(0,0,0,.8);">
+                                  {{$slider->name}}
+                    </rs-layer>
                     <!--
 
                     -->
-                    <a id="slider-14-slide-4{{$Order}}-layer-3" class="rs-layer pq-button pq-button-flat pq-btn-font  rev-btn"
+                    {{-- <a id="slider-14-slide-4{{$Order}}-layer-3" class="rs-layer pq-button pq-button-flat pq-btn-font  rev-btn"
                        href="about-us.html" target="_self" data-type="button" data-rsp_ch="on"
                        data-xy="x:l,l,c,c;xo:30px,30px,0,0;y:m;yo:161px,170px,140px,114px;"
                        data-text="w:normal;s:14,16,16,14;l:32,32,32,28;ls:1px,0px,0px,1px;fw:600;"
@@ -44,7 +52,7 @@
                        style="z-index:8;background-color:#1c186c ;font-family:'Plus Jakarta Sans';text-transform:uppercase;">
                        <div class="pq-button-block"><span class="pq-button-text">read more </span><span
                           class="pq-button-line-right"></span><i class="ion ion-ios-arrow-right"></i></div>
-                    </a>
+                    </a> --}}
                  </rs-slide>
                  <?php $Order = $Order+1; ?>
                  @endforeach
