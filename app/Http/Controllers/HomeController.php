@@ -128,7 +128,7 @@ class HomeController extends Controller
             $CategoryTitle = $category->title;
             $CategorySlung = $category->slung;
             $PageTitle = "$slung $CategoryTitle";
-            return view('front.products', compact('Products','CategoryTitle','CategorySlung','PageTitle','slung'));
+            return view('front.color', compact('Products','CategoryTitle','CategorySlung','PageTitle','slung'));
         }
     }
 

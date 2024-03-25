@@ -12,22 +12,22 @@
             <div class="col-lg-12">
                 <div class="single-portfolio-slider">
                     <div class="owl-carousel owl-loaded owl-drag" data-dots="true" data-nav="false" data-desk_num="1" data-lap_num="1" data-tab_num="1" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="true" data-margin="0">
-                        <div class="item">
-                            <img style="max-height:500px; width:100%" src="{{url('/')}}/uploads/products/{{$product->image_one}}" class="img-fluid" alt="">
+                        <div class="item" style="max-height:520px">
+                            <img style="width: 100%;  height: 100%; object-fit: contain" src="{{url('/')}}/uploads/products/{{$product->image_one}}" class="img-fluid" alt="">
                         </div>
                         @if($product->image_two == null OR $product->image_two =="0")
 
                         @else
-                        <div class="item">
-                            <img style="max-height:500px; width:100%" src="{{url('/')}}/uploads/products/{{$product->image_two}}" class="img-fluid" alt="">
+                        <div class="item" style="max-height:520px">
+                            <img style="width: 100%;  height: 100%; object-fit: contain" src="{{url('/')}}/uploads/products/{{$product->image_two}}" class="img-fluid" alt="">
                         </div>
                         @endif
 
                         @if($product->image_three == null OR $product->image_three =="0")
 
                         @else
-                        <div class="item">
-                            <img style="max-height:500px; width:100%" src="{{url('/')}}/uploads/products/{{$product->image_three}}" class="img-fluid" alt="">
+                        <div class="item" style="max-height:520px">
+                            <img style="width: 100%;  height: 100%; object-fit: contain" src="{{url('/')}}/uploads/products/{{$product->image_three}}" class="img-fluid" alt="">
                         </div>
                         @endif
                     </div>
