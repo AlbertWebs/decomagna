@@ -405,14 +405,14 @@
                       <div class="pq-blog-post">
                          <div class="pq-post-media blog-img">
                             <img decoding="async" src="{{url('/')}}/uploads/blogs/{{$blog->image_one}}" alt="{{$blog->title}}">
-                            <div class="pq-post-category">
+                            {{-- <div class="pq-post-category">
                                <a href="{{url('/')}}/blogs/{{$blog->slung}}">
                                   <?php
                                       $Category = \App\Models\Category::find($blog->category);
                                       echo $Category->name;
                                    ?>
                                </a>
-                            </div>
+                            </div> --}}
                          </div>
                          <div class="pq-blog-contain">
                             <div class="pq-post-meta">
