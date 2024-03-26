@@ -191,7 +191,7 @@
             <div class="col-lg-8 col-md-8 wow animated fadeInRight">
                 <div class="pq-section-title pq-style-1">
                     <span class="pq-section-sub-title">latest work</span>
-                    <h5 class="pq-section-main-title">discover our creation</h5>
+                    <h5 class="pq-section-main-title">discover our creations</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 wow animated fadeInRight">
