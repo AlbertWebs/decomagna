@@ -66,6 +66,12 @@
       <div id="pq-loading">
          <div id="pq-loading-center">
             <img src="{{asset('uploads/logo/logo-clean.png')}}" alt="Loading">
+            <div>
+                {{-- <img src="{{asset('uploads/logo/logo-clean.png')}}" alt="Loading"> --}}
+                <center>
+                    <img *ngIf="loading" style="width:120px; height:120px" src="{{asset('uploads/logo/Spinner-1s-200px.gif')}}" alt="loading" />
+                </center>
+            </div>
          </div>
       </div>
       <!-- Loading -->
