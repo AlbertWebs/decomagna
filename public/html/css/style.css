@@ -7385,4 +7385,8 @@ Custom Css
         width:auto;
         height:auto;
     }
+
+    #pq-loading img{
+        height:80px;
+    }
 }
