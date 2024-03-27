@@ -26,9 +26,8 @@ Route::get('/products', [HomeController::class, 'products']);
 Route::get('/search-product', [HomeController::class, 'search'])->name('search');
 Route::get('/search-filter', [HomeController::class, 'filter'])->name('search-filter');
 
-Route::get("sitemap.xml" , function () {
-    return \Illuminate\Support\Facades\Redirect::to('sitemap.xml');
-     });
+Route::get('sitemap.xml',function() {
+    return response()->view('sitemap')->header('Content-Type', 'xml');});
 
 Route::get('/contact-us', [HomeController::class, 'contact']);
 Route::get('/frequently-asked-questions/{slung}', [HomeController::class, 'faq']);
