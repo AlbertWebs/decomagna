@@ -7,25 +7,7 @@
                    Decomagna Ltd, the official distributor of Quick-Step flooring in Kenya. We specializing in laminate flooring, engineered wood, and click vinyl, made in Belgum.
                </p>
             </div>
-            <div class="pq-sidebars">
-               <div class="pq-widget">
-                  <div class="wp-block-group">
-                     <div class="wp-block-group__inner-container">
-                        <h2>Samples</h2>
-                        <div class="row">
-                            <?php
-                                $Products = DB::table('products')->inRandomOrder()->limit('6')->get();
-                            ?>
-                            @foreach ($Products as $Pro)
-                            <div class="col-lg-4">
-                                <img style="width:100%; height:100px; margin-bottom:5px;" src="{{url('/')}}/uploads/products/{{$Pro->image_one}}" alt="">
-                             </div>
-                            @endforeach
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+
             <div class="pq-sidebar-contact">
                <ul class="pq-contact">
                   <li>
