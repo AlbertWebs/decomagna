@@ -381,7 +381,7 @@
           </div>
           <div class="col-lg-4 wow animated fadeInRight">
              <div class="button-align">
-                <a class="pq-button pq-button-flat" href="1-column-blog.html">
+                <a class="pq-button pq-button-flat" href="{{url('/')}}/blogs">
                    <div class="pq-button-block">
                       <span class="pq-button-text">read more </span>
                       <span class="pq-button-line-right"></span>

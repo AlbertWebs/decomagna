@@ -13,9 +13,9 @@
                         <div class="pq-blog-post">
                             <div class="pq-post-media">
                                 <img style="max-height:700px" decoding="async" src="{{url('/')}}/uploads/blogs/{{$blog->image_one}}" alt="blog-image">
-                                <div class="pq-post-category">
+                                {{-- <div class="pq-post-category">
                                     <a href="in-home-choose-a-light-floor-if-at-all-possible.html">marble</a>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="pq-blog-contain">
                                 <div class="pq-post-meta">
@@ -52,12 +52,12 @@
                                         <li class="pq-tags-share">
                                             <a href="#">laminate</a>
                                         </li>
-                                        <li class="pq-tags-share">
+                                        {{-- <li class="pq-tags-share">
                                             <a href="#">marbles</a>
                                         </li>
                                         <li class="pq-tags-share">
                                             <a href="#">stone</a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>

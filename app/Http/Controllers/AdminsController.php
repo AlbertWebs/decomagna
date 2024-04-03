@@ -1380,6 +1380,7 @@ class AdminsController extends Controller
             'slung' => Str::slug($request->title),
             'content' => $request->content,
             'author' => $request->author,
+            'meta' => $request->meta,
             'category' => $request->category,
             'tags' => $request->tags,
             'image_one' =>$image_one,

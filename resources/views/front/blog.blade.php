@@ -11,14 +11,14 @@
             <div class="col-lg-12">
                 <nav aria-label="breadcrumb">
                     <div class="pq-breadcrumb-title">
-                        <h1>3 Column Blog</h1>
+                        <h1>Blogs</h1>
                     </div>
                     <div class="pq-breadcrumb-container">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html"><i class="fas fa-home me-2"></i>Home</a>
+                                <a href="{{url('/')}}"><i class="fas fa-home me-2"></i>Home</a>
                             </li>
-                            <li class="breadcrumb-item active">3 Column Blog</li>
+                            <li class="breadcrumb-item active">Blogs</li>
                         </ol>
                     </div>
                 </nav>
