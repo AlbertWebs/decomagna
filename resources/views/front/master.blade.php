@@ -31,23 +31,21 @@
       <!-- Responsive -->
       <link rel="stylesheet" href="{{asset('html/css/responsive.css')}}">
       {{-- SEO SKELETON STRUCTURE --}}
-      <title>Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium</title>
+      <title>Quick-Step Kenya - Laminate - Engineered wood - Vinyl flooring</title>
       <meta name="robots" content="index,follow">
       <meta name="googlebot" content="index,follow">
       <!-- Google Specific -->
-      <meta name="subject"
-         content="Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium">
+      <meta name="subject" content="Quick-Step Kenya - Laminate - Engineered wood - Vinyl flooring">
+      <meta name="description" content="Discover our stories and blog-posts. Up to date advice on flooring colors, trends and more on our blog section. Get inspired by Quick-Step® flooring designers.">
       <meta name="rating" content="General">
       <meta name="google-site-verification" value="" content="verification_token">
       <meta name="referrer" content="no-referrer">
       {{-- OG --}}
       <meta property="og:url" content="{{url('/')}}">
       <meta property="og:type" content="website">
-      <meta property="og:title"
-         content="Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium">
+      <meta property="og:title" content="Quick-Step Kenya - Laminate - Engineered wood - Vinyl flooring">
       <meta property="og:image" content="{{url('/')}}/uploads/slider/download-slider-8.webp">
-      <meta property="og:description"
-         content="Discover our stories and blog-posts. Up to date advice on flooring colors, trends and more on our blog section. Get inspired by Quick-Step® flooring designers.">
+      <meta property="og:description" content="Discover our stories and blog-posts. Up to date advice on flooring colors, trends and more on our blog section. Get inspired by Quick-Step® flooring designers.">
       <meta property="og:site_name" content="DecoMagna">
       <meta property="og:locale" content="en_US">
       {{-- Twitter --}}
@@ -55,13 +53,14 @@
       <meta name="twitter:site" content="@Decomagna_Kenya">
       <meta name="twitter:url" content="{{url('/')}}">
       <meta name="twitter:title"
-         content="Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium">
+         content="Quick-Step Kenya - Laminate - Engineered wood - Vinyl flooring">
       <meta name="twitter:description"
          content="Discover our stories and blog-posts. Up to date advice on flooring colors, trends and more on our blog section. Get inspired by Quick-Step® flooring designers.">
       <meta name="twitter:image" content="{{url('/')}}/uploads/slider/download-slider-8.webp">
       {{-- SEO --}}
    </head>
    <body>
+      <h1 style="display: none">Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium</h1>
       <!-- Loading -->
       <div id="pq-loading">
          <div id="pq-loading-center">
