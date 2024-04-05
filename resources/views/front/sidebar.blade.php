@@ -10,10 +10,10 @@
 
             <div class="pq-sidebar-contact">
                <ul class="pq-contact">
-                  <li>
+                  {{-- <li>
                      <i class="fa fa-map-marker"></i>
                      <span> Tumbili rd. Karen Hardy near the Giraffe Centre off Tumbili rd Navy Blue gate written quick-step , Nairobi, Kenya </span>
-                  </li>
+                  </li> --}}
                   <li>
                      <a href="tel:+254796110511"><i class="fas fa-phone-alt"></i>
                      <span> +254 79 611 0511</span>
