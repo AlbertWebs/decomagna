@@ -15,7 +15,7 @@
                  <rs-slide style="position: absolute;" data-key="rs-4{{$Order}}" data-title="Slide"
                     data-thumb="{{asset('html/rev/assets/Banner-1-2-50x100.jpg')}}" data-anim="adpr:false;ms:300;" data-in="o:0;"
                     data-out="a:false;">
-                    <img  src="{{url('/')}}/uploads/slider/{{$slider->image}}" alt="" title="Banner-1"
+                    <img alt="{{$slider->name}}" src="{{url('/')}}/uploads/slider/{{$slider->image}}" alt="" title="Banner-1"
                        class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{url('/')}}/uploads/slider/{{$slider->image}}"
                        data-no-retina>
                     <!--
@@ -147,7 +147,7 @@
     <section class="about-us pq-bg-img-1 py-xl-0 pb-10">
         <div class="container">
             <div class="floating-image floating-image-right floating-image-5">
-                <img src="{{url('/')}}/uploads/sections/Laminate.png" alt="">
+                <img src="{{url('/')}}/uploads/sections/Laminate.png" alt="{{$sectionhome->name}}">
             </div>
         <div class="row align-items-center">
             <div class="col-xl-6 wow animated fadeInLeft">
@@ -303,7 +303,7 @@
                 <div class="pq-image-box pq-style-4">
                     <div class="pq-image-box-img">
                         <a class="pellete-img"  href="{{url('/')}}/products/color/original-laminate-flooring/{{$color->title}}">
-                            <img src="{{url('/')}}/uploads/colors/{{$color->image}}" class="img-fluid w-100s" alt="">
+                            <img src="{{url('/')}}/uploads/colors/{{$color->image}}" class="img-fluid w-100s" alt="Decomagna {{$color->title}}">
                         </a>
                     </div>
                     <div class="pq-image-box-content">

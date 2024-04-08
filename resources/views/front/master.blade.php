@@ -68,7 +68,7 @@
             <div>
                 {{-- <img src="{{asset('uploads/logo/logo-clean.png')}}" alt="Loading"> --}}
                 <center>
-                    <img *ngIf="loading" style="width:120px; height:120px" src="{{asset('uploads/logo/Spinner-1s-200px.gif')}}" alt="loading" />
+                    <img *ngIf="loading" style="width:120px; height:120px" src="{{asset('uploads/logo/Spinner-1s-200px.gif')}}" alt="Decomagna loading" />
                 </center>
             </div>
          </div>
