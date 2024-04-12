@@ -21,7 +21,7 @@ use App\Http\Controllers\BlogController;
 // Route::get('/home', function () {
 //     return view('welcome');
 // });
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home-pages');
 Route::get('/products', [HomeController::class, 'products']);
 Route::get('/search-product', [HomeController::class, 'search'])->name('search');
 Route::get('/search-filter', [HomeController::class, 'filter'])->name('search-filter');
@@ -371,3 +371,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     });
 });
+Route::any('{query}',
+    function() { return redirect('/'); })
+    ->where('query', '.*');
