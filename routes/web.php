@@ -26,6 +26,10 @@ Route::get('/products', [HomeController::class, 'products']);
 Route::get('/search-product', [HomeController::class, 'search'])->name('search');
 Route::get('/search-filter', [HomeController::class, 'filter'])->name('search-filter');
 
+Route::get('/original-laminate-flooring-kenya', [HomeController::class, 'index']);
+Route::get('/contact', [HomeController::class, 'contact']);
+Route::get('/', [HomeController::class, 'index']);
+
 Route::get('sitemap.xml',function() {
     return response()->view('sitemap')->header('Content-Type', 'xml');});
 
