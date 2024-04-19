@@ -63,6 +63,8 @@
       <meta name="twitter:description"
          content="Discover our stories and blog-posts. Up to date advice on flooring colors, trends and more on our blog section. Get inspired by Quick-Step® flooring designers.">
       <meta name="twitter:image" content="{{url('/')}}/uploads/slider/download-slider-8.webp">
+
+      <meta name="google-site-verification" content="aPfWre_bGZ9l-YSyG_gYlHfEe3SHX5h3JVjqnNyD6-8" />
       {{-- SEO --}}
        <!--Start of Tawk.to Script-->
     <script type="text/javascript">
