@@ -79,6 +79,17 @@
         })();
         </script>
     <!--End of Tawk.to Script-->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFZD63N5XN"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EFZD63N5XN');
+    </script>
+
    </head>
    <body>
       <h1 style="display: none">Quick-Step - Kenya - Laminate Flooring - Engineered wood - Vinyl flooring - made in Belgium</h1>
