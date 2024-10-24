@@ -6,7 +6,7 @@
         $Category = DB::table('categories')->get();
         ?>
     @foreach($Category as $category)
-        @if($category->id == 1)
+        @if($category->id == 1 || $category->id == 1 )
             <li class="menu-item">
                 <a href="{{url('/')}}/products/{{$category->slung}}" class="navbar-link hover-underline">
                     <div class="separator"></div>
